@@ -30,7 +30,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Logo renders correctly on desktop and mobile at all breakpoints (375px, 768px, 1280px)
   4. The /blog/ directory path exists in the project structure without any HTML content (blog scaffold ready for v2)
   5. Vite build produces hashed, bundled assets and deploys automatically on git push
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold Vite 6.x project, CSS design token system, Inter font, stub page with logo
+- [ ] 01-02-PLAN.md — Deploy to Netlify and verify live URL with design system applied
 
 ### Phase 2: Home, Sobre & Credibility Shell
 **Goal**: Visitors can land on the homepage, understand the company in under 30 seconds, navigate to the Sobre page, and see all trust signals that address the "can I trust a new company?" question
@@ -82,11 +86,11 @@ Decimal phases appear between their surrounding integers in numeric order.
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Design System | 0/TBD | Not started | - |
+| 1. Foundation & Design System | 0/2 | Planning complete | - |
 | 2. Home, Sobre & Credibility Shell | 0/TBD | Not started | - |
 | 3. Service Pages & SEO Nucleus | 0/TBD | Not started | - |
 | 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
