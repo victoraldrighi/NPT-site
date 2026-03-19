@@ -7,10 +7,10 @@
 
 ### Identidade Visual
 
-- [ ] **IDEN-01**: Site possui paleta de cores e tipografia profissional sugerida (adequada ao setor de engenharia B2B)
-- [ ] **IDEN-02**: Logo da NPT integrado ao design com versão vetorial
-- [ ] **IDEN-03**: Design system com tokens de cor, tipografia e espaçamento documentados em CSS custom properties
-- [ ] **IDEN-04**: Layout responsivo funcional em mobile, tablet e desktop
+- [x] **IDEN-01**: Site possui paleta de cores e tipografia profissional sugerida (adequada ao setor de engenharia B2B)
+- [x] **IDEN-02**: Logo da NPT integrado ao design com versão vetorial
+- [x] **IDEN-03**: Design system com tokens de cor, tipografia e espaçamento documentados em CSS custom properties
+- [x] **IDEN-04**: Layout responsivo funcional em mobile, tablet e desktop
 
 ### Páginas
 
@@ -56,9 +56,9 @@
 
 ### Infraestrutura
 
-- [ ] **INFRA-01**: Build pipeline Vite 6.x configurado com suporte a múltiplas páginas HTML
+- [x] **INFRA-01**: Build pipeline Vite 6.x configurado com suporte a múltiplas páginas HTML
 - [ ] **INFRA-02**: Deploy configurado no Netlify com HTTPS automático
-- [ ] **INFRA-03**: Estrutura de pastas preparada para adição futura de blog (/blog/) sem refatoração
+- [x] **INFRA-03**: Estrutura de pastas preparada para adição futura de blog (/blog/) sem refatoração
 
 ## v2 Requirements
 
@@ -97,13 +97,13 @@
 
 | Requirement | Phase | Phase Name | Status |
 |-------------|-------|------------|--------|
-| IDEN-01 | Phase 1 | Foundation & Design System | Pending |
-| IDEN-02 | Phase 1 | Foundation & Design System | Pending |
-| IDEN-03 | Phase 1 | Foundation & Design System | Pending |
-| IDEN-04 | Phase 1 | Foundation & Design System | Pending |
-| INFRA-01 | Phase 1 | Foundation & Design System | Pending |
-| INFRA-02 | Phase 1 | Foundation & Design System | Pending |
-| INFRA-03 | Phase 1 | Foundation & Design System | Pending |
+| IDEN-01 | Phase 1 | Foundation & Design System | Complete (01-01) |
+| IDEN-02 | Phase 1 | Foundation & Design System | Complete (01-01) |
+| IDEN-03 | Phase 1 | Foundation & Design System | Complete (01-01) |
+| IDEN-04 | Phase 1 | Foundation & Design System | Complete (01-01) |
+| INFRA-01 | Phase 1 | Foundation & Design System | Complete (01-01) |
+| INFRA-02 | Phase 1 | Foundation & Design System | Pending (01-02) |
+| INFRA-03 | Phase 1 | Foundation & Design System | Complete (01-01) |
 | PAGE-01 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
 | PAGE-06 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
 | PAGE-08 | Phase 2 | Home, Sobre & Credibility Shell | Pending |

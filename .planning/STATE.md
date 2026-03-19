@@ -2,16 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planning
-stopped_at: Phase 1 context gathered
-last_updated: "2026-03-19T20:47:40.902Z"
-last_activity: 2026-03-19 — Roadmap created, all 27 v1 requirements mapped to 5 phases
+status: executing
+stopped_at: Completed 01-01-PLAN.md
+last_updated: "2026-03-19T22:25:45Z"
 progress:
   total_phases: 5
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_plans: 2
+  completed_plans: 1
 ---
 
 # Project State
@@ -21,34 +19,30 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-19)
 
 **Core value:** O visitante encontra a NPT pelo Google, entende os serviços em menos de 30 segundos, e entra em contato para pedir orçamento — tudo em uma única visita.
-**Current focus:** Phase 1 — Foundation & Design System
+**Current focus:** Phase 01 — foundation-and-design-system
 
 ## Current Position
 
-Phase: 1 of 5 (Foundation & Design System)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-03-19 — Roadmap created, all 27 v1 requirements mapped to 5 phases
-
-Progress: [░░░░░░░░░░] 0%
+Phase: 01 (foundation-and-design-system) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: 8 min
+- Total execution time: 0.1 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-foundation-and-design-system | 1/2 | 8 min | 8 min |
 
 **Recent Trend:**
 
-- Last 5 plans: none yet
+- Last 5 plans: 01-01 (8 min)
 - Trend: —
 
 *Updated after each plan completion*
@@ -63,7 +57,11 @@ Recent decisions affecting current work:
 - Stack: HTML/CSS/JS puro com Vite 6.x — maximum performance, zero framework overhead, free Netlify hosting
 - Forms: Netlify Forms (free tier, HTML POST, no JS dependency) — do not switch without validating volume needs
 - Fonts: Self-hosted via @fontsource/inter — eliminates Google Fonts CDN request, LGPD-compliant
-- Identity: NPT navy (#1B3A6B) + amber accent (#F5A623) proposed palette; existing logo as reference
+- Identity: NPT navy (#1B3A6B) + amber accent (#F5A623) palette LOCKED in tokens.css (01-01)
+- Vite pinned: vite@6.4.1 explicitly — npm latest installs Vite 8 (Rolldown), breaking rollupOptions API
+- Token architecture: two-layer (primitives + semantic) — semantic names are what all CSS uses directly
+- @fontsource: 4 separate weight imports in main.js (400/500/600/700) — bare import only loads 400
+- Breakpoints: raw rem in @media (48rem tablet, 80rem desktop) — CSS vars cannot be used in media queries
 
 ### Pending Todos
 
@@ -77,6 +75,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T20:47:40.894Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-foundation-and-design-system/01-CONTEXT.md
+Last session: 2026-03-19T22:25:45Z
+Stopped at: Completed 01-01-PLAN.md
+Resume file: .planning/phases/01-foundation-and-design-system/01-02-PLAN.md

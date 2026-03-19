@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Vite 6.x project, CSS design token system, Inter font, stub page with logo
+- [x] 01-01-PLAN.md — Scaffold Vite 6.x project, CSS design token system, Inter font, stub page with logo
 - [ ] 01-02-PLAN.md — Deploy to Netlify and verify live URL with design system applied
 
 ### Phase 2: Home, Sobre & Credibility Shell
@@ -90,7 +90,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Design System | 0/2 | Planning complete | - |
+| 1. Foundation & Design System | 1/2 | Executing | - |
 | 2. Home, Sobre & Credibility Shell | 0/TBD | Not started | - |
 | 3. Service Pages & SEO Nucleus | 0/TBD | Not started | - |
 | 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
