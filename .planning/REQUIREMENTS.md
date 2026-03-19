@@ -95,25 +95,48 @@
 
 ## Traceability
 
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| IDEN-01, IDEN-02, IDEN-03, IDEN-04 | Phase 1 | Pending |
-| INFRA-01, INFRA-02, INFRA-03 | Phase 1 | Pending |
-| PAGE-01 | Phase 2 | Pending |
-| PAGE-06, PAGE-08 | Phase 2 | Pending |
-| CRED-01, CRED-02, CRED-04 | Phase 2 | Pending |
-| PAGE-02, PAGE-03, PAGE-04 | Phase 3 | Pending |
-| SEO-01, SEO-02, SEO-05, SEO-06 | Phase 3 | Pending |
-| PAGE-05, CRED-03 | Phase 4 | Pending |
-| PAGE-07, CONV-01, CONV-02, CONV-03, CONV-04 | Phase 4 | Pending |
-| SEO-03, SEO-04 | Phase 5 | Pending |
-| PERF-01, PERF-02, PERF-03, PERF-04, PERF-05 | Phase 5 | Pending |
+| Requirement | Phase | Phase Name | Status |
+|-------------|-------|------------|--------|
+| IDEN-01 | Phase 1 | Foundation & Design System | Pending |
+| IDEN-02 | Phase 1 | Foundation & Design System | Pending |
+| IDEN-03 | Phase 1 | Foundation & Design System | Pending |
+| IDEN-04 | Phase 1 | Foundation & Design System | Pending |
+| INFRA-01 | Phase 1 | Foundation & Design System | Pending |
+| INFRA-02 | Phase 1 | Foundation & Design System | Pending |
+| INFRA-03 | Phase 1 | Foundation & Design System | Pending |
+| PAGE-01 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
+| PAGE-06 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
+| PAGE-08 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
+| CRED-01 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
+| CRED-02 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
+| CRED-04 | Phase 2 | Home, Sobre & Credibility Shell | Pending |
+| PAGE-02 | Phase 3 | Service Pages & SEO Nucleus | Pending |
+| PAGE-03 | Phase 3 | Service Pages & SEO Nucleus | Pending |
+| PAGE-04 | Phase 3 | Service Pages & SEO Nucleus | Pending |
+| SEO-01 | Phase 3 | Service Pages & SEO Nucleus | Pending |
+| SEO-02 | Phase 3 | Service Pages & SEO Nucleus | Pending |
+| SEO-05 | Phase 3 | Service Pages & SEO Nucleus | Pending |
+| SEO-06 | Phase 3 | Service Pages & SEO Nucleus | Pending |
+| PAGE-05 | Phase 4 | Portfolio, Conversion & Contact | Pending |
+| PAGE-07 | Phase 4 | Portfolio, Conversion & Contact | Pending |
+| CONV-01 | Phase 4 | Portfolio, Conversion & Contact | Pending |
+| CONV-02 | Phase 4 | Portfolio, Conversion & Contact | Pending |
+| CONV-03 | Phase 4 | Portfolio, Conversion & Contact | Pending |
+| CONV-04 | Phase 4 | Portfolio, Conversion & Contact | Pending |
+| CRED-03 | Phase 4 | Portfolio, Conversion & Contact | Pending |
+| SEO-03 | Phase 5 | Performance & Launch QA | Pending |
+| SEO-04 | Phase 5 | Performance & Launch QA | Pending |
+| PERF-01 | Phase 5 | Performance & Launch QA | Pending |
+| PERF-02 | Phase 5 | Performance & Launch QA | Pending |
+| PERF-03 | Phase 5 | Performance & Launch QA | Pending |
+| PERF-04 | Phase 5 | Performance & Launch QA | Pending |
+| PERF-05 | Phase 5 | Performance & Launch QA | Pending |
 
 **Coverage:**
 - v1 requirements: 27 total
 - Mapped to phases: 27
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-19*
-*Last updated: 2026-03-19 after initial definition*
+*Last updated: 2026-03-19 — traceability finalized after roadmap creation*
