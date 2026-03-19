@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NPT Engenharia</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <svg class="site-logo" aria-label="NPT Engenharia" role="img" viewBox="0 0 120 40" width="120" height="40">
+        <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
+      </svg>
+    </div>
+  </header>
+  <main class="main-content">
+    <div class="container">
+      <h1>NPT Engenharia</h1>
+      <p>Site em desenvolvimento — em breve.</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+
+  <style>
+    /* Stub page styles — temporary, replaced in Phase 2 */
+    .site-header {
+      background-color: var(--color-brand-primary);
+      padding: var(--space-4);
+    }
+    .site-header .site-logo {
+      color: var(--color-bg-surface); /* white logo on navy */
+    }
+    .container {
+      width: 100%;
+      max-width: var(--max-width-content);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--space-4);
+      padding-right: var(--space-4);
+    }
+    .main-content {
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+    .main-content h1 {
+      font-size: var(--font-size-4xl);
+      color: var(--color-brand-primary);
+      margin-bottom: var(--space-4);
+    }
+    .main-content p {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-muted);
+    }
+    .site-footer {
+      background-color: var(--color-brand-primary);
+      color: var(--color-bg-surface);
+      padding: var(--space-6);
+      text-align: center;
+      font-size: var(--font-size-sm);
+    }
+    /* Tablet breakpoint — raw rem, NOT var(--bp-tablet) */
+    @media (min-width: 48rem) {
+      .container {
+        padding-left: var(--space-6);
+        padding-right: var(--space-6);
+      }
+    }
+    /* Desktop breakpoint — raw rem, NOT var(--bp-desktop) */
+    @media (min-width: 80rem) {
+      .container {
+        padding-left: var(--space-8);
+        padding-right: var(--space-8);
+      }
+    }
+  </style>
+</body>
+</html>
