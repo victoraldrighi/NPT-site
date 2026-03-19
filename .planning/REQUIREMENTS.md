@@ -57,7 +57,7 @@
 ### Infraestrutura
 
 - [x] **INFRA-01**: Build pipeline Vite 6.x configurado com suporte a múltiplas páginas HTML
-- [ ] **INFRA-02**: Deploy configurado no Netlify com HTTPS automático
+- [x] **INFRA-02**: Deploy configurado no Netlify com HTTPS automático
 - [x] **INFRA-03**: Estrutura de pastas preparada para adição futura de blog (/blog/) sem refatoração
 
 ## v2 Requirements

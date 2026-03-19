@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-19T22:25:45Z"
+status: unknown
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-19T23:17:48.324Z"
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -46,6 +46,7 @@ Plan: 2 of 2
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-foundation-and-design-system P02 | 5 | 2 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -62,6 +63,8 @@ Recent decisions affecting current work:
 - Token architecture: two-layer (primitives + semantic) — semantic names are what all CSS uses directly
 - @fontsource: 4 separate weight imports in main.js (400/500/600/700) — bare import only loads 400
 - Breakpoints: raw rem in @media (48rem tablet, 80rem desktop) — CSS vars cannot be used in media queries
+- [Phase 01-foundation-and-design-system]: Netlify free tier confirmed for hosting: CDN, HTTPS, CI/CD, and Forms all on free plan
+- [Phase 01-foundation-and-design-system]: Live URL: https://npt-site.netlify.app/ — canonical production URL for all v1 phases
 
 ### Pending Todos
 
@@ -75,6 +78,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T22:25:45Z
-Stopped at: Completed 01-01-PLAN.md
-Resume file: .planning/phases/01-foundation-and-design-system/01-02-PLAN.md
+Last session: 2026-03-19T23:17:48.315Z
+Stopped at: Completed 01-02-PLAN.md
+Resume file: None

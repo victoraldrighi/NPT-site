@@ -12,7 +12,7 @@ Five phases deliver a site that ranks on Google and converts construtoras into l
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Design System** - Vite 6.x scaffold, CSS token system, Netlify deploy, visual identity locked
+- [x] **Phase 1: Foundation & Design System** - Vite 6.x scaffold, CSS token system, Netlify deploy, visual identity locked (completed 2026-03-19)
 - [ ] **Phase 2: Home, Sobre & Credibility Shell** - Homepage, Sobre page, thank-you page, and all trust signals live
 - [ ] **Phase 3: Service Pages & SEO Nucleus** - Three rich service pages with NBR references, schema markup, and per-page SEO
 - [ ] **Phase 4: Portfolio, Conversion & Contact** - Case study page, contact form, WhatsApp CTA, and full conversion loop
@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Logo renders correctly on desktop and mobile at all breakpoints (375px, 768px, 1280px)
   4. The /blog/ directory path exists in the project structure without any HTML content (blog scaffold ready for v2)
   5. Vite build produces hashed, bundled assets and deploys automatically on git push
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 Plans:
 - [x] 01-01-PLAN.md — Scaffold Vite 6.x project, CSS design token system, Inter font, stub page with logo
@@ -90,7 +90,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Design System | 1/2 | Executing | - |
+| 1. Foundation & Design System | 2/2 | Complete   | 2026-03-19 |
 | 2. Home, Sobre & Credibility Shell | 0/TBD | Not started | - |
 | 3. Service Pages & SEO Nucleus | 0/TBD | Not started | - |
 | 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
