@@ -1,0 +1,64 @@
+:root {
+  /* --- PRIMITIVE TOKENS --- */
+  --primitive-navy: #1B3A6B;
+  --primitive-amber: #F5A623;
+  --primitive-off-white: #F8F9FA;
+  --primitive-white: #FFFFFF;
+  --primitive-dark: #1A1A2E;
+  --primitive-muted: #6B7280;
+  --primitive-green: #10B981;
+
+  /* --- SEMANTIC COLOR TOKENS --- */
+  --color-brand-primary: var(--primitive-navy);
+  --color-brand-accent: var(--primitive-amber);
+  --color-bg-page: var(--primitive-off-white);
+  --color-bg-surface: var(--primitive-white);
+  --color-text-body: var(--primitive-dark);
+  --color-text-muted: var(--primitive-muted);
+  --color-feedback-success: var(--primitive-green);
+
+  /* --- TYPOGRAPHY TOKENS --- */
+  --font-family-base: 'Inter', system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  --line-height-body: 1.5;
+  --line-height-heading: 1.2;
+
+  /* --- SPACING TOKENS (4px base) --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* --- LAYOUT TOKENS --- */
+  --max-width-content: 75rem;
+  --bp-tablet: 48rem;
+  --bp-desktop: 80rem;
+
+  /* --- COMPONENT TOKENS --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --transition-base: 150ms ease-in-out;
+}
