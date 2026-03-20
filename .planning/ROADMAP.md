@@ -61,7 +61,11 @@ Plans:
   2. Each service page contains at least 800 words of unique technical content citing the relevant ABNT norms (NBR 9077 for pressurização, NBR 5626/8160 for hidráulica, NBR 5410/5419 for elétrica)
   3. Every page on the site has a unique meta title, meta description, og:title, og:description, og:image, and canonical tag
   4. Google's Rich Results Test validates Service schema markup on each service page and ProfessionalService schema on the homepage without errors
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — SEO infrastructure: vite entries, og-image.png, canonical/og on existing pages, ProfessionalService schema on home, nav service links, service-page.css
+- [ ] 03-02-PLAN.md — Three service pages: pressurização, hidráulica, elétrica (full HTML content, JSON-LD, breadcrumb, FAQ accordion)
 
 ### Phase 4: Portfolio, Conversion & Contact
 **Goal**: Visitors have a complete path from landing on any page to submitting a lead — via the contact form or WhatsApp — and the portfolio case study gives skeptical prospects a concrete reason to trust NPT
@@ -96,6 +100,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 2/2 | Complete    | 2026-03-19 |
 | 2. Home, Sobre & Credibility Shell | 2/2 | Complete    | 2026-03-20 |
-| 3. Service Pages & SEO Nucleus | 0/TBD | Not started | - |
+| 3. Service Pages & SEO Nucleus | 0/2 | Not started | - |
 | 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
 | 5. Performance & Launch QA | 0/TBD | Not started | - |
