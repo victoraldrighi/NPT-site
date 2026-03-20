@@ -108,6 +108,15 @@
   outline-offset: var(--space-1);
 }
 
+/* Minimal header — logo only, no navigation (e.g. /obrigado/ page) */
+.site-header--minimal .site-header__inner,
+.site-header--minimal .container {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
 /* Active page link highlight via body class */
 .page-home .nav-links a[href="/"],
 .page-sobre .nav-links a[href="/sobre/"] {

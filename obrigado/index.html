@@ -7,7 +7,65 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body class="page-obrigado">
-  <p>stub</p>
+
+  <!-- Minimal header: logo only, NO nav -->
+  <header class="site-header site-header--minimal">
+    <div class="container">
+      <a href="/" class="site-logo" aria-label="NPT Engenharia — voltar para o início">
+        <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
+          <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="obrigado-main">
+    <div class="container">
+      <!-- Bootstrap Icons bi-check-circle (MIT) -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+           class="obrigado-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+      </svg>
+      <h1>Mensagem recebida!</h1>
+      <p>Entraremos em contato em breve.</p>
+      <a href="/" class="btn btn--primary">Voltar para o início</a>
+    </div>
+  </main>
+
+  <!-- Footer with CREA — CRED-01 requires CREA in footer on ALL pages -->
+  <footer class="site-footer" id="contato">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para o início">
+          <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
+            <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
+          </svg>
+        </a>
+      </div>
+      <div class="site-footer__info">
+        <p>
+          Engenheiro responsável: <strong>[Nome do Engenheiro]</strong>
+        </p>
+        <p>
+          <a
+            href="https://consultaprofissional.confea.org.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Verificar registro CREA-SP [000000-D] no portal CONFEA (abre em nova aba)"
+          >CREA-SP [000000-D]</a>
+        </p>
+        <p>
+          <a href="mailto:contato@nptengenharia.com.br">contato@nptengenharia.com.br</a>
+        </p>
+        <p>+55 (11) 9 0000-0000</p>
+      </div>
+    </div>
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
   <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>
