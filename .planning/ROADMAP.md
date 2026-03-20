@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation & Design System** - Vite 6.x scaffold, CSS token system, Netlify deploy, visual identity locked (completed 2026-03-19)
 - [x] **Phase 2: Home, Sobre & Credibility Shell** - Homepage, Sobre page, thank-you page, and all trust signals live (completed 2026-03-20)
 - [x] **Phase 3: Service Pages & SEO Nucleus** - Three rich service pages with NBR references, schema markup, and per-page SEO (completed 2026-03-20)
-- [ ] **Phase 4: Portfolio, Conversion & Contact** - Case study page, contact form, WhatsApp CTA, and full conversion loop
+- [x] **Phase 4: Portfolio, Conversion & Contact** - Case study page, contact form, WhatsApp CTA, and full conversion loop (completed 2026-03-20)
 - [ ] **Phase 5: Performance & Launch QA** - Core Web Vitals green, sitemap/robots, Lighthouse 90+ gate, launch
 
 ## Phase Details
@@ -77,7 +77,7 @@ Plans:
   3. Portfolio case study page documents the single delivered project with building type, applicable norms, scope of deliverables, and result — not just a photo
   4. Phone number is visible in the site header and email address is visible in the site footer on all pages
   5. Visitor can initiate contact from any page without navigating to /contato/ (WhatsApp CTA or in-page form anchor present throughout)
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 04-01-PLAN.md — CSS components + Vite config + Portfolio page + Contact page with Netlify Forms
@@ -105,5 +105,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation & Design System | 2/2 | Complete    | 2026-03-19 |
 | 2. Home, Sobre & Credibility Shell | 2/2 | Complete    | 2026-03-20 |
 | 3. Service Pages & SEO Nucleus | 2/2 | Complete   | 2026-03-20 |
-| 4. Portfolio, Conversion & Contact | 1/2 | In Progress|  |
+| 4. Portfolio, Conversion & Contact | 2/2 | Complete   | 2026-03-20 |
 | 5. Performance & Launch QA | 0/TBD | Not started | - |

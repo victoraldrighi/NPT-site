@@ -25,10 +25,10 @@
 
 ### Conversão
 
-- [ ] **CONV-01**: Botão WhatsApp flutuante e persistente em todas as páginas com mensagem pré-preenchida
+- [x] **CONV-01**: Botão WhatsApp flutuante e persistente em todas as páginas com mensagem pré-preenchida
 - [x] **CONV-02**: Formulário de contato/orçamento funcional (nome, empresa, tipo de projeto, mensagem) — integrado via Google Forms ou Netlify Forms (gratuito)
-- [ ] **CONV-03**: Email visível no rodapé de todas as páginas
-- [ ] **CONV-04**: Telefone/celular visível no header de todas as páginas
+- [x] **CONV-03**: Email visível no rodapé de todas as páginas
+- [x] **CONV-04**: Telefone/celular visível no header de todas as páginas
 
 ### SEO Técnico
 
