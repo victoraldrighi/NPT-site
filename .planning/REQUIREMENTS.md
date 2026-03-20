@@ -15,9 +15,9 @@
 ### Páginas
 
 - [x] **PAGE-01**: Página Home com seções: hero com CTA, serviços resumidos, diferencial de preço, case rápido e rodapé
-- [ ] **PAGE-02**: Página de serviço — Pressurização de Escadas de Emergência (800-1200 palavras, referências NBR 9077 e IT 11 CBPMESP)
-- [ ] **PAGE-03**: Página de serviço — Projetos Hidráulicos (800-1200 palavras, referências NBR 5626 e NBR 7198)
-- [ ] **PAGE-04**: Página de serviço — Projetos Elétricos (800-1200 palavras, referências NBR 5410 e NBR 5419)
+- [x] **PAGE-02**: Página de serviço — Pressurização de Escadas de Emergência (800-1200 palavras, referências NBR 9077 e IT 11 CBPMESP)
+- [x] **PAGE-03**: Página de serviço — Projetos Hidráulicos (800-1200 palavras, referências NBR 5626 e NBR 7198)
+- [x] **PAGE-04**: Página de serviço — Projetos Elétricos (800-1200 palavras, referências NBR 5410 e NBR 5419)
 - [ ] **PAGE-05**: Página Portfólio com case study completo do único projeto entregue (tipo, normas aplicadas, escopo, resultado)
 - [x] **PAGE-06**: Página Sobre a Empresa (equipe/sócios com foto, número CREA, missão, diferenciais)
 - [ ] **PAGE-07**: Página Contato / Solicitar Orçamento com formulário funcional e dados de contato completos

@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Design System** - Vite 6.x scaffold, CSS token system, Netlify deploy, visual identity locked (completed 2026-03-19)
 - [x] **Phase 2: Home, Sobre & Credibility Shell** - Homepage, Sobre page, thank-you page, and all trust signals live (completed 2026-03-20)
-- [ ] **Phase 3: Service Pages & SEO Nucleus** - Three rich service pages with NBR references, schema markup, and per-page SEO
+- [x] **Phase 3: Service Pages & SEO Nucleus** - Three rich service pages with NBR references, schema markup, and per-page SEO (completed 2026-03-20)
 - [ ] **Phase 4: Portfolio, Conversion & Contact** - Case study page, contact form, WhatsApp CTA, and full conversion loop
 - [ ] **Phase 5: Performance & Launch QA** - Core Web Vitals green, sitemap/robots, Lighthouse 90+ gate, launch
 
@@ -61,7 +61,7 @@ Plans:
   2. Each service page contains at least 800 words of unique technical content citing the relevant ABNT norms (NBR 9077 for pressurização, NBR 5626/8160 for hidráulica, NBR 5410/5419 for elétrica)
   3. Every page on the site has a unique meta title, meta description, og:title, og:description, og:image, and canonical tag
   4. Google's Rich Results Test validates Service schema markup on each service page and ProfessionalService schema on the homepage without errors
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 03-01-PLAN.md — SEO infrastructure: vite entries, og-image.png, canonical/og on existing pages, ProfessionalService schema on home, nav service links, service-page.css
@@ -100,6 +100,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 2/2 | Complete    | 2026-03-19 |
 | 2. Home, Sobre & Credibility Shell | 2/2 | Complete    | 2026-03-20 |
-| 3. Service Pages & SEO Nucleus | 1/2 | In Progress|  |
+| 3. Service Pages & SEO Nucleus | 2/2 | Complete   | 2026-03-20 |
 | 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
 | 5. Performance & Launch QA | 0/TBD | Not started | - |

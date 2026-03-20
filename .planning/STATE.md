@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-03-20T01:34:30.309Z"
+stopped_at: Completed 03-02-PLAN.md
+last_updated: "2026-03-20T02:43:49.185Z"
 progress:
   total_phases: 5
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State
@@ -50,6 +50,7 @@ Plan: 2 of 2
 | Phase 02-home-sobre-and-credibility-shell P01 | 8 min | 2 tasks | 14 files |
 | Phase 02-home-sobre-and-credibility-shell P02 | 5 min | 2 tasks | 5 files |
 | Phase 03-service-pages-seo-nucleus P01 | 8 min | 3 tasks | 12 files |
+| Phase 03-service-pages-seo-nucleus P02 | 11 min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,8 @@ Recent decisions affecting current work:
 - [Phase 02-home-sobre-and-credibility-shell]: CONFEA link uses consultaprofissional.confea.org.br (not www.confea.org.br) for direct professional registration verification
 - [Phase 03-service-pages-seo-nucleus]: og-image generation: pure-Node approach using zlib.deflateSync + manual CRC32 — no new npm packages, 1200x630 navy PNG
 - [Phase 03-service-pages-seo-nucleus]: service-page CSS-only FAQ accordion via details/summary — no JavaScript, progressively enhances with native browser behavior
+- [Phase 03-service-pages-seo-nucleus]: FAQPage schema placed on service pages for AI engine visibility (Perplexity/ChatGPT/Google AI Overviews) — not eligible for Google SERP rich result since 2023 policy
+- [Phase 03-service-pages-seo-nucleus]: BreadcrumbList position 3 has no item property — current page node per Google spec
 
 ### Pending Todos
 
@@ -87,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T01:34:30.299Z
-Stopped at: Completed 03-01-PLAN.md
+Last session: 2026-03-20T02:43:49.177Z
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
