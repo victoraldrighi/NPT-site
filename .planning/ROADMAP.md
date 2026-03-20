@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Home, Sobre & Credibility Shell** - Homepage, Sobre page, thank-you page, and all trust signals live (completed 2026-03-20)
 - [x] **Phase 3: Service Pages & SEO Nucleus** - Three rich service pages with NBR references, schema markup, and per-page SEO (completed 2026-03-20)
 - [x] **Phase 4: Portfolio, Conversion & Contact** - Case study page, contact form, WhatsApp CTA, and full conversion loop (completed 2026-03-20)
-- [ ] **Phase 5: Performance & Launch QA** - Core Web Vitals green, sitemap/robots, Lighthouse 90+ gate, launch
+- [x] **Phase 5: Performance & Launch QA** - Core Web Vitals green, sitemap/robots, Lighthouse 90+ gate, launch (completed 2026-03-20)
 
 ## Phase Details
 
@@ -93,7 +93,7 @@ Plans:
   3. /sitemap.xml returns a valid XML sitemap listing all pages; /robots.txt allows Googlebot access and references the sitemap URL
   4. All fonts are self-hosted (no external CDN requests in the waterfall) and display correctly across Chrome, Firefox, and Safari
   5. A real end-to-end test confirms: form submission receives an email, WhatsApp link opens with pre-filled message, /obrigado/ page loads post-redirect
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 05-01-PLAN.md — Canonical URL update, sitemap/robots creation, netlify.toml cache headers, GA4 snippet, build verification
@@ -109,4 +109,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Home, Sobre & Credibility Shell | 2/2 | Complete    | 2026-03-20 |
 | 3. Service Pages & SEO Nucleus | 2/2 | Complete   | 2026-03-20 |
 | 4. Portfolio, Conversion & Contact | 2/2 | Complete   | 2026-03-20 |
-| 5. Performance & Launch QA | 0/1 | Not started | - |
+| 5. Performance & Launch QA | 1/1 | Complete   | 2026-03-20 |

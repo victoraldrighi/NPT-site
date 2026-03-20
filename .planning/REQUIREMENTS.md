@@ -34,18 +34,18 @@
 
 - [x] **SEO-01**: URLs semânticas para todas as páginas (ex: /servicos/pressurizacao-escadas-emergencia/)
 - [x] **SEO-02**: Meta tags únicas por página (title, meta description, og:title, og:description, og:image)
-- [ ] **SEO-03**: sitemap.xml gerado e acessível em /sitemap.xml
-- [ ] **SEO-04**: robots.txt configurado corretamente (sem bloquear indexação acidental)
+- [x] **SEO-03**: sitemap.xml gerado e acessível em /sitemap.xml
+- [x] **SEO-04**: robots.txt configurado corretamente (sem bloquear indexação acidental)
 - [x] **SEO-05**: Schema markup JSON-LD implementado — ProfessionalService na home, Service em cada página de serviço, ItemList no portfólio
 - [x] **SEO-06**: Canonical tags em todas as páginas
 
 ### Performance (Core Web Vitals)
 
-- [ ] **PERF-01**: LCP < 2.5s — imagem hero otimizada com fetchpriority="high" e formato WebP
-- [ ] **PERF-02**: CLS < 0.1 — todos os elementos `<img>` com atributos width e height explícitos
-- [ ] **PERF-03**: INP < 200ms — sem JavaScript bloqueante no critical path
-- [ ] **PERF-04**: Fontes auto-hospedadas (sem Google Fonts CDN) com font-display: swap
-- [ ] **PERF-05**: Lighthouse Performance Score ≥ 90 em mobile
+- [x] **PERF-01**: LCP < 2.5s — imagem hero otimizada com fetchpriority="high" e formato WebP
+- [x] **PERF-02**: CLS < 0.1 — todos os elementos `<img>` com atributos width e height explícitos
+- [x] **PERF-03**: INP < 200ms — sem JavaScript bloqueante no critical path
+- [x] **PERF-04**: Fontes auto-hospedadas (sem Google Fonts CDN) com font-display: swap
+- [x] **PERF-05**: Lighthouse Performance Score ≥ 90 em mobile
 
 ### Credibilidade
 
