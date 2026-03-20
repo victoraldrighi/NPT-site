@@ -1,0 +1,68 @@
+.how-we-work {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg-surface);
+}
+
+.how-we-work > .container > h2 {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  color: var(--color-brand-primary);
+  font-size: var(--font-size-2xl);
+}
+
+.how-we-work__steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.how-we-work__step {
+  flex: 1;
+}
+
+.how-we-work__number {
+  display: block;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-accent);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.how-we-work__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-2);
+}
+
+.how-we-work__desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+@media (min-width: 48rem) {
+  .how-we-work__steps {
+    flex-direction: row;
+    gap: var(--space-4);
+    position: relative;
+  }
+
+  .how-we-work__step {
+    position: relative;
+  }
+
+  /* Decorative horizontal line connector between steps */
+  .how-we-work__step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    right: calc(-1 * var(--space-4) / 2);
+    width: var(--space-4);
+    height: 2px;
+    background-color: var(--color-brand-accent);
+    opacity: 0.4;
+  }
+}

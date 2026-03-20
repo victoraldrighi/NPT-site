@@ -1,0 +1,51 @@
+.hero {
+  background-color: var(--color-brand-primary);
+  color: var(--color-bg-surface);
+  padding: var(--space-16) 0;
+  text-align: center;
+}
+
+.hero__headline {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  margin-bottom: var(--space-4);
+  color: var(--color-bg-surface);
+}
+
+.hero__subheadline {
+  font-size: var(--font-size-base);
+  color: var(--color-bg-surface);
+  opacity: 0.9;
+  margin-bottom: var(--space-8);
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* Inline SVG inside button: override base.css svg { display: block } */
+.hero__whatsapp svg {
+  display: inline-block;
+}
+
+@media (min-width: 48rem) {
+  .hero__headline {
+    font-size: var(--font-size-5xl);
+  }
+
+  .hero__subheadline {
+    font-size: var(--font-size-lg);
+  }
+
+  .hero__ctas {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
