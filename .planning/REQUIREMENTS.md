@@ -18,15 +18,15 @@
 - [x] **PAGE-02**: Página de serviço — Pressurização de Escadas de Emergência (800-1200 palavras, referências NBR 9077 e IT 11 CBPMESP)
 - [x] **PAGE-03**: Página de serviço — Projetos Hidráulicos (800-1200 palavras, referências NBR 5626 e NBR 7198)
 - [x] **PAGE-04**: Página de serviço — Projetos Elétricos (800-1200 palavras, referências NBR 5410 e NBR 5419)
-- [ ] **PAGE-05**: Página Portfólio com case study completo do único projeto entregue (tipo, normas aplicadas, escopo, resultado)
+- [x] **PAGE-05**: Página Portfólio com case study completo do único projeto entregue (tipo, normas aplicadas, escopo, resultado)
 - [x] **PAGE-06**: Página Sobre a Empresa (equipe/sócios com foto, número CREA, missão, diferenciais)
-- [ ] **PAGE-07**: Página Contato / Solicitar Orçamento com formulário funcional e dados de contato completos
+- [x] **PAGE-07**: Página Contato / Solicitar Orçamento com formulário funcional e dados de contato completos
 - [x] **PAGE-08**: Página de agradecimento pós-envio de formulário (/obrigado/)
 
 ### Conversão
 
 - [ ] **CONV-01**: Botão WhatsApp flutuante e persistente em todas as páginas com mensagem pré-preenchida
-- [ ] **CONV-02**: Formulário de contato/orçamento funcional (nome, empresa, tipo de projeto, mensagem) — integrado via Google Forms ou Netlify Forms (gratuito)
+- [x] **CONV-02**: Formulário de contato/orçamento funcional (nome, empresa, tipo de projeto, mensagem) — integrado via Google Forms ou Netlify Forms (gratuito)
 - [ ] **CONV-03**: Email visível no rodapé de todas as páginas
 - [ ] **CONV-04**: Telefone/celular visível no header de todas as páginas
 
@@ -51,7 +51,7 @@
 
 - [x] **CRED-01**: Número de registro CREA visível na página Sobre e no rodapé
 - [x] **CRED-02**: Foto profissional da equipe/sócios na página Sobre
-- [ ] **CRED-03**: Case study do projeto entregue com detalhes técnicos (não apenas foto)
+- [x] **CRED-03**: Case study do projeto entregue com detalhes técnicos (não apenas foto)
 - [x] **CRED-04**: Seção "Como trabalhamos" com processo em etapas visível na home ou página Sobre
 
 ### Infraestrutura

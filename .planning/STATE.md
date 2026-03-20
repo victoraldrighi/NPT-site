@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Phase 4 context gathered
-last_updated: "2026-03-20T12:07:43.953Z"
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-03-20T12:52:21.692Z"
 progress:
   total_phases: 5
   completed_phases: 3
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 8
+  completed_plans: 7
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-19)
 
 **Core value:** O visitante encontra a NPT pelo Google, entende os serviços em menos de 30 segundos, e entra em contato para pedir orçamento — tudo em uma única visita.
-**Current focus:** Phase 03 — service-pages-seo-nucleus
+**Current focus:** Phase 04 — portfolio-conversion-contact
 
 ## Current Position
 
-Phase: 03 (service-pages-seo-nucleus) — EXECUTING
-Plan: 2 of 2
+Phase: 04 (portfolio-conversion-contact) — EXECUTING
+Plan: 1 of 2
 
 ## Performance Metrics
 
@@ -51,6 +51,7 @@ Plan: 2 of 2
 | Phase 02-home-sobre-and-credibility-shell P02 | 5 min | 2 tasks | 5 files |
 | Phase 03-service-pages-seo-nucleus P01 | 8 min | 3 tasks | 12 files |
 | Phase 03-service-pages-seo-nucleus P02 | 11 min | 3 tasks | 3 files |
+| Phase 04-portfolio-conversion-contact P01 | 7 | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,8 @@ Recent decisions affecting current work:
 - [Phase 03-service-pages-seo-nucleus]: service-page CSS-only FAQ accordion via details/summary — no JavaScript, progressively enhances with native browser behavior
 - [Phase 03-service-pages-seo-nucleus]: FAQPage schema placed on service pages for AI engine visibility (Perplexity/ChatGPT/Google AI Overviews) — not eligible for Google SERP rich result since 2023 policy
 - [Phase 03-service-pages-seo-nucleus]: BreadcrumbList position 3 has no item property — current page node per Google spec
+- [Phase 04-portfolio-conversion-contact]: tipo-outro field always visible (not conditional via CSS :has()) — eliminates browser compatibility concerns, label text makes purpose clear
+- [Phase 04-portfolio-conversion-contact]: Portfolio page uses .service-cta class for CTA section — zero new CSS for navy block, consistent with service pages
 
 ### Pending Todos
 
@@ -90,6 +93,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T12:07:43.944Z
-Stopped at: Phase 4 context gathered
-Resume file: .planning/phases/04-portfolio-conversion-contact/04-CONTEXT.md
+Last session: 2026-03-20T12:52:21.683Z
+Stopped at: Completed 04-01-PLAN.md
+Resume file: None
