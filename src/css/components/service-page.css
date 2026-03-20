@@ -1,0 +1,252 @@
+/* ============================================================
+   service-page.css — Service page layout and CSS-only FAQ accordion
+   All colors via var() tokens only — no hex values.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Breadcrumb navigation
+   ------------------------------------------------------------ */
+.breadcrumb {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+}
+
+.breadcrumb li[aria-hidden] {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  user-select: none;
+}
+
+/* Active / current breadcrumb item (span, not a) */
+.breadcrumb span[aria-current="page"],
+.breadcrumb li > span:not([aria-hidden]) {
+  color: var(--color-text-body);
+}
+
+/* ------------------------------------------------------------
+   Service article layout
+   ------------------------------------------------------------ */
+.service-article {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-body);
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-16);
+}
+
+.service-article h1 {
+  font-size: var(--font-size-3xl);
+  color: var(--color-text-body);
+  margin-bottom: var(--space-6);
+  line-height: 1.2;
+}
+
+@media (min-width: 48rem) {
+  .service-article h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+.service-article h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-brand-primary);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+}
+
+.service-article h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-body);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-2);
+}
+
+.service-article p {
+  color: var(--color-text-body);
+  margin-bottom: var(--space-4);
+}
+
+.service-article ul,
+.service-article ol {
+  padding-left: var(--space-6);
+  color: var(--color-text-body);
+}
+
+.service-article ul li,
+.service-article ol li {
+  margin-bottom: var(--space-2);
+  line-height: var(--line-height-body);
+}
+
+/* ------------------------------------------------------------
+   Specs table / definition list
+   ------------------------------------------------------------ */
+dl.service-specs,
+.service-specs {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.service-specs dt {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
+  margin-top: var(--space-4);
+}
+
+.service-specs dd {
+  color: var(--color-text-body);
+  margin-bottom: var(--space-3);
+  margin-left: 0;
+}
+
+@media (min-width: 48rem) {
+  .service-specs {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: var(--space-8);
+    align-items: baseline;
+  }
+
+  .service-specs dt {
+    margin-top: 0;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-bg-page);
+  }
+
+  .service-specs dd {
+    margin-bottom: 0;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-bg-page);
+  }
+}
+
+/* ------------------------------------------------------------
+   FAQ section — CSS-only accordion via <details>/<summary>
+   ------------------------------------------------------------ */
+.service-faq {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.service-faq h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-6);
+}
+
+/* details element */
+.faq-item {
+  border-bottom: 1px solid var(--color-bg-page);
+  margin-bottom: 0;
+}
+
+/* summary — the clickable question */
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: var(--space-4) 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Remove default disclosure marker */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::marker {
+  display: none;
+}
+
+/* Custom + / − indicator */
+.faq-item summary::after {
+  content: '+';
+  font-size: var(--font-size-xl);
+  color: var(--color-brand-accent);
+  flex-shrink: 0;
+  margin-left: var(--space-4);
+  transition: content var(--transition-base);
+}
+
+.faq-item[open] summary::after {
+  content: '\2212'; /* Unicode minus sign − */
+}
+
+/* Answer content */
+.faq-item__answer {
+  padding: 0 0 var(--space-4);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+}
+
+.faq-item__answer p {
+  margin-bottom: var(--space-2);
+}
+
+/* ------------------------------------------------------------
+   Service CTA section
+   ------------------------------------------------------------ */
+.service-cta {
+  background-color: var(--color-brand-primary);
+  padding: var(--space-12) 0;
+  text-align: center;
+  color: var(--color-bg-surface);
+}
+
+.service-cta h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-bg-surface);
+  margin-bottom: var(--space-6);
+}
+
+.service-cta p {
+  color: var(--color-bg-surface);
+  margin-bottom: var(--space-6);
+  opacity: 0.9;
+}
+
+.service-cta__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .service-cta__buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
