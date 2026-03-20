@@ -36,6 +36,7 @@ Declared values — token names map to `tokens.css` `--space-*` variables:
 |-------|---------|-------|-------|
 | xs | `--space-1` | 4px | Icon gaps, inline micro-spacing |
 | sm | `--space-2` | 8px | Form field label-to-input, inline tag gaps |
+| sm+ | `--space-3` | 12px | Form control padding (vertical), contact info item gap |
 | md | `--space-4` | 16px | Default block margin, form field margin-bottom |
 | lg | `--space-6` | 24px | Section inner padding, form group spacing |
 | xl | `--space-8` | 32px | Layout column gaps, article padding |
@@ -63,7 +64,8 @@ All sizes reference existing `tokens.css` variables. No new type tokens required
 | Heading H1 | `--font-size-3xl` / `--font-size-4xl` | 30px mobile / 36px tablet+ | 700 (`--font-weight-bold`) | 1.2 | Page `<h1>` on /contato/ and /portfolio/ |
 
 Active weights in this phase: **regular (400)** + **bold (700)**.
-Semibold (600) reserved for `.btn` labels and form field `<strong>` highlights (matches existing buttons.css).
+
+`.form-label` uses weight 700 (`--font-weight-bold`) — matching heading weight to keep the active weight count at exactly 2.
 
 Source: `tokens.css` typography section; pattern from `service-page.css`
 
@@ -91,6 +93,15 @@ Source: `tokens.css`; pattern established in Phase 1 and applied in Phases 2–3
 
 ---
 
+## Focal Points
+
+| Page | Primary Focal Point |
+|------|-------------------|
+| /contato/ | The form card and its "Enviar Solicitação" CTA — the entire page layout directs the eye to the form first; contact info is supporting context |
+| /portfolio/ | The `.portfolio-case` card with the result statement — specifically the `.portfolio-case__result` paragraph which frames the delivered outcome |
+
+---
+
 ## Component Inventory
 
 New CSS components to create in this phase (one file each, imported via `src/js/main.js`):
@@ -100,7 +111,7 @@ New CSS components to create in this phase (one file each, imported via `src/js/
 - `.contact-page` — page wrapper, single-column on mobile, 2-col grid on desktop (form left + contact info right)
 - `.contact-form` — the `<form>` element, stacked fields, max-width 560px in single-column context
 - `.form-group` — wraps `<label>` + `<input>`/`<select>`/`<textarea>`, margin-bottom `--space-6`
-- `.form-label` — 14px, weight 600 (semibold), color `--color-text-body`, margin-bottom `--space-2`
+- `.form-label` — 14px, weight 700 (bold), color `--color-text-body`, margin-bottom `--space-2`
 - `.form-control` — applies to `<input>`, `<select>`, `<textarea>`
   - padding: `--space-3` `--space-4`
   - min-height: 44px
