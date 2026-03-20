@@ -13,7 +13,7 @@ Five phases deliver a site that ranks on Google and converts construtoras into l
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Design System** - Vite 6.x scaffold, CSS token system, Netlify deploy, visual identity locked (completed 2026-03-19)
-- [ ] **Phase 2: Home, Sobre & Credibility Shell** - Homepage, Sobre page, thank-you page, and all trust signals live
+- [x] **Phase 2: Home, Sobre & Credibility Shell** - Homepage, Sobre page, thank-you page, and all trust signals live (completed 2026-03-20)
 - [ ] **Phase 3: Service Pages & SEO Nucleus** - Three rich service pages with NBR references, schema markup, and per-page SEO
 - [ ] **Phase 4: Portfolio, Conversion & Contact** - Case study page, contact form, WhatsApp CTA, and full conversion loop
 - [ ] **Phase 5: Performance & Launch QA** - Core Web Vitals green, sitemap/robots, Lighthouse 90+ gate, launch
@@ -46,7 +46,7 @@ Plans:
   3. "Como trabalhamos" process section is visible on the homepage or Sobre page with numbered steps
   4. /obrigado/ page renders and confirms form submission to the visitor
   5. CREA number appears in the page footer on all pages delivered in this phase
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 02-01-PLAN.md — Homepage with hero, services grid, "Como trabalhamos", case teaser, shared header/footer/buttons CSS
@@ -95,7 +95,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 2/2 | Complete    | 2026-03-19 |
-| 2. Home, Sobre & Credibility Shell | 1/2 | In Progress|  |
+| 2. Home, Sobre & Credibility Shell | 2/2 | Complete   | 2026-03-20 |
 | 3. Service Pages & SEO Nucleus | 0/TBD | Not started | - |
 | 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
 | 5. Performance & Launch QA | 0/TBD | Not started | - |

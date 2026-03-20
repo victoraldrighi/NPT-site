@@ -19,9 +19,9 @@
 - [ ] **PAGE-03**: Página de serviço — Projetos Hidráulicos (800-1200 palavras, referências NBR 5626 e NBR 7198)
 - [ ] **PAGE-04**: Página de serviço — Projetos Elétricos (800-1200 palavras, referências NBR 5410 e NBR 5419)
 - [ ] **PAGE-05**: Página Portfólio com case study completo do único projeto entregue (tipo, normas aplicadas, escopo, resultado)
-- [ ] **PAGE-06**: Página Sobre a Empresa (equipe/sócios com foto, número CREA, missão, diferenciais)
+- [x] **PAGE-06**: Página Sobre a Empresa (equipe/sócios com foto, número CREA, missão, diferenciais)
 - [ ] **PAGE-07**: Página Contato / Solicitar Orçamento com formulário funcional e dados de contato completos
-- [ ] **PAGE-08**: Página de agradecimento pós-envio de formulário (/obrigado/)
+- [x] **PAGE-08**: Página de agradecimento pós-envio de formulário (/obrigado/)
 
 ### Conversão
 
@@ -50,7 +50,7 @@
 ### Credibilidade
 
 - [x] **CRED-01**: Número de registro CREA visível na página Sobre e no rodapé
-- [ ] **CRED-02**: Foto profissional da equipe/sócios na página Sobre
+- [x] **CRED-02**: Foto profissional da equipe/sócios na página Sobre
 - [ ] **CRED-03**: Case study do projeto entregue com detalhes técnicos (não apenas foto)
 - [x] **CRED-04**: Seção "Como trabalhamos" com processo em etapas visível na home ou página Sobre
 
