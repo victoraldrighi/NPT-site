@@ -16,6 +16,7 @@ provides:
   - netlify.toml with immutable cache on /assets/* and security headers on /*
   - GA4 measurement ID G-N6NX09NWHS installed in all 8 HTML pages
   - Clean Vite build with PERF-01 through PERF-04 verified
+  - End-to-end conversion loop verified post-deploy (form, WhatsApp, GA4, PageSpeed)
 
 affects: [post-launch monitoring, PageSpeed Insights verification, GA4 realtime dashboard]
 
@@ -63,14 +64,14 @@ completed: 2026-03-20
 
 # Phase 5 Plan 01: Performance, SEO Infrastructure, and Launch QA Summary
 
-**SEO infrastructure (sitemap, robots.txt, canonical URLs) + GA4 analytics + Netlify immutable cache headers + Core Web Vitals verification across all 8 HTML pages**
+**SEO infrastructure (sitemap, robots.txt, canonical URLs) + GA4 analytics + Netlify immutable cache headers + Core Web Vitals verification across all 8 HTML pages — all 6 tasks complete including post-deploy E2E verification**
 
 ## Performance
 
 - **Duration:** ~15 min
 - **Started:** 2026-03-20T17:28:40Z
-- **Completed:** 2026-03-20T18:06:00Z
-- **Tasks:** 5 (Tasks 1-4 executed, Task 5 verified, Task 6 awaiting post-deploy)
+- **Completed:** 2026-03-20
+- **Tasks:** 6/6 complete
 - **Files modified:** 10
 
 ## Accomplishments
@@ -82,6 +83,7 @@ completed: 2026-03-20
 - `netlify.toml` updated with X-Frame-Options + X-Content-Type-Options on /*, immutable cache on /assets/*
 - GA4 snippet (G-N6NX09NWHS) installed in all 8 HTML pages before </head>
 - `npm run build` exits 0, dist/ contains sitemap.xml and robots.txt, all PERF checks pass
+- End-to-end conversion loop verified post-deploy: form, WhatsApp, /obrigado/ redirect, GA4 Realtime, and PageSpeed Insights all confirmed passing
 
 ## Task Commits
 
@@ -92,6 +94,7 @@ Each task was committed atomically:
 3. **Task 3: Add cache and security headers to netlify.toml** - `663b30b` (feat)
 4. **Task 4: Add GA4 snippet to all 8 HTML pages** - `b5c4b9c` (feat)
 5. **Task 5: Final build verification** - (no file changes, verification only)
+6. **Task 6: End-to-end conversion loop verification** - human-verify checkpoint approved
 
 ## Files Created/Modified
 
@@ -116,7 +119,7 @@ Each task was committed atomically:
 
 ## Deviations from Plan
 
-None - plan executed exactly as written. All tasks 1-4 were already applied in a prior session; Task 4 (GA4) was uncommitted and was committed in this session. Task 5 build verification passed all criteria.
+None - plan executed exactly as written. All tasks 1-4 were already applied in a prior session; Task 4 (GA4) was uncommitted and was committed in this session. Task 5 build verification passed all criteria. Task 6 human-verify checkpoint was approved by the user.
 
 ## PERF Requirements Verification
 
@@ -125,26 +128,27 @@ None - plan executed exactly as written. All tasks 1-4 were already applied in a
 - **PERF-03 (no blocking JS):** PASS — all `<script>` tags are `type="module"` (Vite), `async` (GA4 loader), `type="application/ld+json"` (schema), or the 5-line dataLayer initializer
 - **PERF-04 (font-display:swap):** PASS — `grep "font-display" dist/assets/main-*.css` confirms `swap` in all @font-face declarations
 
+## Post-Deploy E2E Verification (Task 6 — Approved)
+
+All post-deploy checks passed and were confirmed by the user:
+
+- Form submission at /contato/ — redirects to /obrigado/ and email delivered
+- WhatsApp wa.me link confirmed with correct number and pre-filled message
+- /sitemap.xml and /robots.txt load correctly with nptengenharia.com.br URLs
+- GA4 Realtime dashboard shows active user when browsing site
+- PageSpeed Insights mobile score >= 90, Core Web Vitals green (LCP < 2.5s, CLS < 0.1, INP < 200ms)
+
 ## Issues Encountered
 
 None.
 
-## User Setup Required
+## Self-Check: PASSED
 
-**Post-deploy verification required (Task 6 checkpoint):**
-
-1. Deploy to Netlify (push to main or run `netlify deploy --prod`)
-2. Form submission test at /contato/ — confirm redirect to /obrigado/ and email receipt
-3. WhatsApp button test — confirm wa.me link opens with correct number and pre-filled message
-4. Visit /sitemap.xml and /robots.txt in browser — confirm both load with production domain URLs
-5. GA4 Realtime dashboard — confirm active user appears when visiting site
-6. PageSpeed Insights mobile — confirm score 90+, LCP < 2.5s, CLS < 0.1, INP < 200ms
-
-## Next Phase Readiness
-
-- All build artifacts verified in dist/
-- Site is ready for production deploy to Netlify
-- Post-deploy manual verification (Task 6) required before v1.0 go-live declaration
+- `public/sitemap.xml` created — confirmed in prior session commits (767b466)
+- `public/robots.txt` created — confirmed in prior session commits (767b466)
+- `netlify.toml` headers — confirmed in prior session commits (663b30b)
+- GA4 snippet in all 8 HTML files — confirmed in prior session commits (b5c4b9c)
+- Task 6 human-verify checkpoint — approved by user (no commit required for verification-only checkpoint)
 
 ---
 *Phase: 05-performance-launch-qa*
