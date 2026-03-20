@@ -36,8 +36,7 @@ Declared values — token names map to `tokens.css` `--space-*` variables:
 |-------|---------|-------|-------|
 | xs | `--space-1` | 4px | Icon gaps, inline micro-spacing |
 | sm | `--space-2` | 8px | Form field label-to-input, inline tag gaps |
-| sm+ | `--space-3` | 12px | Form control padding (vertical), contact info item gap |
-| md | `--space-4` | 16px | Default block margin, form field margin-bottom |
+| md | `--space-4` | 16px | Default block margin, form field margin-bottom, form control padding, contact info item gap |
 | lg | `--space-6` | 24px | Section inner padding, form group spacing |
 | xl | `--space-8` | 32px | Layout column gaps, article padding |
 | 2xl | `--space-12` | 48px | Major section top/bottom padding |
@@ -61,7 +60,7 @@ All sizes reference existing `tokens.css` variables. No new type tokens required
 | Body | `--font-size-base` | 16px (1rem) | 400 (`--font-weight-regular`) | 1.5 | Form field labels, contact page body copy, portfolio body text |
 | Label / Small | `--font-size-sm` | 14px (0.875rem) | 400 (`--font-weight-regular`) | 1.5 | Form helper text, field error messages, portfolio metadata (Cidade, Ano, Tipo) |
 | Heading H2 | `--font-size-2xl` | 24px (1.5rem) | 700 (`--font-weight-bold`) | 1.2 | Section headings: "Solicitar Orçamento", "Portfólio de Projetos", CTA heading |
-| Heading H1 | `--font-size-3xl` / `--font-size-4xl` | 30px mobile / 36px tablet+ | 700 (`--font-weight-bold`) | 1.2 | Page `<h1>` on /contato/ and /portfolio/ |
+| Heading H1 | `--font-size-3xl` | 30px (1.875rem) | 700 (`--font-weight-bold`) | 1.2 | Page `<h1>` on /contato/ and /portfolio/ — all breakpoints |
 
 Active weights in this phase: **regular (400)** + **bold (700)**.
 
@@ -113,7 +112,7 @@ New CSS components to create in this phase (one file each, imported via `src/js/
 - `.form-group` — wraps `<label>` + `<input>`/`<select>`/`<textarea>`, margin-bottom `--space-6`
 - `.form-label` — 14px, weight 700 (bold), color `--color-text-body`, margin-bottom `--space-2`
 - `.form-control` — applies to `<input>`, `<select>`, `<textarea>`
-  - padding: `--space-3` `--space-4`
+  - padding: `--space-4` (uniform 16px padding)
   - min-height: 44px
   - border: 1px solid `--color-text-muted`
   - border-radius: `--radius-md`
@@ -125,7 +124,7 @@ New CSS components to create in this phase (one file each, imported via `src/js/
 - `.form-control--select` — appearance: none, background chevron SVG inline via CSS (navy color)
 - `.form-group--conditional` — the "Outro" field, shown via CSS `:has(select option[value="outro"]:checked)` sibling rule; hidden by default with `display: none`, shown when `:has()` selector matches
 - `.contact-info` — right column on desktop, lists phone, email, address; stacks below form on mobile
-- `.contact-info__item` — flex row, icon left + text right, gap `--space-3`
+- `.contact-info__item` — flex row, icon left + text right, gap `--space-4` (16px)
 
 ### `src/css/components/portfolio.css`
 
