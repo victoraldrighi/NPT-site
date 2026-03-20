@@ -1,38 +1,89 @@
+/* ============================================================
+   Buttons — premium dark theme
+   ============================================================ */
+
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-8);
+  padding: 0.875rem var(--space-8);
   border-radius: var(--radius-md);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   text-decoration: none;
-  transition: background-color var(--transition-base), color var(--transition-base);
-  width: 100%;
-  justify-content: center;
   cursor: pointer;
   border: none;
   font-family: var(--font-family-base);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base), color var(--transition-base);
+  width: 100%;
 }
 
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background var(--transition-base);
+}
+
+.btn:hover::before {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Primary — amber gradient */
 .btn--primary {
-  background-color: var(--color-brand-accent);
-  color: var(--color-text-body);
+  background: var(--gradient-accent);
+  color: var(--primitive-dark);
+  box-shadow: var(--shadow-amber);
 }
 
 .btn--primary:hover {
-  filter: brightness(0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 40px -6px rgba(245, 166, 35, 0.4);
 }
 
+/* Secondary — glass outline */
 .btn--secondary {
-  background-color: transparent;
-  color: var(--color-bg-surface);
-  border: 2px solid var(--color-bg-surface);
+  background: transparent;
+  color: var(--color-text-heading);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .btn--secondary:hover {
-  background-color: var(--color-bg-surface);
-  color: var(--color-brand-primary);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+  color: var(--color-text-heading);
+}
+
+/* Ghost — for dark sections */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-brand-accent);
+  border: 1px solid var(--color-border-accent);
+}
+
+.btn--ghost:hover {
+  background: rgba(245, 166, 35, 0.08);
+  border-color: var(--color-brand-accent);
+  color: var(--color-brand-accent);
+}
+
+/* Inline SVG inside button */
+.btn svg {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
 }
 
 @media (min-width: 48rem) {

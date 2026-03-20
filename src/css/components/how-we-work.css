@@ -1,68 +1,143 @@
+/* ============================================================
+   How We Work — dark timeline steps
+   ============================================================ */
+
 .how-we-work {
-  padding: var(--space-16) 0;
-  background-color: var(--color-bg-surface);
+  padding: var(--space-24) 0;
+  background: var(--color-bg-page);
+  position: relative;
+  overflow: hidden;
 }
 
-.how-we-work > .container > h2 {
+/* Grid background accent */
+.how-we-work::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 40%, transparent 100%);
+}
+
+.how-we-work__header {
   text-align: center;
-  margin-bottom: var(--space-8);
-  color: var(--color-brand-primary);
-  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-16);
+  position: relative;
+  z-index: 1;
 }
 
+.how-we-work__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.how-we-work__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  max-width: 48ch;
+  margin: 0 auto;
+  line-height: var(--line-height-body);
+}
+
+@media (min-width: 48rem) {
+  .how-we-work__title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+/* Steps grid */
 .how-we-work__steps {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
 }
 
+/* Step card */
 .how-we-work__step {
   flex: 1;
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
 }
 
+.how-we-work__step:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: 0 8px 32px -8px rgba(245, 166, 35, 0.15);
+}
+
+/* Large number */
 .how-we-work__number {
   display: block;
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-brand-accent);
+  font-size: 4rem;
+  font-weight: var(--font-weight-black);
   line-height: 1;
-  margin-bottom: var(--space-2);
+  letter-spacing: -0.05em;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-4);
+  opacity: 0.7;
 }
 
-.how-we-work__title {
+.how-we-work__title-step {
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-brand-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
 }
 
 .how-we-work__desc {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   line-height: var(--line-height-body);
+}
+
+/* Arrow connector (mobile) */
+.how-we-work__step:not(:last-child)::after {
+  content: '↓';
+  position: absolute;
+  bottom: calc(-1 * var(--space-4) - 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-brand-accent);
+  opacity: 0.5;
+  z-index: 2;
 }
 
 @media (min-width: 48rem) {
   .how-we-work__steps {
     flex-direction: row;
     gap: var(--space-4);
-    position: relative;
+    align-items: stretch;
   }
 
-  .how-we-work__step {
-    position: relative;
-  }
-
-  /* Decorative horizontal line connector between steps */
+  /* Replace arrow with right arrow on desktop */
   .how-we-work__step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 1.5rem;
-    right: calc(-1 * var(--space-4) / 2);
-    width: var(--space-4);
-    height: 2px;
-    background-color: var(--color-brand-accent);
-    opacity: 0.4;
+    content: '→';
+    bottom: auto;
+    top: 50%;
+    left: auto;
+    right: calc(-1 * var(--space-4) - 0.75rem);
+    transform: translateY(-50%);
   }
 }

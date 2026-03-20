@@ -1,26 +1,59 @@
 /* ============================================================
-   About Hero — engineer profile
+   About Hero — engineer profile — dark premium
    ============================================================ */
 .about-hero {
-  padding: var(--space-16) 0;
-  background-color: var(--color-bg-surface);
+  padding: var(--space-20) 0 var(--space-16);
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 30% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 30% 50%, black 30%, transparent 100%);
 }
 
 .about-hero__inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-8);
+  align-items: flex-start;
+  gap: var(--space-10);
+  position: relative;
+  z-index: 1;
 }
 
+/* Photo */
 .about-photo {
   width: 280px;
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: var(--color-brand-primary); /* navy fallback when image missing */
-  border-radius: var(--radius-lg);
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   flex-shrink: 0;
+  position: relative;
+}
+
+/* Amber accent corner */
+.about-photo::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  width: 4rem;
+  height: 4rem;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .about-photo__img {
@@ -30,42 +63,59 @@
   display: block;
 }
 
+/* Text content */
 .about-hero__text {
-  text-align: center;
+  text-align: left;
 }
 
 .about-hero__text h1 {
-  font-size: var(--font-size-3xl);
-  color: var(--color-brand-primary);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-2);
+  letter-spacing: -0.03em;
+  line-height: var(--line-height-heading);
 }
 
 .about-hero__role {
   font-size: var(--font-size-lg);
   color: var(--color-text-muted);
   margin-bottom: var(--space-4);
+  line-height: var(--line-height-body);
 }
 
 .about-hero__role a {
   color: var(--color-brand-accent);
   font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.about-hero__role a:hover {
+  color: var(--color-brand-accent-light);
 }
 
 .about-hero__specialization {
   font-size: var(--font-size-base);
-  color: var(--color-text-body);
+  color: var(--color-text-muted);
   line-height: var(--line-height-body);
-  max-width: 36rem;
+  max-width: 44ch;
 }
 
 @media (min-width: 48rem) {
   .about-hero__inner {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16);
   }
 
   .about-hero__text {
-    text-align: left;
+    flex: 1;
+  }
+
+  .about-hero__text h1 {
+    font-size: var(--font-size-5xl);
   }
 
   .about-photo {
@@ -77,38 +127,42 @@
    Mission
    ============================================================ */
 .about-mission {
-  padding: var(--space-12) 0;
-  background-color: var(--color-bg-page);
+  padding: var(--space-20) 0;
+  background: var(--gradient-section);
+  text-align: center;
 }
 
 .about-mission h2 {
-  font-size: var(--font-size-2xl);
-  color: var(--color-brand-primary);
-  margin-bottom: var(--space-4);
-  text-align: center;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.02em;
 }
 
 .about-mission p {
-  max-width: 48rem;
+  max-width: 52ch;
   margin: 0 auto;
   line-height: var(--line-height-body);
-  color: var(--color-text-body);
-  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
 }
 
 /* ============================================================
    Differentials
    ============================================================ */
 .about-differentials {
-  padding: var(--space-16) 0;
-  background-color: var(--color-bg-surface);
+  padding: var(--space-20) 0;
+  background: var(--color-bg-page);
 }
 
 .about-differentials h2 {
-  font-size: var(--font-size-2xl);
-  color: var(--color-brand-primary);
-  margin-bottom: var(--space-8);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-12);
   text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .differentials__list {
@@ -116,31 +170,55 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
-  max-width: 56rem;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
 .differential {
   display: flex;
-  gap: var(--space-4);
+  gap: var(--space-5);
   align-items: flex-start;
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.differential:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: 0 8px 32px -8px rgba(245, 166, 35, 0.15);
 }
 
 .differential__icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 166, 35, 0.1);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-lg);
   color: var(--color-brand-accent);
   flex-shrink: 0;
-  margin-top: var(--space-1);
+}
+
+.differential__icon svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  display: block;
 }
 
 .differential__title {
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-brand-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-1);
+  letter-spacing: -0.01em;
 }
 
 .differential__desc {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   line-height: var(--line-height-body);
 }
@@ -156,22 +234,47 @@
    ============================================================ */
 .obrigado-main {
   text-align: center;
-  padding: var(--space-24) 0;
+  padding: var(--space-32) 0;
+  background: var(--gradient-section);
+  min-height: 60svh;
+  display: flex;
+  align-items: center;
+}
+
+.obrigado-main .container {
+  width: 100%;
 }
 
 .obrigado-icon {
+  width: 5rem;
+  height: 5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-8);
   color: var(--color-feedback-success);
-  margin: 0 auto var(--space-6);
+}
+
+.obrigado-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
 }
 
 .obrigado-main h1 {
-  font-size: var(--font-size-3xl);
-  color: var(--color-brand-primary);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
 }
 
 .obrigado-main p {
   font-size: var(--font-size-lg);
   color: var(--color-text-muted);
   margin-bottom: var(--space-8);
+  line-height: var(--line-height-body);
 }

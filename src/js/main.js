@@ -17,3 +17,5 @@ import '../css/components/service-page.css'
 import '../css/components/portfolio.css'
 import '../css/components/contact-form.css'
 import '../css/components/whatsapp-btn.css'
+
+import './scroll.js'

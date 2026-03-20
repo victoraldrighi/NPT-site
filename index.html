@@ -53,14 +53,13 @@
 <body class="page-home">
 
   <!-- ============================================================
-       Site Header — sticky, CSS-only hamburger menu
+       Site Header
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para a página inicial">
-        <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
-          <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
-        </svg>
+        <span class="site-logo__mark" aria-hidden="true">NPT</span>
+        <span class="site-logo__text">Engenharia</span>
       </a>
 
       <nav class="site-nav" aria-label="Navegação principal">
@@ -81,8 +80,7 @@
           <li><a href="/servicos/projetos-hidraulicos/">Hidráulica</a></li>
           <li><a href="/servicos/projetos-eletricos/">Elétrica</a></li>
           <li><a href="/sobre/">Sobre</a></li>
-          <li><a href="/contato/">Contato</a></li>
-          <li><a href="tel:+55119XXXXXXXX" aria-label="Ligar para NPT Engenharia: (11) 9 0000-0000" class="nav-phone">(11) 9 0000-0000</a></li>
+          <li class="nav-cta"><a href="/contato/">Solicitar Orçamento</a></li>
         </ul>
       </nav>
     </div>
@@ -91,17 +89,23 @@
   <main>
 
     <!-- ============================================================
-         Hero — Proposta de valor + CTAs
+         Hero
          ============================================================ -->
     <section class="hero" aria-label="Proposta de valor NPT Engenharia">
-      <div class="container">
+      <div class="hero__container">
+
+        <span class="hero__eyebrow">Engenharia Especializada · CREA-SP</span>
+
         <h1 class="hero__headline">
-          Projetos de engenharia que aprovam na primeira vistoria
+          Projetos que aprovam<br>
+          <span class="text-accent">na primeira vistoria</span>
         </h1>
+
         <p class="hero__subheadline">
           Especialistas em pressurização de escadas de emergência, projetos
           hidráulicos e instalações elétricas de baixa tensão para todo o Brasil.
         </p>
+
         <div class="hero__ctas">
           <a href="/contato/" class="btn btn--primary">Solicitar Orçamento</a>
           <a
@@ -111,50 +115,79 @@
             rel="noopener noreferrer"
             aria-label="Falar pelo WhatsApp (abre WhatsApp)"
           >
-            <!-- WhatsApp SVG — Bootstrap Icons bi-whatsapp (MIT) -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                  fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
               <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
             </svg>
             WhatsApp
           </a>
         </div>
+
+        <div class="hero__stats">
+          <div class="hero__stat-item">
+            <span class="hero__stat-value">100%</span>
+            <span class="hero__stat-label">Aprovação na 1ª vistoria</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-value">3</span>
+            <span class="hero__stat-label">Especialidades técnicas</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-value">NBR</span>
+            <span class="hero__stat-label">Conformidade garantida</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-value">BR</span>
+            <span class="hero__stat-label">Atendimento nacional</span>
+          </div>
+        </div>
+
+        <!-- Floating badge (desktop only) -->
+        <div class="hero__badge" aria-hidden="true">
+          <div class="hero__badge-icon">🏗️</div>
+          <div class="hero__badge-title">Projeto em Destaque</div>
+          <div class="hero__badge-text">Torre Corporativa 18 andares — São Paulo, SP</div>
+          <span class="hero__badge-norm">NBR 9077 · IT 11</span>
+        </div>
+
       </div>
     </section>
 
     <!-- ============================================================
-         Serviços — 3 cards com ícones SVG
+         Serviços — 3 cards
          ============================================================ -->
     <section class="services" aria-labelledby="services-heading">
       <div class="container">
-        <h2 id="services-heading">Nossos Serviços</h2>
+        <div class="services__header">
+          <span class="section-label">O que fazemos</span>
+          <h2 class="services__title" id="services-heading">Nossas <span class="text-accent">especialidades</span></h2>
+          <p class="services__subtitle">Projetos técnicos completos com laudos e memoriais, entregues remotamente para todo o Brasil.</p>
+        </div>
         <div class="services__grid">
 
-          <!-- Card 1: Pressurização de Escadas -->
           <article class="service-card">
+            <span class="service-card__number">01</span>
             <div class="service-card__icon">
-              <!-- Fire SVG — Bootstrap Icons bi-fire (MIT) -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                    viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                 <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
               </svg>
             </div>
-            <h3 class="service-card__title">Pressurização de Escadas de Emergência</h3>
+            <h3 class="service-card__title">Pressurização de Escadas</h3>
             <p class="service-card__desc">
               Projetos completos de sistemas de pressurização conforme NBR 9077 e IT 11 do
               Corpo de Bombeiros, para edificações comerciais e residenciais.
             </p>
-            <a href="/servicos/pressurizacao-escadas-emergencia/" class="service-card__link">Saiba mais &rarr;</a>
+            <span class="service-card__norm">NBR 9077 · IT 11</span>
+            <a href="/servicos/pressurizacao-escadas-emergencia/" class="service-card__link">Saiba mais</a>
           </article>
 
-          <!-- Card 2: Projetos Hidráulicos -->
           <article class="service-card">
+            <span class="service-card__number">02</span>
             <div class="service-card__icon">
-              <!-- Droplet SVG — Bootstrap Icons bi-droplet (MIT) -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                    viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
-                <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
               </svg>
             </div>
             <h3 class="service-card__title">Projetos Hidráulicos</h3>
@@ -162,14 +195,14 @@
               Sistemas de água fria, água quente, esgoto e águas pluviais para edificações
               de todos os portes, conforme NBR 5626 e NBR 8160.
             </p>
-            <a href="/servicos/projetos-hidraulicos/" class="service-card__link">Saiba mais &rarr;</a>
+            <span class="service-card__norm">NBR 5626 · NBR 8160</span>
+            <a href="/servicos/projetos-hidraulicos/" class="service-card__link">Saiba mais</a>
           </article>
 
-          <!-- Card 3: Instalações Elétricas -->
           <article class="service-card">
+            <span class="service-card__number">03</span>
             <div class="service-card__icon">
-              <!-- Lightning SVG — Bootstrap Icons bi-lightning (MIT) -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                    viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                 <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641zM6.374 1 4.168 8.5H7.5a.5.5 0 0 1 .478.647L6.78 13.04 11.478 7H8a.5.5 0 0 1-.474-.658L9.306 1z"/>
               </svg>
@@ -179,7 +212,8 @@
               Projetos de instalações elétricas de baixa tensão e sistemas de proteção
               contra descargas atmosféricas, conforme NBR 5410 e NBR 5419.
             </p>
-            <a href="/servicos/projetos-eletricos/" class="service-card__link">Saiba mais &rarr;</a>
+            <span class="service-card__norm">NBR 5410 · NBR 5419</span>
+            <a href="/servicos/projetos-eletricos/" class="service-card__link">Saiba mais</a>
           </article>
 
         </div>
@@ -187,40 +221,42 @@
     </section>
 
     <!-- ============================================================
-         Como trabalhamos — 4 etapas numeradas
+         Como trabalhamos — 4 etapas
          ============================================================ -->
     <section class="how-we-work" aria-labelledby="how-we-work-heading">
       <div class="container">
-        <h2 id="how-we-work-heading">Como trabalhamos</h2>
+        <div class="how-we-work__header">
+          <span class="section-label">Processo</span>
+          <h2 class="how-we-work__title" id="how-we-work-heading">Como <span class="text-accent">trabalhamos</span></h2>
+          <p class="how-we-work__subtitle">Do contato inicial à aprovação final, acompanhamos cada etapa do seu projeto.</p>
+        </div>
         <ol class="how-we-work__steps" role="list">
           <li class="how-we-work__step">
             <span class="how-we-work__number" aria-hidden="true">01</span>
-            <h3 class="how-we-work__title">Contato inicial</h3>
+            <h3 class="how-we-work__title-step">Contato inicial</h3>
             <p class="how-we-work__desc">
               Você nos descreve o projeto — tipo de edificação, localização e normas aplicáveis.
             </p>
           </li>
           <li class="how-we-work__step">
             <span class="how-we-work__number" aria-hidden="true">02</span>
-            <h3 class="how-we-work__title">Análise do projeto</h3>
+            <h3 class="how-we-work__title-step">Análise do projeto</h3>
             <p class="how-we-work__desc">
               Avaliamos os requisitos técnicos e definimos o escopo e o orçamento.
             </p>
           </li>
           <li class="how-we-work__step">
             <span class="how-we-work__number" aria-hidden="true">03</span>
-            <h3 class="how-we-work__title">Desenvolvimento do projeto</h3>
+            <h3 class="how-we-work__title-step">Desenvolvimento</h3>
             <p class="how-we-work__desc">
-              Desenvolvemos o projeto completo conforme as normas ABNT aplicáveis,
-              com todos os memoriais e pranchas.
+              Desenvolvemos o projeto completo conforme as normas ABNT, com memoriais e pranchas.
             </p>
           </li>
           <li class="how-we-work__step">
             <span class="how-we-work__number" aria-hidden="true">04</span>
-            <h3 class="how-we-work__title">Entrega e aprovação</h3>
+            <h3 class="how-we-work__title-step">Entrega e aprovação</h3>
             <p class="how-we-work__desc">
-              Entregamos o projeto revisado e acompanhamos o processo de aprovação
-              junto ao órgão competente.
+              Entregamos o projeto revisado e acompanhamos o processo de aprovação junto ao órgão competente.
             </p>
           </li>
         </ol>
@@ -228,21 +264,39 @@
     </section>
 
     <!-- ============================================================
-         Projeto em destaque — case teaser
+         Projeto em destaque
          ============================================================ -->
     <section class="case-teaser" aria-labelledby="case-heading">
       <div class="container">
-        <h2 id="case-heading">Projeto em destaque</h2>
+        <div class="case-teaser__header">
+          <span class="section-label">Portfólio</span>
+          <h2 class="case-teaser__title" id="case-heading">Projeto em <span class="text-accent">destaque</span></h2>
+          <p class="case-teaser__intro">Um case real que demonstra nossa capacidade técnica e compromisso com a aprovação.</p>
+        </div>
         <div class="case-teaser__card">
           <span class="case-teaser__type">Pressurização de Escadas</span>
-          <h3 class="case-teaser__title">Edifício Comercial — Torre Corporativa</h3>
+          <h3 class="case-teaser__card-title">Edifício Comercial — Torre Corporativa</h3>
           <p class="case-teaser__location">São Paulo, SP</p>
+          <div class="case-teaser__metrics">
+            <div class="case-teaser__metric">
+              <span class="case-teaser__metric-value">18</span>
+              <span class="case-teaser__metric-label">Andares</span>
+            </div>
+            <div class="case-teaser__metric">
+              <span class="case-teaser__metric-value">1ª</span>
+              <span class="case-teaser__metric-label">Vistoria aprovada</span>
+            </div>
+            <div class="case-teaser__metric">
+              <span class="case-teaser__metric-value">NBR</span>
+              <span class="case-teaser__metric-label">9077 · IT 11</span>
+            </div>
+          </div>
           <p class="case-teaser__desc">
             Projeto completo de sistema de pressurização de escadas de emergência para
             edifício comercial de 18 andares, aprovado pelo Corpo de Bombeiros conforme
             NBR 9077 e IT 11 na primeira vistoria.
           </p>
-          <a href="/portfolio/" class="case-teaser__link">Ver portfólio &rarr;</a>
+          <a href="/portfolio/" class="case-teaser__link">Ver portfólio completo</a>
         </div>
       </div>
     </section>
@@ -250,37 +304,70 @@
   </main>
 
   <!-- ============================================================
-       Footer — CREA, contato, copyright
+       Footer
        ============================================================ -->
-  <footer class="site-footer" id="contato">
-    <div class="container site-footer__inner">
-      <div class="site-footer__brand">
-        <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para o início">
-          <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
-            <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
-          </svg>
-        </a>
-      </div>
-      <div class="site-footer__info">
-        <p>
-          Engenheiro responsável: <strong>[Nome do Engenheiro]</strong>
-        </p>
-        <p>
-          <a
-            href="https://consultaprofissional.confea.org.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Verificar registro CREA-SP [000000-D] no portal CONFEA (abre em nova aba)"
-          >CREA-SP [000000-D]</a>
-        </p>
-        <p>
-          <a href="mailto:contato@nptengenharia.com.br">contato@nptengenharia.com.br</a>
-        </p>
-        <p>+55 (11) 9 0000-0000</p>
-      </div>
-    </div>
+  <footer class="site-footer">
     <div class="container">
-      <p class="site-footer__copy">&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para o início">
+              <span class="site-logo__mark" aria-hidden="true">NPT</span>
+              <span class="site-logo__text">Engenharia</span>
+            </a>
+            <p class="site-footer__tagline">
+              Projetos de pressurização, hidráulica e elétrica para todo o Brasil.
+              Conformidade garantida com normas ABNT.
+            </p>
+          </div>
+
+          <div class="site-footer__links">
+            <div class="site-footer__col">
+              <p class="site-footer__col-title">Serviços</p>
+              <ul role="list">
+                <li><a href="/servicos/pressurizacao-escadas-emergencia/">Pressurização de Escadas</a></li>
+                <li><a href="/servicos/projetos-hidraulicos/">Projetos Hidráulicos</a></li>
+                <li><a href="/servicos/projetos-eletricos/">Instalações Elétricas</a></li>
+              </ul>
+            </div>
+            <div class="site-footer__col">
+              <p class="site-footer__col-title">Empresa</p>
+              <ul role="list">
+                <li><a href="/sobre/">Sobre</a></li>
+                <li><a href="/portfolio/">Portfólio</a></li>
+                <li><a href="/contato/">Contato</a></li>
+              </ul>
+            </div>
+            <div class="site-footer__col">
+              <p class="site-footer__col-title">Contato</p>
+              <div class="site-footer__info">
+                <div class="site-footer__info-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" class="site-footer__info-icon">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                  </svg>
+                  <a href="mailto:contato@nptengenharia.com.br">contato@nptengenharia.com.br</a>
+                </div>
+                <div class="site-footer__info-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" class="site-footer__info-icon">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                  </svg>
+                  <a href="tel:+5511900000000">+55 (11) 9 0000-0000</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__divider"></div>
+
+        <div class="site-footer__bottom">
+          <p class="site-footer__copy">&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
+          <p class="site-footer__crea">
+            Engenheiro responsável: <strong>[Nome do Engenheiro]</strong> —
+            <a href="https://consultaprofissional.confea.org.br/" target="_blank" rel="noopener noreferrer" aria-label="Verificar CREA no portal CONFEA">CREA-SP [000000-D]</a>
+          </p>
+        </div>
+      </div>
     </div>
   </footer>
 

@@ -19,19 +19,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), var(--shadow-md);
   text-decoration: none;
   z-index: 900;
   border: none;
   cursor: pointer;
-  transition: filter var(--transition-base);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  animation: wapp-pulse 2.5s ease-in-out infinite;
 }
 
 .whatsapp-btn:hover {
-  filter: brightness(0.9);
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+  animation: none;
+  color: #FFFFFF;
 }
 
 .whatsapp-btn svg {
   width: 28px;
   height: 28px;
+  display: block;
+}
+
+@keyframes wapp-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), var(--shadow-md); }
+  50%       { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.6), 0 0 0 8px rgba(37, 211, 102, 0.1); }
 }

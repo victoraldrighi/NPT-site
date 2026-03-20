@@ -1,28 +1,45 @@
 :root {
   /* --- PRIMITIVE TOKENS --- */
-  --primitive-navy: #1B3A6B;
+  --primitive-navy: #0D1F3C;
+  --primitive-navy-mid: #1B3A6B;
+  --primitive-navy-light: #2A5298;
   --primitive-amber: #F5A623;
-  --primitive-off-white: #F8F9FA;
+  --primitive-amber-light: #FFD07A;
+  --primitive-off-white: #F0F4F8;
   --primitive-white: #FFFFFF;
-  --primitive-dark: #1A1A2E;
-  --primitive-muted: #6B7280;
+  --primitive-dark: #080E1A;
+  --primitive-dark-mid: #111827;
+  --primitive-muted: #94A3B8;
+  --primitive-muted-light: #CBD5E1;
   --primitive-green: #10B981;
+  --primitive-steel: #1E293B;
+  --primitive-steel-light: #334155;
 
   /* --- SEMANTIC COLOR TOKENS --- */
-  --color-brand-primary: var(--primitive-navy);
+  --color-brand-primary: var(--primitive-navy-mid);
+  --color-brand-primary-deep: var(--primitive-navy);
+  --color-brand-primary-light: var(--primitive-navy-light);
   --color-brand-accent: var(--primitive-amber);
-  --color-bg-page: var(--primitive-off-white);
-  --color-bg-surface: var(--primitive-white);
-  --color-text-body: var(--primitive-dark);
+  --color-brand-accent-light: var(--primitive-amber-light);
+  --color-bg-page: var(--primitive-dark);
+  --color-bg-surface: var(--primitive-steel);
+  --color-bg-surface-2: var(--primitive-steel-light);
+  --color-bg-elevated: #243048;
+  --color-text-body: var(--primitive-muted-light);
+  --color-text-heading: var(--primitive-white);
   --color-text-muted: var(--primitive-muted);
   --color-feedback-success: var(--primitive-green);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-accent: rgba(245, 166, 35, 0.3);
 
   /* --- TYPOGRAPHY TOKENS --- */
   --font-family-base: 'Inter', system-ui, sans-serif;
+  --font-family-display: 'Inter', system-ui, sans-serif;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-black: 800;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -33,9 +50,11 @@
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
   --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
 
-  --line-height-body: 1.5;
-  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --line-height-heading: 1.1;
 
   /* --- SPACING TOKENS (4px base) --- */
   --space-1: 0.25rem;
@@ -46,6 +65,7 @@
   --space-8: 2rem;
   --space-12: 3rem;
   --space-16: 4rem;
+  --space-20: 5rem;
   --space-24: 6rem;
   --space-32: 8rem;
 
@@ -55,10 +75,30 @@
   --bp-desktop: 80rem;
 
   /* --- COMPONENT TOKENS --- */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --transition-base: 150ms ease-in-out;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 8px 24px -4px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 20px 60px -10px rgb(0 0 0 / 0.5);
+  --shadow-amber: 0 8px 32px -4px rgba(245, 166, 35, 0.25);
+  --shadow-glow: 0 0 40px rgba(245, 166, 35, 0.15);
+
+  --transition-fast: 100ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- GLASS EFFECT --- */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px);
+
+  /* --- GRADIENTS --- */
+  --gradient-hero: linear-gradient(135deg, #080E1A 0%, #0D1F3C 40%, #1B3A6B 100%);
+  --gradient-accent: linear-gradient(135deg, #F5A623 0%, #FFD07A 100%);
+  --gradient-card: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+  --gradient-section: linear-gradient(180deg, #080E1A 0%, #111827 100%);
 }

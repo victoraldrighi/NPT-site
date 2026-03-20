@@ -1,36 +1,39 @@
 /* ============================================================
-   contact-form.css — Contact page layout and form components
+   contact-form.css — dark premium contact page
    All colors via var() tokens only — no hex values.
    ============================================================ */
 
-/* ------------------------------------------------------------
-   Contact page wrapper
-   ------------------------------------------------------------ */
 .contact-page {
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-24);
+  background: var(--gradient-section);
+  min-height: 100svh;
 }
 
 .contact-page h1 {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
   line-height: var(--line-height-heading);
-  color: var(--color-brand-primary);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-4);
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 48rem) {
+  .contact-page h1 {
+    font-size: var(--font-size-5xl);
+  }
 }
 
 .contact-page__intro {
-  font-size: var(--font-size-base);
-  color: var(--color-text-body);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
   line-height: var(--line-height-body);
-  margin-bottom: var(--space-8);
-  max-width: 70ch;
+  margin-bottom: var(--space-12);
+  max-width: 52ch;
 }
 
-/* ------------------------------------------------------------
-   Two-column grid — form left, contact info right (desktop)
-   Mobile-first: stacked single column
-   ------------------------------------------------------------ */
+/* Two-column grid */
 .contact-page__grid {
   display: flex;
   flex-direction: column;
@@ -41,7 +44,7 @@
   .contact-page__grid {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: var(--space-8);
+    gap: var(--space-12);
     align-items: start;
   }
 }
@@ -50,106 +53,149 @@
    Contact form
    ------------------------------------------------------------ */
 .contact-form {
-  max-width: 560px;
   width: 100%;
 }
 
-/* ------------------------------------------------------------
-   Form groups
-   ------------------------------------------------------------ */
 .form-group {
   margin-bottom: var(--space-6);
 }
 
 .form-label {
   display: block;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-2);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-/* ------------------------------------------------------------
-   Form controls — inputs, select, textarea
-   ------------------------------------------------------------ */
+/* Required asterisk */
+.form-label .required {
+  color: var(--color-brand-accent);
+  margin-left: var(--space-1);
+}
+
 .form-control {
   display: block;
   width: 100%;
   padding: var(--space-4);
   min-height: 44px;
-  border: 1px solid var(--color-text-muted);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
-  background: var(--color-bg-surface);
-  color: var(--color-text-body);
-  transition: border-color var(--transition-base);
+  background: var(--glass-bg);
+  color: var(--color-text-heading);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
   box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.5;
 }
 
 .form-control:focus {
-  outline: 2px solid var(--color-brand-primary);
-  outline-offset: 2px;
-  border-color: var(--color-brand-primary);
+  outline: none;
+  border-color: var(--color-brand-accent);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* Textarea variant */
 .form-control--textarea {
-  min-height: 120px;
+  min-height: 140px;
   resize: vertical;
 }
 
-/* Select variant — custom chevron via inline SVG */
+/* Select variant */
 .form-control--select {
   appearance: none;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path fill="%231B3A6B" d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path fill="%23F5A623" d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
   background-repeat: no-repeat;
   background-position: right var(--space-4) center;
   background-size: 12px;
-  padding-right: var(--space-8);
+  padding-right: var(--space-10);
   cursor: pointer;
 }
 
+.form-control--select option {
+  background: var(--primitive-steel);
+  color: var(--color-text-heading);
+}
+
+/* Helper text */
+.form-helper {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+  opacity: 0.7;
+}
+
 /* ------------------------------------------------------------
-   Contact info card (aside — right column on desktop)
+   Contact info card (aside)
    ------------------------------------------------------------ */
 .contact-info {
-  background: var(--color-bg-surface);
-  border-radius: var(--radius-lg);
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
   padding: var(--space-8);
-  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Amber top accent */
+.contact-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--space-6);
+  right: var(--space-6);
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: 0 0 var(--radius-full) var(--radius-full);
 }
 
 .contact-info h2 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-brand-primary);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-6);
   line-height: var(--line-height-heading);
+  letter-spacing: -0.01em;
 }
 
 .contact-info__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-4);
-  margin-bottom: var(--space-4);
-  font-size: var(--font-size-base);
-  color: var(--color-text-body);
+  margin-bottom: var(--space-5);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
   line-height: var(--line-height-body);
+}
+
+.contact-info__item:last-child {
+  margin-bottom: 0;
 }
 
 .contact-info__item svg {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  color: var(--color-brand-primary);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-brand-accent);
+  margin-top: 0.125rem;
+  display: block;
 }
 
 .contact-info__item a {
-  color: var(--color-brand-primary);
+  color: var(--color-text-muted);
   text-decoration: none;
+  transition: color var(--transition-base);
 }
 
 .contact-info__item a:hover {
-  text-decoration: underline;
+  color: var(--color-brand-accent);
 }
