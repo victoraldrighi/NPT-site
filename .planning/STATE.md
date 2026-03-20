@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-19T23:50:20.123Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-20T00:27:03.790Z"
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 4
+  completed_plans: 3
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-19)
 
 **Core value:** O visitante encontra a NPT pelo Google, entende os serviços em menos de 30 segundos, e entra em contato para pedir orçamento — tudo em uma única visita.
-**Current focus:** Phase 01 — foundation-and-design-system
+**Current focus:** Phase 02 — home-sobre-and-credibility-shell
 
 ## Current Position
 
-Phase: 01 (foundation-and-design-system) — EXECUTING
-Plan: 2 of 2
+Phase: 02 (home-sobre-and-credibility-shell) — EXECUTING
+Plan: 1 of 2
 
 ## Performance Metrics
 
@@ -47,6 +47,7 @@ Plan: 2 of 2
 
 *Updated after each plan completion*
 | Phase 01-foundation-and-design-system P02 | 5 | 2 tasks | 0 files |
+| Phase 02-home-sobre-and-credibility-shell P01 | 8 min | 2 tasks | 14 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,9 @@ Recent decisions affecting current work:
 - Breakpoints: raw rem in @media (48rem tablet, 80rem desktop) — CSS vars cannot be used in media queries
 - [Phase 01-foundation-and-design-system]: Netlify free tier confirmed for hosting: CDN, HTTPS, CI/CD, and Forms all on free plan
 - [Phase 01-foundation-and-design-system]: Live URL: https://npt-site.netlify.app/ — canonical production URL for all v1 phases
+- [Phase 02-home-sobre-and-credibility-shell]: CSS hamburger uses visibility:hidden (not display:none) on nav-links to prevent keyboard focus trap when menu is closed
+- [Phase 02-home-sobre-and-credibility-shell]: ol[role=list] on Como trabalhamos steps restores VoiceOver list semantics after list-style:none removes them
+- [Phase 02-home-sobre-and-credibility-shell]: Footer id=contato serves as anchor target for Solicitar Orcamento CTA buttons
 
 ### Pending Todos
 
@@ -78,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T23:50:20.112Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-home-sobre-and-credibility-shell/02-CONTEXT.md
+Last session: 2026-03-20T00:26:21.700Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None

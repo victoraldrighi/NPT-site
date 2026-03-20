@@ -14,7 +14,7 @@
 
 ### Páginas
 
-- [ ] **PAGE-01**: Página Home com seções: hero com CTA, serviços resumidos, diferencial de preço, case rápido e rodapé
+- [x] **PAGE-01**: Página Home com seções: hero com CTA, serviços resumidos, diferencial de preço, case rápido e rodapé
 - [ ] **PAGE-02**: Página de serviço — Pressurização de Escadas de Emergência (800-1200 palavras, referências NBR 9077 e IT 11 CBPMESP)
 - [ ] **PAGE-03**: Página de serviço — Projetos Hidráulicos (800-1200 palavras, referências NBR 5626 e NBR 7198)
 - [ ] **PAGE-04**: Página de serviço — Projetos Elétricos (800-1200 palavras, referências NBR 5410 e NBR 5419)
@@ -49,10 +49,10 @@
 
 ### Credibilidade
 
-- [ ] **CRED-01**: Número de registro CREA visível na página Sobre e no rodapé
+- [x] **CRED-01**: Número de registro CREA visível na página Sobre e no rodapé
 - [ ] **CRED-02**: Foto profissional da equipe/sócios na página Sobre
 - [ ] **CRED-03**: Case study do projeto entregue com detalhes técnicos (não apenas foto)
-- [ ] **CRED-04**: Seção "Como trabalhamos" com processo em etapas visível na home ou página Sobre
+- [x] **CRED-04**: Seção "Como trabalhamos" com processo em etapas visível na home ou página Sobre
 
 ### Infraestrutura
 
