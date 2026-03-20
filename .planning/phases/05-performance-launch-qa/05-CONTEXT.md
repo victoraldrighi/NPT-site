@@ -55,7 +55,7 @@ Otimização final antes do go-live: Core Web Vitals verde no mobile, Lighthouse
 **Preconnect/Preload:**
 - Fontes são self-hosted (nenhum preconnect para Google Fonts necessário)
 - Sem CDN externo — nenhum preconnect necessário
-- `<link rel="preload">` para fonte Inter 400 (peso mais usado) no `<head>` de todas as páginas
+- ~~`<link rel="preload">` para fonte Inter 400 (peso mais usado) no `<head>` de todas as páginas~~ **REVISADO:** Font preload skipped. RESEARCH.md encontrou que o filename hash da fonte muda a cada rebuild do CSS (`inter-latin-400-normal-Cxxxxxxx.woff2`), criando risco de manutenção (preload stale = double fetch = pior performance). `@fontsource/inter` já inclui `font-display:swap` em todas as declarações @font-face (verificado no CSS compilado), prevenindo FOIT. O intent original do preload (reduzir FOIT) já está coberto por font-display:swap.
 
 ### Google Analytics 4
 - **Measurement ID:** `G-N6NX09NWHS`
@@ -71,12 +71,11 @@ Os seguintes itens devem ser confirmados antes de marcar a fase como completa:
 3. `/robots.txt` acessível e correto
 4. GA4 snippet presente em todas as 8 páginas (grep por `G-N6NX09NWHS`)
 5. Canonical/og:url atualizado para `nptengenharia.com.br` em todas as páginas
-6. PageSpeed Insights mobile ≥ 90 na homepage (manual, pós-deploy)
+6. PageSpeed Insights mobile >= 90 na homepage (manual, pós-deploy)
 7. LCP < 2.5s, CLS < 0.1, INP < 200ms (manual, PageSpeed Insights)
 
 ### Claude's Discretion
 - Estrutura exata do `netlify.toml` (path patterns, header syntax)
-- Ordem dos elementos `<link rel="preload">` no `<head>`
 - Formato exato das datas `<lastmod>` no sitemap (ISO 8601: `2026-03-20`)
 - Posição do snippet GA4 no `<head>` (após title/meta, antes de scripts)
 
@@ -144,7 +143,7 @@ Os seguintes itens devem ser confirmados antes de marcar a fase como completa:
 - GA4 Measurement ID real fornecido: `G-N6NX09NWHS` — implementar diretamente, sem placeholder
 - `/obrigado/` excluída do sitemap e disallowed no robots.txt — evita indexação de página de thank-you
 - netlify.toml com cache headers longos em assets hashed (`immutable`) melhora significativamente o Lighthouse Performance Score
-- Font preload para Inter 400 reduz FOIT e melhora LCP em browsers que bloqueiam renderização por font load
+- Font preload skipped — `@fontsource/inter` already provides `font-display:swap` which prevents FOIT; preload hash instability creates maintenance risk that outweighs the marginal LCP benefit on a text-hero site
 
 </specifics>
 
