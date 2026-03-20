@@ -1,0 +1,142 @@
+/* ============================================================
+   Site Header — sticky, CSS-only hamburger menu
+   ============================================================ */
+
+.site-header {
+  background-color: var(--color-brand-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+}
+
+/* Logo */
+.site-logo {
+  color: var(--color-bg-surface);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ---- Nav ---- */
+
+/* Hide checkbox visually but keep it focusable for keyboard users */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Hamburger button — visible on mobile only */
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.nav-hamburger__line {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-bg-surface);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Nav links: hidden on mobile using visibility (NOT display:none — keyboard a11y) */
+.nav-links {
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-brand-primary);
+  transition: max-height var(--transition-base), visibility var(--transition-base);
+}
+
+.nav-links a {
+  display: block;
+  color: var(--color-bg-surface);
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--color-brand-accent);
+}
+
+/* When checkbox is checked: show nav */
+.nav-toggle:checked ~ .nav-links {
+  visibility: visible;
+  max-height: 20rem;
+}
+
+/* Hamburger → X transform when open */
+.nav-toggle:checked ~ .nav-hamburger .nav-hamburger__line:nth-child(1) {
+  transform: translateY(0.4rem) rotate(45deg);
+}
+
+.nav-toggle:checked ~ .nav-hamburger .nav-hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .nav-hamburger .nav-hamburger__line:nth-child(3) {
+  transform: translateY(-0.4rem) rotate(-45deg);
+}
+
+/* Focus indicator for keyboard users */
+.nav-toggle:focus-visible ~ .nav-hamburger {
+  outline: 2px solid var(--color-brand-accent);
+  outline-offset: var(--space-1);
+}
+
+/* Active page link highlight via body class */
+.page-home .nav-links a[href="/"],
+.page-sobre .nav-links a[href="/sobre/"] {
+  color: var(--color-brand-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* ---- Desktop (48rem+): hide hamburger, show links inline ---- */
+@media (min-width: 48rem) {
+  .site-nav {
+    position: relative;
+  }
+
+  .nav-hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    visibility: visible;
+    max-height: none;
+    overflow: visible;
+    flex-direction: row;
+    gap: var(--space-6);
+    position: static;
+    background-color: transparent;
+  }
+
+  .nav-links a {
+    padding: var(--space-1) 0;
+  }
+}
