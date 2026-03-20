@@ -3,11 +3,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre — NPT Engenharia</title>
+  <title>Sobre a NPT Engenharia</title>
+  <meta name="description" content="Conheça a NPT Engenharia — engenheiro responsável com CREA-SP ativo, especializado em pressurização de escadas, projetos hidráulicos e instalações elétricas." />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body class="page-sobre">
-  <p>stub</p>
+
+  <!-- ============================================================
+       Site Header — sticky, CSS-only hamburger menu
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para a página inicial">
+        <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
+          <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
+        </svg>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <input
+          class="nav-toggle"
+          type="checkbox"
+          id="nav-toggle"
+          aria-label="Abrir menu de navegação"
+        />
+        <label class="nav-hamburger" for="nav-toggle" aria-hidden="true">
+          <span class="nav-hamburger__line"></span>
+          <span class="nav-hamburger__line"></span>
+          <span class="nav-hamburger__line"></span>
+        </label>
+        <ul class="nav-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/sobre/">Sobre</a></li>
+          <li><a href="/#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         Section A: Engineer profile — two-column on desktop
+         ============================================================ -->
+    <section class="about-hero" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-hero__inner">
+          <div class="about-photo">
+            <img
+              src="/src/assets/images/engenheiro.jpg"
+              alt="[Nome do Engenheiro] — Engenheiro responsável, CREA-SP [000000-D]"
+              width="400"
+              height="400"
+              class="about-photo__img"
+            />
+          </div>
+          <div class="about-hero__text">
+            <h1 id="about-heading">[Nome do Engenheiro]</h1>
+            <p class="about-hero__role">
+              Engenheiro Civil —
+              <a
+                href="https://consultaprofissional.confea.org.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Verificar registro CREA-SP [000000-D] no portal CONFEA (abre em nova aba)"
+              >CREA-SP [000000-D]</a>
+            </p>
+            <p class="about-hero__specialization">
+              Somos especializados em projetos de pressurização de escadas de emergência (NBR 9077),
+              sistemas hidráulicos prediais e instalações elétricas de baixa tensão.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section B: Mission
+         ============================================================ -->
+    <section class="about-mission" aria-labelledby="mission-heading">
+      <div class="container">
+        <h2 id="mission-heading">Nossa Missão</h2>
+        <p>
+          A NPT Engenharia nasceu para oferecer projetos de engenharia com excelência técnica a um custo
+          competitivo. Nossa estrutura enxuta nos permite entregar projetos completos — do memorial de
+          cálculo às pranchas de execução — com agilidade e compromisso com as normas ABNT, atendendo
+          clientes em todo o território nacional.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section C: Differentials — 4 items with SVG icons
+         ============================================================ -->
+    <section class="about-differentials" aria-labelledby="differentials-heading">
+      <div class="container">
+        <h2 id="differentials-heading">Nossos Diferenciais</h2>
+        <ul class="differentials__list" role="list">
+
+          <!-- Differential 1: Preço competitivo -->
+          <li class="differential">
+            <div class="differential__icon">
+              <!-- Bootstrap Icons bi-check-circle-fill (MIT) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24"
+                   fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="differential__title">Preço competitivo</p>
+              <p class="differential__desc">Estrutura enxuta que elimina custos administrativos sem comprometer a qualidade técnica.</p>
+            </div>
+          </li>
+
+          <!-- Differential 2: Atendimento nacional -->
+          <li class="differential">
+            <div class="differential__icon">
+              <!-- Bootstrap Icons bi-globe (MIT) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24"
+                   fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7.02 7.02 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49a7 7 0 0 0 .656 2.5zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146a7 7 0 0 0 .656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.02 7.02 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="differential__title">Atendimento nacional</p>
+              <p class="differential__desc">Projetos entregues remotamente para construtoras e incorporadoras em todo o Brasil.</p>
+            </div>
+          </li>
+
+          <!-- Differential 3: Especialização em normas ABNT -->
+          <li class="differential">
+            <div class="differential__icon">
+              <!-- Bootstrap Icons bi-file-earmark-text (MIT) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24"
+                   fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="differential__title">Especialização em normas ABNT</p>
+              <p class="differential__desc">Domínio profundo das NBR 9077, NBR 5626, NBR 5410 e normas correlatas.</p>
+            </div>
+          </li>
+
+          <!-- Differential 4: Aprovação na primeira vistoria -->
+          <li class="differential">
+            <div class="differential__icon">
+              <!-- Bootstrap Icons bi-shield-check (MIT) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24"
+                   fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625 2.5 2.5 0 0 1-.444.2 1 1 0 0 1-.385.062 1 1 0 0 1-.386-.062 2.5 2.5 0 0 1-.444-.2 7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+              </svg>
+            </div>
+            <div>
+              <p class="differential__title">Aprovação na primeira vistoria</p>
+              <p class="differential__desc">Nossa meta em cada projeto: documentação completa que aprova sem ressalvas.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       Footer — CREA, contato, copyright
+       ============================================================ -->
+  <footer class="site-footer" id="contato">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para o início">
+          <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
+            <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
+          </svg>
+        </a>
+      </div>
+      <div class="site-footer__info">
+        <p>
+          Engenheiro responsável: <strong>[Nome do Engenheiro]</strong>
+        </p>
+        <p>
+          <a
+            href="https://consultaprofissional.confea.org.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Verificar registro CREA-SP [000000-D] no portal CONFEA (abre em nova aba)"
+          >CREA-SP [000000-D]</a>
+        </p>
+        <p>
+          <a href="mailto:contato@nptengenharia.com.br">contato@nptengenharia.com.br</a>
+        </p>
+        <p>+55 (11) 9 0000-0000</p>
+      </div>
+    </div>
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
   <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

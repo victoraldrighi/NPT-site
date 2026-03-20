@@ -1,0 +1,177 @@
+/* ============================================================
+   About Hero — engineer profile
+   ============================================================ */
+.about-hero {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg-surface);
+}
+
+.about-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.about-photo {
+  width: 280px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-brand-primary); /* navy fallback when image missing */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.about-photo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-hero__text {
+  text-align: center;
+}
+
+.about-hero__text h1 {
+  font-size: var(--font-size-3xl);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-2);
+}
+
+.about-hero__role {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.about-hero__role a {
+  color: var(--color-brand-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.about-hero__specialization {
+  font-size: var(--font-size-base);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+  max-width: 36rem;
+}
+
+@media (min-width: 48rem) {
+  .about-hero__inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .about-hero__text {
+    text-align: left;
+  }
+
+  .about-photo {
+    width: 320px;
+  }
+}
+
+/* ============================================================
+   Mission
+   ============================================================ */
+.about-mission {
+  padding: var(--space-12) 0;
+  background-color: var(--color-bg-page);
+}
+
+.about-mission h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.about-mission p {
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: var(--line-height-body);
+  color: var(--color-text-body);
+  text-align: center;
+}
+
+/* ============================================================
+   Differentials
+   ============================================================ */
+.about-differentials {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg-surface);
+}
+
+.about-differentials h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.differentials__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.differential {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.differential__icon {
+  color: var(--color-brand-accent);
+  flex-shrink: 0;
+  margin-top: var(--space-1);
+}
+
+.differential__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-1);
+}
+
+.differential__desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+@media (min-width: 48rem) {
+  .differentials__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   Obrigado page
+   ============================================================ */
+.obrigado-main {
+  text-align: center;
+  padding: var(--space-24) 0;
+}
+
+.obrigado-icon {
+  color: var(--color-feedback-success);
+  margin: 0 auto var(--space-6);
+}
+
+.obrigado-main h1 {
+  font-size: var(--font-size-3xl);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-4);
+}
+
+.obrigado-main p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
