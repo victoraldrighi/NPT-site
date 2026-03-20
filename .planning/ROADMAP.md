@@ -77,7 +77,11 @@ Plans:
   3. Portfolio case study page documents the single delivered project with building type, applicable norms, scope of deliverables, and result — not just a photo
   4. Phone number is visible in the site header and email address is visible in the site footer on all pages
   5. Visitor can initiate contact from any page without navigating to /contato/ (WhatsApp CTA or in-page form anchor present throughout)
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — CSS components + Vite config + Portfolio page + Contact page with Netlify Forms
+- [ ] 04-02-PLAN.md — Global conversion elements: WhatsApp button, phone in header, email in footer across all 8 pages
 
 ### Phase 5: Performance & Launch QA
 **Goal**: The site passes every pre-launch gate: Core Web Vitals are green on mobile, Lighthouse Performance score is 90+ on mobile for the homepage and at least two service pages, sitemap.xml and robots.txt are correct, and the full conversion loop has been tested end-to-end
@@ -101,5 +105,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation & Design System | 2/2 | Complete    | 2026-03-19 |
 | 2. Home, Sobre & Credibility Shell | 2/2 | Complete    | 2026-03-20 |
 | 3. Service Pages & SEO Nucleus | 2/2 | Complete   | 2026-03-20 |
-| 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
+| 4. Portfolio, Conversion & Contact | 0/2 | Not started | - |
 | 5. Performance & Launch QA | 0/TBD | Not started | - |
