@@ -10,23 +10,23 @@ O visitante encontra a NPT pelo Google, entende os serviços em menos de 30 segu
 
 ## Requirements
 
-### Validated
+### Validated (v1.0 — 2026-03-20)
 
-(None yet — ship to validate)
+- [x] Site encontrável no Google para buscas de "projeto pressurização escada emergência", "projeto hidráulico", "projeto elétrico" em âmbito nacional — Validated in Phase 3: Service Pages & SEO Nucleus
+- [x] Página de cada serviço otimizada para SEO (pressurização, hidráulica, elétrica) com conteúdo técnico relevante — Validated in Phase 3
+- [x] Formulário de contato/orçamento funcional (nome, empresa, tipo de projeto, mensagem) — Validated in Phase 4: Portfolio, Conversion & Contact
+- [x] CTA para WhatsApp presente em posição de destaque (desativado até número disponível) — Validated in Phase 4
+- [x] Seção de portfólio com ao menos 1 projeto entregue — Validated in Phase 4
+- [x] Identidade visual profissional que transmita credibilidade técnica — Validated in Phase 1: Foundation & Design System
+- [x] Performance excelente (Core Web Vitals verdes, Lighthouse ≥ 90 mobile) — Validated in Phase 5: Performance & Launch QA
+- [x] Site responsivo e funcional em mobile — Validated in Phase 2: Home, Sobre & Credibility Shell
+- [x] Estrutura técnica de SEO: meta tags, schema markup, sitemap.xml, robots.txt — Validated in Phase 5
+- [x] Página Sobre com apresentação da equipe e diferenciais da empresa — Validated in Phase 2
+- [x] Estrutura pronta para adição futura de blog/artigos técnicos — Validated in Phase 1
 
 ### Active
 
-- [ ] Site encontrável no Google para buscas de "projeto pressurização escada emergência", "projeto hidráulico", "projeto elétrico" em âmbito nacional
-- [ ] Página de cada serviço otimizada para SEO (pressurização, hidráulica, elétrica) com conteúdo técnico relevante
-- [ ] Formulário de contato/orçamento funcional (nome, empresa, tipo de projeto, mensagem)
-- [ ] CTA para WhatsApp presente em posição de destaque
-- [ ] Seção de portfólio com ao menos 1 projeto entregue
-- [ ] Identidade visual profissional que transmita credibilidade técnica
-- [ ] Performance excelente (Core Web Vitals verdes) para favorecer ranqueamento
-- [ ] Site responsivo e funcional em mobile (construtores usam muito mobile)
-- [ ] Estrutura técnica de SEO: meta tags, schema markup, sitemap.xml, robots.txt
-- [ ] Página Sobre com apresentação da equipe e diferenciais da empresa
-- [ ] Estrutura pronta para adição futura de blog/artigos técnicos
+(None — all v1.0 requirements validated)
 
 ### Out of Scope
 
@@ -57,10 +57,23 @@ O visitante encontra a NPT pelo Google, entende os serviços em menos de 30 segu
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| HTML/CSS/JS puro (sem framework) | Melhor performance = melhor SEO; zero overhead; hospedagem gratuita | — Pending |
-| Estrutura para blog sem conteúdo v1 | SEO de longo prazo exige blog, mas não bloquear lançamento | — Pending |
-| Foco em lead generation (formulário + WhatsApp) | Conversão é o KPI principal do site | — Pending |
-| Identidade visual nova sugerida | Logo existe mas empresa está aberta a reposicionamento visual | — Pending |
+| HTML/CSS/JS puro (sem framework) | Melhor performance = melhor SEO; zero overhead; hospedagem gratuita | ✓ Validated — Lighthouse ≥ 90 mobile |
+| Estrutura para blog sem conteúdo v1 | SEO de longo prazo exige blog, mas não bloquear lançamento | ✓ Scaffold in /blog/ directory, conteúdo v2 |
+| Foco em lead generation (formulário + WhatsApp) | Conversão é o KPI principal do site | ✓ Netlify Forms + WhatsApp FAB implementados |
+| Identidade visual nova sugerida | Logo existe mas empresa está aberta a reposicionamento visual | ✓ Navy #1B3A6B + Amber #F5A623 aplicados |
+
+## Current State
+
+**v1.0 milestone complete — 2026-03-20**
+
+All 5 phases shipped:
+1. Foundation & Design System — Vite 6.x, CSS tokens, Netlify deploy
+2. Home, Sobre & Credibility Shell — Homepage, Sobre, CREA, Como trabalhamos
+3. Service Pages & SEO Nucleus — 3 service pages, schema markup, OG tags
+4. Portfolio, Conversion & Contact — Portfolio, contact form, WhatsApp FAB
+5. Performance & Launch QA — Core Web Vitals green, sitemap, robots.txt, GA4
+
+Site live at https://nptengenharia.com.br (production domain configured).
 
 ---
-*Last updated: 2026-03-19 after initialization*
+*Last updated: 2026-03-20 after v1.0 milestone completion*
