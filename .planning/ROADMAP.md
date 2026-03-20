@@ -93,7 +93,10 @@ Plans:
   3. /sitemap.xml returns a valid XML sitemap listing all pages; /robots.txt allows Googlebot access and references the sitemap URL
   4. All fonts are self-hosted (no external CDN requests in the waterfall) and display correctly across Chrome, Firefox, and Safari
   5. A real end-to-end test confirms: form submission receives an email, WhatsApp link opens with pre-filled message, /obrigado/ page loads post-redirect
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 05-01-PLAN.md — Canonical URL update, sitemap/robots creation, netlify.toml cache headers, GA4 snippet, build verification
 
 ## Progress
 
@@ -106,4 +109,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Home, Sobre & Credibility Shell | 2/2 | Complete    | 2026-03-20 |
 | 3. Service Pages & SEO Nucleus | 2/2 | Complete   | 2026-03-20 |
 | 4. Portfolio, Conversion & Contact | 2/2 | Complete   | 2026-03-20 |
-| 5. Performance & Launch QA | 0/TBD | Not started | - |
+| 5. Performance & Launch QA | 0/1 | Not started | - |
