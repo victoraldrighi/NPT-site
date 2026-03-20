@@ -32,12 +32,12 @@
 
 ### SEO Técnico
 
-- [ ] **SEO-01**: URLs semânticas para todas as páginas (ex: /servicos/pressurizacao-escadas-emergencia/)
-- [ ] **SEO-02**: Meta tags únicas por página (title, meta description, og:title, og:description, og:image)
+- [x] **SEO-01**: URLs semânticas para todas as páginas (ex: /servicos/pressurizacao-escadas-emergencia/)
+- [x] **SEO-02**: Meta tags únicas por página (title, meta description, og:title, og:description, og:image)
 - [ ] **SEO-03**: sitemap.xml gerado e acessível em /sitemap.xml
 - [ ] **SEO-04**: robots.txt configurado corretamente (sem bloquear indexação acidental)
-- [ ] **SEO-05**: Schema markup JSON-LD implementado — ProfessionalService na home, Service em cada página de serviço, ItemList no portfólio
-- [ ] **SEO-06**: Canonical tags em todas as páginas
+- [x] **SEO-05**: Schema markup JSON-LD implementado — ProfessionalService na home, Service em cada página de serviço, ItemList no portfólio
+- [x] **SEO-06**: Canonical tags em todas as páginas
 
 ### Performance (Core Web Vitals)
 
