@@ -46,7 +46,11 @@ Plans:
   3. "Como trabalhamos" process section is visible on the homepage or Sobre page with numbered steps
   4. /obrigado/ page renders and confirms form submission to the visitor
   5. CREA number appears in the page footer on all pages delivered in this phase
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Homepage with hero, services grid, "Como trabalhamos", case teaser, shared header/footer/buttons CSS
+- [ ] 02-02-PLAN.md — Sobre page with engineer bio, CREA, photo, differentials + /obrigado/ thank-you page
 
 ### Phase 3: Service Pages & SEO Nucleus
 **Goal**: The three service pages exist at semantic URLs with full technical content (800-1200 words each), NBR norm citations, per-page schema markup, and complete on-page SEO — making them eligible to rank on Google from day one of indexing
@@ -91,7 +95,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 2/2 | Complete    | 2026-03-19 |
-| 2. Home, Sobre & Credibility Shell | 0/TBD | Not started | - |
+| 2. Home, Sobre & Credibility Shell | 0/2 | Not started | - |
 | 3. Service Pages & SEO Nucleus | 0/TBD | Not started | - |
 | 4. Portfolio, Conversion & Contact | 0/TBD | Not started | - |
 | 5. Performance & Launch QA | 0/TBD | Not started | - |
