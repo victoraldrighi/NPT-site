@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-stopped_at: Completed 05-01-PLAN.md (all 6 tasks including Task 6 human-verify approved)
-last_updated: "2026-03-20T21:25:37.221Z"
+status: milestone_complete
+stopped_at: v1.0 milestone archived — all 5 phases complete, git tag pending
+last_updated: "2026-03-20T22:00:00.000Z"
 progress:
   total_phases: 5
   completed_phases: 5
@@ -16,15 +16,15 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-19)
+See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** O visitante encontra a NPT pelo Google, entende os serviços em menos de 30 segundos, e entra em contato para pedir orçamento — tudo em uma única visita.
-**Current focus:** Phase 05 — performance-launch-qa
+**Current focus:** v1.0 milestone complete — site live at https://nptengenharia.com.br
 
 ## Current Position
 
-Phase: 05 (performance-launch-qa) — EXECUTING
-Plan: 1 of 1
+Milestone v1.0 complete. All 5 phases shipped 2026-03-20.
+Next: `/gsd:new-milestone` to start v1.1 planning.
 
 ## Performance Metrics
 
