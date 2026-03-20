@@ -1,0 +1,149 @@
+/* ============================================================
+   portfolio.css — Portfolio page layout and case study card
+   All colors via var() tokens only — no hex values.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Portfolio page wrapper
+   ------------------------------------------------------------ */
+.portfolio-page {
+  padding-bottom: var(--space-16);
+}
+
+/* ------------------------------------------------------------
+   Portfolio hero / intro section
+   ------------------------------------------------------------ */
+.portfolio-hero {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding-top: var(--space-8);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.portfolio-hero h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-4);
+}
+
+.portfolio-hero p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+}
+
+/* ------------------------------------------------------------
+   Portfolio grid — single column, scalable when more projects added
+   ------------------------------------------------------------ */
+.portfolio-grid {
+  margin-top: var(--space-8);
+}
+
+/* ------------------------------------------------------------
+   Portfolio case study card
+   ------------------------------------------------------------ */
+.portfolio-case {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.portfolio-case h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-4);
+}
+
+.portfolio-case h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-body);
+  margin-bottom: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* ------------------------------------------------------------
+   Case metadata — tipo, cidade, ano
+   ------------------------------------------------------------ */
+.portfolio-case__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  list-style: none;
+  padding: 0;
+}
+
+.portfolio-case__meta li {
+  display: flex;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------
+   Norms definition list
+   ------------------------------------------------------------ */
+.portfolio-case__norms {
+  margin-bottom: var(--space-6);
+}
+
+.portfolio-case__norms dt {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.portfolio-case__norms dd {
+  margin: 0;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+/* ------------------------------------------------------------
+   Scope of deliverables list
+   ------------------------------------------------------------ */
+.portfolio-case__scope {
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-6);
+}
+
+.portfolio-case__scope li {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+/* ------------------------------------------------------------
+   Result paragraph
+   ------------------------------------------------------------ */
+.portfolio-case__result {
+  font-size: var(--font-size-base);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+  margin-bottom: var(--space-6);
+}
+
+/* ------------------------------------------------------------
+   Photo note / disclaimer
+   ------------------------------------------------------------ */
+.portfolio-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--space-4);
+}

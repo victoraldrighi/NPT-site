@@ -1,0 +1,155 @@
+/* ============================================================
+   contact-form.css — Contact page layout and form components
+   All colors via var() tokens only — no hex values.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Contact page wrapper
+   ------------------------------------------------------------ */
+.contact-page {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-16);
+}
+
+.contact-page h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-4);
+}
+
+.contact-page__intro {
+  font-size: var(--font-size-base);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+  margin-bottom: var(--space-8);
+  max-width: 70ch;
+}
+
+/* ------------------------------------------------------------
+   Two-column grid — form left, contact info right (desktop)
+   Mobile-first: stacked single column
+   ------------------------------------------------------------ */
+.contact-page__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 80rem) {
+  .contact-page__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+}
+
+/* ------------------------------------------------------------
+   Contact form
+   ------------------------------------------------------------ */
+.contact-form {
+  max-width: 560px;
+  width: 100%;
+}
+
+/* ------------------------------------------------------------
+   Form groups
+   ------------------------------------------------------------ */
+.form-group {
+  margin-bottom: var(--space-6);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-body);
+  margin-bottom: var(--space-2);
+}
+
+/* ------------------------------------------------------------
+   Form controls — inputs, select, textarea
+   ------------------------------------------------------------ */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: var(--space-4);
+  min-height: 44px;
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  background: var(--color-bg-surface);
+  color: var(--color-text-body);
+  transition: border-color var(--transition-base);
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-color: var(--color-brand-primary);
+}
+
+/* Textarea variant */
+.form-control--textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Select variant — custom chevron via inline SVG */
+.form-control--select {
+  appearance: none;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path fill="%231B3A6B" d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  background-size: 12px;
+  padding-right: var(--space-8);
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------
+   Contact info card (aside — right column on desktop)
+   ------------------------------------------------------------ */
+.contact-info {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-info h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-6);
+  line-height: var(--line-height-heading);
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-base);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+}
+
+.contact-info__item svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-brand-primary);
+}
+
+.contact-info__item a {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+
+.contact-info__item a:hover {
+  text-decoration: underline;
+}

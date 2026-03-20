@@ -14,6 +14,8 @@ export default defineConfig({
         servicosPressurizacao: resolve(__dirname, 'servicos/pressurizacao-escadas-emergencia/index.html'),
         servicosHidraulica: resolve(__dirname, 'servicos/projetos-hidraulicos/index.html'),
         servicosEletrica: resolve(__dirname, 'servicos/projetos-eletricos/index.html'),
+        portfolio: resolve(__dirname, 'portfolio/index.html'),
+        contato: resolve(__dirname, 'contato/index.html'),
       },
     },
   },
