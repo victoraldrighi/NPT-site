@@ -182,11 +182,22 @@
   .site-footer__top {
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
     gap: var(--space-16);
   }
 
   .site-footer__brand {
     flex-shrink: 0;
+    max-width: 22rem;
+  }
+
+  .site-footer__links {
+    flex-wrap: nowrap;
+    gap: var(--space-12);
+  }
+
+  .site-footer__col {
+    min-width: 9rem;
   }
 
   .site-footer__bottom {
