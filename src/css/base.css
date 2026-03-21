@@ -1,3 +1,10 @@
+/* ============================================================
+   BASE — Precision Industrial Dark
+   Reset + tipografia global + utilitários
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -8,16 +15,28 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Cursor personalizado — crosshair técnico */
+  cursor: crosshair;
 }
 
 body {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-body);
-  color: var(--color-text-body);
-  background-color: var(--color-bg-page);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Grain overlay — textura de impressão técnica */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Seleção de texto */
+::selection {
+  background: var(--amber);
+  color: var(--ink);
 }
 
 img, video, svg {
@@ -25,87 +44,81 @@ img, video, svg {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-display);
-  line-height: var(--line-height-heading);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-heading);
-}
-
 a {
-  color: var(--color-brand-accent);
+  color: var(--color-accent-hi);
   text-decoration: none;
-  transition: color var(--transition-base);
+  transition: color var(--t-base);
 }
 
 a:hover {
-  color: var(--color-brand-accent-light);
+  color: var(--amber-pale);
 }
 
-/* Section label utility */
-.section-label {
-  display: inline-block;
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.15em;
+/* Headings — display font condensada */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+/* Texto técnico muted — usado em labels de dados */
+.label {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-brand-accent);
-  margin-bottom: var(--space-3);
+  color: var(--color-accent);
 }
 
-/* Highlight span inside headings */
-.text-accent {
-  color: var(--color-brand-accent);
-  position: relative;
+/* Tag de norma */
+.norm-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--amber);
+  border: 1px solid rgba(212,134,10,0.35);
+  padding: 2px var(--sp-3);
+  border-radius: var(--r-sm);
+  letter-spacing: 0.06em;
+  background: rgba(212,134,10,0.06);
 }
 
-/* Section heading pattern */
-.section-heading {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-black);
-  color: var(--color-text-heading);
-  line-height: var(--line-height-heading);
-  margin-bottom: var(--space-4);
-}
-
-@media (min-width: 48rem) {
-  .section-heading {
-    font-size: var(--font-size-4xl);
-  }
-}
-
-/* Layout utility */
+/* Container */
 .container {
   width: 100%;
-  max-width: var(--max-width-content);
+  max-width: var(--max-w);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
+  padding-left: var(--sp-6);
+  padding-right: var(--sp-6);
 }
 
 @media (min-width: 48rem) {
   .container {
-    padding-left: var(--space-6);
-    padding-right: var(--space-6);
+    padding-left: var(--sp-10);
+    padding-right: var(--sp-10);
   }
 }
 
 @media (min-width: 80rem) {
   .container {
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
+    padding-left: var(--sp-16);
+    padding-right: var(--sp-16);
   }
 }
 
-/* Decorative geometric lines */
+/* Linha decorativa âmbar */
 .geo-line {
   display: block;
   width: 3rem;
-  height: 3px;
-  background: var(--gradient-accent);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-6);
+  height: 1px;
+  background: var(--amber);
+  margin-bottom: var(--sp-6);
 }
 
 .geo-line--center {
@@ -113,16 +126,35 @@ a:hover {
   margin-right: auto;
 }
 
-/* Fade-in animation (CSS-only, triggered by scroll via animation-play-state) */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Texto accent */
+.text-accent {
+  color: var(--amber-bright);
+}
+
+/* Section label */
+.section-label {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: inline-block;
+  margin-bottom: var(--sp-4);
+}
+
+/* Section heading */
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--chalk);
+  margin-bottom: var(--sp-4);
+}
+
+/* Keyframes globais */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -130,25 +162,34 @@ a:hover {
   to   { opacity: 1; }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes slideRight {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes scanline {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100vh); }
+}
+
+@keyframes counterUp {
+  from { transform: translateY(1em); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes pulse-amber {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
-  50%       { box-shadow: 0 0 0 12px rgba(245, 166, 35, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,134,10,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(212,134,10,0); }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
 }
 
 @keyframes spin-slow {
@@ -156,6 +197,7 @@ a:hover {
   to   { transform: rotate(360deg); }
 }
 
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

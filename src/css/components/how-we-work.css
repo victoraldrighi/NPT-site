@@ -1,143 +1,184 @@
 /* ============================================================
-   How We Work — dark timeline steps
+   HOW WE WORK — Precision Industrial
+   Timeline vertical com linha de progresso animada
+   Números grandes como marcações de medição
    ============================================================ */
 
 .how-we-work {
-  padding: var(--space-24) 0;
-  background: var(--color-bg-page);
+  padding: var(--sp-24) 0;
+  background: var(--ink);
   position: relative;
   overflow: hidden;
 }
 
-/* Grid background accent */
 .how-we-work::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 40%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, black 40%, transparent 100%);
+  background-image: var(--blueprint-grid);
+  background-size: 48px 48px;
+  opacity: 0.35;
+}
+
+/* Marcação lateral de seção */
+.how-we-work::after {
+  content: 'PROC_MODULE';
+  position: absolute;
+  top: var(--sp-8);
+  right: var(--sp-10);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.2em;
 }
 
 .how-we-work__header {
-  text-align: center;
-  margin-bottom: var(--space-16);
+  text-align: left;
+  margin-bottom: var(--sp-16);
   position: relative;
   z-index: 1;
+  max-width: 40rem;
 }
 
 .how-we-work__title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-black);
-  color: var(--color-text-heading);
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-4);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  margin-bottom: var(--sp-6);
 }
 
 .how-we-work__subtitle {
-  font-size: var(--font-size-base);
-  color: var(--color-text-muted);
-  max-width: 48ch;
-  margin: 0 auto;
-  line-height: var(--line-height-body);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  max-width: 52ch;
+  line-height: var(--leading-body);
+  border-left: 2px solid var(--amber);
+  padding-left: var(--sp-4);
 }
 
-@media (min-width: 48rem) {
-  .how-we-work__title {
-    font-size: var(--font-size-4xl);
-  }
-}
-
-/* Steps grid */
+/* Steps — lista com linha de timeline */
 .how-we-work__steps {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  counter-reset: steps;
+  border-left: 1px solid var(--ink-border);
+  margin-left: var(--sp-6);
+  padding-left: var(--sp-10);
 }
 
-/* Step card */
+/* Step individual */
 .how-we-work__step {
-  flex: 1;
-  background: var(--gradient-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
+  padding: var(--sp-8) 0;
+  border-bottom: 1px solid var(--ink-border);
   position: relative;
-  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
+  transition: background var(--t-slow);
 }
 
-.how-we-work__step:hover {
-  border-color: var(--color-border-accent);
-  box-shadow: 0 8px 32px -8px rgba(245, 166, 35, 0.15);
+/* Marcador na linha — círculo técnico */
+.how-we-work__step::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--sp-10) - 4px);
+  top: calc(var(--sp-8) + 2px);
+  width: 9px;
+  height: 9px;
+  background: var(--ink);
+  border: 1px solid var(--chalk-ghost);
+  transition: border-color var(--t-base), background var(--t-base);
 }
 
-/* Large number */
+.how-we-work__step:hover::before {
+  border-color: var(--amber);
+  background: var(--amber);
+}
+
+/* Número grande como anotação técnica de margem */
 .how-we-work__number {
   display: block;
-  font-size: 4rem;
-  font-weight: var(--font-weight-black);
-  line-height: 1;
-  letter-spacing: -0.05em;
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: var(--space-4);
-  opacity: 0.7;
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  color: var(--ink-border);
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--sp-3);
+  transition: color var(--t-base);
+  /* Número posicionado à direita como anotação */
+  float: right;
+  margin-left: var(--sp-6);
+}
+
+.how-we-work__step:hover .how-we-work__number {
+  color: rgba(212,134,10,0.25);
 }
 
 .how-we-work__title-step {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-heading);
-  margin-bottom: var(--space-2);
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--sp-3);
+  transition: color var(--t-base);
+}
+
+.how-we-work__step:hover .how-we-work__title-step {
+  color: var(--amber-pale);
 }
 
 .how-we-work__desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  line-height: var(--line-height-body);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
+  max-width: 56ch;
+  clear: both;
 }
 
-/* Arrow connector (mobile) */
-.how-we-work__step:not(:last-child)::after {
-  content: '↓';
-  position: absolute;
-  bottom: calc(-1 * var(--space-4) - 0.5rem);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-sm);
-  color: var(--color-brand-accent);
-  opacity: 0.5;
-  z-index: 2;
-}
-
+/* Desktop — grid de 4 colunas horizontais */
 @media (min-width: 48rem) {
   .how-we-work__steps {
     flex-direction: row;
-    gap: var(--space-4);
-    align-items: stretch;
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--ink-border);
+    gap: 0;
   }
 
-  /* Replace arrow with right arrow on desktop */
-  .how-we-work__step:not(:last-child)::after {
-    content: '→';
-    bottom: auto;
-    top: 50%;
-    left: auto;
-    right: calc(-1 * var(--space-4) - 0.75rem);
-    transform: translateY(-50%);
+  .how-we-work__step {
+    flex: 1;
+    padding: var(--sp-8) var(--sp-6);
+    border-bottom: none;
+    border-right: 1px solid var(--ink-border);
+    background: transparent;
+  }
+
+  .how-we-work__step:last-child {
+    border-right: none;
+  }
+
+  /* Marcador no topo da linha horizontal */
+  .how-we-work__step::before {
+    left: var(--sp-6);
+    top: calc(-1 * var(--sp-0) - 4px);
+    top: -5px;
+  }
+
+  .how-we-work__number {
+    float: none;
+    margin-left: 0;
+  }
+
+  .how-we-work__desc {
+    max-width: none;
   }
 }
