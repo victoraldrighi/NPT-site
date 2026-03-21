@@ -15,3 +15,38 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/obrigado"
+  to = "/obrigado/"
+  status = 301
+
+[[redirects]]
+  from = "/contato"
+  to = "/contato/"
+  status = 301
+
+[[redirects]]
+  from = "/sobre"
+  to = "/sobre/"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/portfolio/"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/pressurizacao-escadas-emergencia"
+  to = "/servicos/pressurizacao-escadas-emergencia/"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/projetos-hidraulicos"
+  to = "/servicos/projetos-hidraulicos/"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/projetos-eletricos"
+  to = "/servicos/projetos-eletricos/"
+  status = 301
