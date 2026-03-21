@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Papel Timbrado — NPT Engenharia</title>
+  <style>
+    /* ============================================================
+       NPT ENGENHARIA — PAPEL TIMBRADO OFICIAL v2.0
+       ============================================================
+       Chrome → Imprimir → Salvar como PDF
+       Configurações: A4 · Margens: Nenhuma · Gráficos de fundo: ✓
+       ============================================================ */
+
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap');
+
+    /* ── RESET & PRINT-COLOR-ADJUST ── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    /* ── PAGE SETUP ── */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    /* ── DESIGN TOKENS ── */
+    :root {
+      /* Background */
+      --doc-bg:         #FFFFFF;
+
+      /* Header / Footer */
+      --ink:            #050709;
+
+      /* Accent */
+      --amber:          #D4860A;
+      --amber-bright:   #F5A623;
+
+      /* Body text */
+      --text-main:      #1A1A1A;
+      --text-dim:       #4A4A4A;
+      --text-muted:     #767676;
+
+      /* Header text */
+      --chalk:          #F2EEE8;
+      --chalk-dim:      #9BA3AE;
+      --chalk-ghost:    #3D4855;
+
+      /* Borders */
+      --rule-light:     rgba(26,26,26,0.12);
+      --rule-amber:     rgba(212,134,10,0.35);
+
+      /* Typography */
+      --font-display:   'Bebas Neue', sans-serif;
+      --font-mono:      'DM Mono', monospace;
+      --font-label:     'Barlow Condensed', sans-serif;
+    }
+
+    /* ── DOCUMENT ROOT ── */
+    html, body {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--doc-bg);
+      color: var(--text-main);
+      font-family: var(--font-mono);
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: var(--doc-bg);
+    }
+
+    /* ============================================================
+       HEADER (~40mm)
+       ============================================================ */
+    .letterhead-header {
+      background: var(--ink);
+      height: 40mm;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    /* Blueprint grid — header only */
+    .letterhead-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212,134,10,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,134,10,0.055) 1px, transparent 1px),
+        linear-gradient(rgba(212,134,10,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,134,10,0.025) 1px, transparent 1px);
+      background-size: 8mm 8mm, 8mm 8mm, 2mm 2mm, 2mm 2mm;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Amber bottom rule on header */
+    .letterhead-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--amber-bright);
+      z-index: 2;
+    }
+
+    /* Corner brackets — amber, 4 corners */
+    .corner { position: absolute; z-index: 3; }
+    .corner--tl { top: 3.5mm; left: 4mm; }
+    .corner--tr { top: 3.5mm; right: 4mm; transform: scaleX(-1); }
+    .corner--bl { bottom: 3.5mm; left: 4mm; transform: scaleY(-1); }
+    .corner--br { bottom: 3.5mm; right: 4mm; transform: scale(-1,-1); }
+
+    .corner svg {
+      display: block;
+      width: 6mm;
+      height: 6mm;
+    }
+
+    /* ── LOGO COLUMN ── */
+    .header-logo {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 0 0 14mm;
+      flex: 0 0 auto;
+    }
+
+    .logo-npt {
+      font-family: var(--font-display);
+      font-size: 40pt;
+      line-height: 1;
+      color: var(--chalk);
+      letter-spacing: 0.04em;
+    }
+
+    .logo-engenharia {
+      font-family: var(--font-label);
+      font-weight: 500;
+      font-size: 9pt;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--amber-bright);
+      margin-top: 0.5mm;
+    }
+
+    /* Vertical amber separator between logo and contact */
+    .header-divider {
+      position: relative;
+      z-index: 1;
+      width: 2px;
+      background: var(--amber);
+      margin: 8mm 10mm;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT COLUMN ── */
+    .header-contact {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.2mm;
+      flex: 1 1 auto;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: baseline;
+      gap: 2.5mm;
+    }
+
+    .contact-label {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: 5.5pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      min-width: 14mm;
+    }
+
+    .contact-value {
+      font-family: var(--font-mono);
+      font-size: 7pt;
+      color: var(--chalk);
+      letter-spacing: 0.01em;
+    }
+
+    /* Specialty tags right-aligned */
+    .header-tags {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0 14mm 0 6mm;
+      gap: 2mm;
+      flex: 0 0 auto;
+    }
+
+    .tag {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: 6pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--chalk-dim);
+      border: 1px solid var(--chalk-ghost);
+      padding: 0.6mm 2.5mm;
+      line-height: 1.4;
+    }
+
+    .tag--amber {
+      color: var(--amber-bright);
+      border-color: var(--amber);
+    }
+
+    /* ============================================================
+       DOCUMENT META BAR (below header)
+       ============================================================ */
+    .doc-meta {
+      background: var(--doc-bg);
+      border-bottom: 1.5px solid var(--ink);
+      padding: 3mm 20mm;
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .meta-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8mm;
+      flex: 1 1 0;
+      padding-right: 6mm;
+      border-right: 1px solid var(--rule-light);
+      margin-right: 6mm;
+    }
+
+    .meta-field:last-child {
+      border-right: none;
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+    .meta-label {
+      font-family: var(--font-label);
+      font-weight: 700;
+      font-size: 5.5pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .meta-value {
+      font-family: var(--font-mono);
+      font-size: 7.5pt;
+      color: var(--text-main);
+      min-height: 4mm;
+      border-bottom: 0.5pt solid var(--text-dim);
+      padding-bottom: 0.5mm;
+    }
+
+    .meta-value--wide {
+      min-width: 50mm;
+    }
+
+    /* ============================================================
+       BODY — Content Area (~220mm)
+       ============================================================ */
+    .content-area {
+      flex: 1 1 auto;
+      padding: 12mm 20mm 8mm 20mm;
+      position: relative;
+      background: var(--doc-bg);
+    }
+
+    /* Very subtle guide lines — technical block paper style */
+    .content-area::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 6.5mm,
+        rgba(26,26,26,0.035) 6.5mm,
+        rgba(26,26,26,0.035) 6.6mm
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Left margin accent rule */
+    .margin-rule {
+      position: absolute;
+      left: 15mm;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(212,134,10,0.18);
+      z-index: 0;
+    }
+
+    /* Content is above pseudo-elements */
+    .content-area > * { position: relative; z-index: 1; }
+
+    /* ── CITY / DATE ── */
+    .letter-city-date {
+      font-family: var(--font-mono);
+      font-size: 8.5pt;
+      color: var(--text-dim);
+      text-align: right;
+      margin-bottom: 9mm;
+    }
+
+    /* ── ADDRESSEE ── */
+    .letter-addressee {
+      font-family: var(--font-mono);
+      font-size: 9pt;
+      color: var(--text-main);
+      line-height: 1.7;
+      margin-bottom: 9mm;
+    }
+
+    .letter-addressee strong {
+      font-weight: 500;
+      display: block;
+    }
+
+    /* ── SUBJECT LINE ── */
+    .letter-subject {
+      font-family: var(--font-label);
+      font-weight: 700;
+      font-size: 9.5pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      padding: 2mm 0 2mm 3mm;
+      border-left: 3px solid var(--amber);
+      margin-bottom: 8mm;
+    }
+
+    .letter-subject-ref {
+      font-family: var(--font-mono);
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-top: 1mm;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── BODY TEXT ── */
+    .letter-body {
+      font-family: var(--font-mono);
+      font-size: 9pt;
+      color: var(--text-main);
+      line-height: 1.85;
+      text-align: justify;
+      margin-bottom: 5mm;
+      font-weight: 300;
+    }
+
+    .letter-body + .letter-body {
+      margin-top: 1mm;
+    }
+
+    /* ── CLOSING ── */
+    .letter-closing {
+      font-family: var(--font-mono);
+      font-size: 9pt;
+      color: var(--text-dim);
+      margin-top: 8mm;
+      margin-bottom: 0;
+      font-weight: 300;
+    }
+
+    /* ── SIGNATURE BLOCK ── */
+    .sig-block {
+      margin-top: 18mm;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5mm;
+    }
+
+    .sig-line {
+      width: 72mm;
+      height: 1px;
+      background: var(--text-main);
+      margin-bottom: 3mm;
+    }
+
+    .sig-name {
+      font-family: var(--font-label);
+      font-weight: 700;
+      font-size: 10pt;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .sig-role {
+      font-family: var(--font-label);
+      font-weight: 400;
+      font-size: 8.5pt;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+    }
+
+    .sig-crea {
+      font-family: var(--font-mono);
+      font-size: 7.5pt;
+      color: var(--amber);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-top: 0.5mm;
+    }
+
+    .sig-company {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: 7.5pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.5mm;
+    }
+
+    /* ============================================================
+       FOOTER (~20mm)
+       ============================================================ */
+    .letterhead-footer {
+      background: var(--ink);
+      height: 20mm;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14mm;
+      flex-shrink: 0;
+    }
+
+    /* Amber top rule */
+    .letterhead-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--amber-bright);
+    }
+
+    .footer-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 16pt;
+      letter-spacing: 0.08em;
+      color: var(--chalk);
+      line-height: 1;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-label);
+      font-weight: 400;
+      font-size: 5.5pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--chalk-dim);
+      margin-top: 1mm;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8mm;
+    }
+
+    .footer-info-row {
+      font-family: var(--font-mono);
+      font-size: 6pt;
+      color: var(--chalk-dim);
+      letter-spacing: 0.03em;
+      font-weight: 300;
+    }
+
+    .footer-info-row span + span::before {
+      content: ' · ';
+      color: var(--chalk-ghost);
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-crea {
+      font-family: var(--font-mono);
+      font-size: 6.5pt;
+      color: var(--amber-bright);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-rights {
+      font-family: var(--font-label);
+      font-size: 6pt;
+      letter-spacing: 0.08em;
+      color: var(--chalk-ghost);
+      margin-top: 1.5mm;
+    }
+
+    /* ============================================================
+       SCREEN CONTROLS (hidden on print)
+       ============================================================ */
+    @media screen {
+      html, body {
+        background: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 32px 24px 80px;
+        min-height: 100vh;
+        width: auto;
+      }
+
+      .page {
+        box-shadow:
+          0 0 0 1px rgba(212,134,10,0.15),
+          0 8px 40px rgba(0,0,0,0.55),
+          0 24px 80px rgba(0,0,0,0.35);
+        margin: 0 auto;
+      }
+
+      .print-controls {
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        z-index: 200;
+      }
+
+      .print-btn {
+        background: var(--amber-bright, #F5A623);
+        color: #050709;
+        border: none;
+        padding: 11px 26px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        line-height: 1;
+        box-shadow: 0 4px 16px rgba(245,166,35,0.35);
+        transition: background 0.15s ease;
+      }
+
+      .print-btn:hover { background: #FFD47A; }
+
+      .print-note {
+        font-family: 'DM Mono', monospace;
+        font-size: 10px;
+        color: #6b7280;
+        text-align: right;
+        max-width: 190px;
+        line-height: 1.5;
+      }
+
+      .print-note strong {
+        color: #9ca3af;
+        font-weight: 400;
+      }
+    }
+
+    @media print {
+      html, body {
+        width: 210mm;
+        background: white;
+        padding: 0;
+        margin: 0;
+        display: block;
+      }
+      .print-controls { display: none !important; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen-only print controls -->
+  <div class="print-controls">
+    <button class="print-btn" onclick="window.print()">&#11123; Imprimir / Salvar PDF</button>
+    <p class="print-note">
+      <strong>Chrome</strong> → Imprimir → Salvar como PDF<br>
+      Margens: Nenhuma &nbsp;·&nbsp; Gráficos de fundo: ✓
+    </p>
+  </div>
+
+  <div class="page">
+
+    <!-- ======================================================
+         HEADER
+         ====================================================== -->
+    <header class="letterhead-header">
+
+      <!-- Corner brackets (amber) -->
+      <div class="corner corner--tl">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 14 L2 2 L14 2" stroke="#D4860A" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="corner corner--tr">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 14 L2 2 L14 2" stroke="#D4860A" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="corner corner--bl">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 14 L2 2 L14 2" stroke="#D4860A" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="corner corner--br">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 14 L2 2 L14 2" stroke="#D4860A" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Logo block -->
+      <div class="header-logo">
+        <div class="logo-npt">NPT</div>
+        <div class="logo-engenharia">Engenharia</div>
+      </div>
+
+      <!-- Vertical separator -->
+      <div class="header-divider"></div>
+
+      <!-- Contact data (DM Mono) -->
+      <div class="header-contact">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">contato@nptengenharia.com.br</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Site</span>
+          <span class="contact-value">nptengenharia.com.br</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Telefone</span>
+          <span class="contact-value">+55 (11) 9 0000-0000</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">CREA-SP</span>
+          <span class="contact-value">000000-D</span>
+        </div>
+      </div>
+
+      <!-- Service tags -->
+      <div class="header-tags">
+        <span class="tag tag--amber">Projetos aprovados</span>
+        <span class="tag">Pressurização · NBR 9077</span>
+        <span class="tag">Hidráulica · NBR 5626</span>
+        <span class="tag">Elétrica · NBR 5410</span>
+      </div>
+
+    </header>
+
+    <!-- ======================================================
+         DOCUMENT META BAR
+         ====================================================== -->
+    <div class="doc-meta">
+      <div class="meta-field">
+        <span class="meta-label">Ref. do Projeto</span>
+        <span class="meta-value">NPT-2026-____</span>
+      </div>
+      <div class="meta-field">
+        <span class="meta-label">Data</span>
+        <span class="meta-value">___ / ___ / 2026</span>
+      </div>
+      <div class="meta-field">
+        <span class="meta-label">Cliente</span>
+        <span class="meta-value meta-value--wide">______________________________</span>
+      </div>
+      <div class="meta-field">
+        <span class="meta-label">Assunto</span>
+        <span class="meta-value meta-value--wide">______________________________</span>
+      </div>
+      <div class="meta-field" style="flex: 0 0 auto; min-width: 18mm;">
+        <span class="meta-label">Pág.</span>
+        <span class="meta-value">___ / ___</span>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         CONTENT AREA
+         ====================================================== -->
+    <main class="content-area">
+      <div class="margin-rule"></div>
+
+      <!-- City and date (right-aligned) -->
+      <p class="letter-city-date">
+        São Paulo, ___ de _____________ de 2026
+      </p>
+
+      <!-- Addressee block -->
+      <div class="letter-addressee">
+        <strong>A/C: [Nome do Destinatário]</strong>
+        [Cargo] — [Nome da Empresa / Construtora]<br>
+        [Cidade], [Estado]
+      </div>
+
+      <!-- Subject line -->
+      <div class="letter-subject">
+        Ref.: [Assunto do Documento — ex.: Proposta Técnica para Projeto de Pressurização de Escadas de Emergência]
+        <div class="letter-subject-ref">
+          Normas de referência: NBR 9077:2001 · IT-11/CBPMESP · NBR 5626 · NBR 5410 · NBR 5419
+        </div>
+      </div>
+
+      <!-- Body paragraphs -->
+      <p class="letter-body">
+        [Primeiro parágrafo. Apresentação do motivo da correspondência. A NPT Engenharia é uma
+        empresa especializada em projetos de pressurização de escadas de emergência, instalações
+        hidráulicas e projetos elétricos, atuando em âmbito nacional com atendimento remoto e
+        estrutura enxuta que garante o melhor custo-benefício do mercado.]
+      </p>
+
+      <p class="letter-body">
+        [Segundo parágrafo. Desenvolvimento técnico. Todos os projetos são elaborados em conformidade
+        com as normas técnicas brasileiras vigentes: NBR 9077:2001 (Saídas de emergência em edifícios)
+        e Instrução Técnica IT-11 do CBPMESP para sistemas de pressurização; NBR 5626 para instalações
+        hidráulicas prediais; NBR 5410 e NBR 5419 para instalações elétricas de baixa tensão e proteção
+        contra descargas atmosféricas. Os memoriais descritivos e pranchas são entregues prontos para
+        aprovação junto aos órgãos competentes.]
+      </p>
+
+      <p class="letter-body">
+        [Terceiro parágrafo. Informações complementares, condições comerciais, prazo de entrega,
+        validade da proposta ou demais considerações técnicas e administrativas pertinentes à
+        correspondência. Permanecemos à disposição para apresentação de maiores esclarecimentos,
+        visita técnica virtual ou reunião de alinhamento conforme a conveniência do destinatário.]
+      </p>
+
+      <p class="letter-closing">
+        Atenciosamente,
+      </p>
+
+      <!-- Signature block -->
+      <div class="sig-block">
+        <div class="sig-line"></div>
+        <div class="sig-name">[Nome do Engenheiro Responsável]</div>
+        <div class="sig-role">Engenheiro Responsável</div>
+        <div class="sig-crea">CREA-SP 000000-D</div>
+        <div class="sig-company">NPT Engenharia</div>
+      </div>
+
+    </main>
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+    <footer class="letterhead-footer">
+
+      <!-- Left: CNPJ + address -->
+      <div class="footer-left">
+        <div class="footer-info-row">
+          <span>CNPJ XX.XXX.XXX/0001-XX</span>
+        </div>
+        <div class="footer-info-row">
+          <span>São Paulo</span>
+          <span>SP</span>
+          <span>Brasil</span>
+        </div>
+        <div class="footer-info-row">
+          <span>Todos os direitos reservados</span>
+        </div>
+      </div>
+
+      <!-- Center: Brand -->
+      <div class="footer-center">
+        <div class="footer-brand">NPT ENGENHARIA</div>
+        <div class="footer-tagline">Pressurização · Hidráulica · Elétrica</div>
+      </div>
+
+      <!-- Right: CREA + rights -->
+      <div class="footer-right">
+        <div class="footer-crea">CREA-SP 000000-D</div>
+        <div class="footer-rights">nptengenharia.com.br</div>
+      </div>
+
+    </footer>
+
+  </div><!-- /.page -->
+
+</body>
+</html>

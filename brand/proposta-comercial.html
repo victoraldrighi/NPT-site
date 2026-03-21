@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial — NPT Engenharia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap');
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+:root {
+  --bg-dark:     #050709;
+  --accent:      #D4860A;
+  --amber-bright:#F5A623;
+  --text-dark:   #1A1A1A;
+  --text-light:  #F2EEE8;
+  --text-muted:  #8A8070;
+  --border:      #2A2C30;
+  --border-light:#D8D0C4;
+  --white:       #FFFFFF;
+}
+
+html, body {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10pt;
+  color: var(--text-dark);
+  background: #E0E0E0;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   PRINT SETUP
+   ============================================================ */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: transparent;
+  }
+  .page {
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+  .print-btn {
+    display: none !important;
+  }
+  .page {
+    page-break-after: always;
+  }
+  .page:last-child {
+    page-break-after: auto;
+  }
+}
+
+/* ============================================================
+   PAGE CONTAINER
+   ============================================================ */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+  margin: 10mm auto;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: column;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   BLUEPRINT GRID
+   ============================================================ */
+.blueprint-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,134,10,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,134,10,0.08) 1px, transparent 1px),
+    linear-gradient(rgba(212,134,10,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,134,10,0.03) 1px, transparent 1px);
+  background-size: 20mm 20mm, 20mm 20mm, 5mm 5mm, 5mm 5mm;
+  pointer-events: none;
+  z-index: 0;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+.blueprint-grid-light {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26,26,26,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,26,26,0.045) 1px, transparent 1px),
+    linear-gradient(rgba(26,26,26,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,26,26,0.018) 1px, transparent 1px);
+  background-size: 20mm 20mm, 20mm 20mm, 5mm 5mm, 5mm 5mm;
+  pointer-events: none;
+  z-index: 0;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   CORNER BRACKETS
+   ============================================================ */
+.corner-brackets {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.cb-tl, .cb-tr, .cb-br, .cb-bl {
+  position: absolute;
+  width: 14mm;
+  height: 14mm;
+  border-color: var(--accent);
+  border-style: solid;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.cb-tl { top: 7mm; left: 7mm; border-width: 1.5px 0 0 1.5px; }
+.cb-tr { top: 7mm; right: 7mm; border-width: 1.5px 1.5px 0 0; }
+.cb-br { bottom: 7mm; right: 7mm; border-width: 0 1.5px 1.5px 0; }
+.cb-bl { bottom: 7mm; left: 7mm; border-width: 0 0 1.5px 1.5px; }
+
+/* ============================================================
+   DIAGONAL DECORATIVE LINE
+   ============================================================ */
+.diagonal-line {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.diagonal-line::after {
+  content: '';
+  position: absolute;
+  top: 62%;
+  left: -10%;
+  width: 120%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #D4860A 30%, #F5A623 50%, #D4860A 70%, transparent 100%);
+  transform: rotate(-3.5deg);
+  opacity: 0.55;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   COMPACT PAGE HEADER (páginas 2–5)
+   ============================================================ */
+.page-header {
+  background: #050709;
+  width: 100%;
+  padding: 4mm 10mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 10;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.logo-compact {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18pt;
+  color: #FFFFFF;
+  letter-spacing: 0.08em;
+  z-index: 1;
+  position: relative;
+  line-height: 1;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.logo-compact .acc { color: #D4860A; }
+.logo-compact .sub {
+  font-size: 10pt;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+}
+.header-ref {
+  font-family: 'DM Mono', monospace;
+  font-size: 7pt;
+  color: #F2EEE8;
+  opacity: 0.7;
+  text-align: right;
+  z-index: 1;
+  position: relative;
+  line-height: 1.6;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.header-ref strong {
+  color: #D4860A;
+  display: block;
+  font-size: 8pt;
+  opacity: 1;
+}
+
+/* ============================================================
+   PAGE CONTENT AREA
+   ============================================================ */
+.page-content {
+  flex: 1;
+  padding: 8mm 12mm 6mm 12mm;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5mm;
+}
+
+/* ============================================================
+   PAGE FOOTER
+   ============================================================ */
+.page-footer {
+  padding: 3mm 12mm;
+  border-top: 1px solid #D8D0C4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.footer-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 6.5pt;
+  color: #8A8070;
+  letter-spacing: 0.02em;
+}
+.footer-page {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10pt;
+  color: #D4860A;
+  letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   SECTION TITLES
+   ============================================================ */
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16pt;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid #D4860A;
+  padding-bottom: 1.5mm;
+  margin-bottom: 0;
+  line-height: 1;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.section-subtitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 7pt;
+  color: #D4860A;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1mm;
+  font-weight: 600;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   INFO BLOCKS
+   ============================================================ */
+.info-block {
+  border: 1px solid #D8D0C4;
+  padding: 4mm 5mm;
+  position: relative;
+  background: #FFFFFF;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.block-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #D4860A;
+  margin-bottom: 3mm;
+  display: block;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.info-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5mm;
+  align-items: baseline;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.ir-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 7.5pt;
+  color: #8A8070;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  min-width: 38mm;
+  padding-right: 2mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.ir-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 7.5pt;
+  color: #1A1A1A;
+  font-weight: 400;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.ir-amber {
+  color: #D4860A;
+  font-style: italic;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+thead th {
+  background: #050709;
+  color: #F2EEE8;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2.5mm 3mm;
+  text-align: left;
+  border: 1px solid #2A2C30;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+tbody td {
+  padding: 2mm 3mm;
+  border: 1px solid #D8D0C4;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 8pt;
+  vertical-align: top;
+  color: #1A1A1A;
+  line-height: 1.45;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+tbody tr:nth-child(even) td {
+  background: #F7F5F2;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.td-mono {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 7.5pt !important;
+}
+.td-center { text-align: center; }
+.td-right  { text-align: right; }
+
+.row-total td {
+  background: #050709 !important;
+  color: #F5A623 !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 11pt !important;
+  letter-spacing: 0.06em;
+  border-color: #2A2C30 !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+.tag-sim {
+  display: inline-block;
+  background: #1A3A1A;
+  color: #5BC55B;
+  font-family: 'DM Mono', monospace;
+  font-size: 6pt;
+  padding: 0.5mm 2mm;
+  letter-spacing: 0.08em;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.tag-opc {
+  display: inline-block;
+  background: #2A220A;
+  color: #F5A623;
+  font-family: 'DM Mono', monospace;
+  font-size: 6pt;
+  padding: 0.5mm 2mm;
+  letter-spacing: 0.08em;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   NORM TAGS
+   ============================================================ */
+.norm-tags {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+  margin-top: 1mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.norm-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 6.5pt;
+  color: #D4860A;
+  border: 1px solid #D4860A;
+  padding: 0.8mm 2.5mm;
+  letter-spacing: 0.1em;
+  background: rgba(212,134,10,0.06);
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   NEGATIVE SCOPE BOX
+   ============================================================ */
+.neg-scope {
+  border: 1px solid #C04040;
+  background: #FDF5F5;
+  padding: 3.5mm 5mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.neg-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11pt;
+  color: #C04040;
+  letter-spacing: 0.06em;
+  margin-bottom: 2mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.neg-scope ul {
+  list-style: none;
+  padding: 0;
+}
+.neg-scope ul li {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 7.5pt;
+  color: #1A1A1A;
+  padding: 0.8mm 0 0.8mm 5mm;
+  position: relative;
+  border-bottom: 1px solid #F0DADA;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.neg-scope ul li:last-child { border-bottom: none; }
+.neg-scope ul li::before {
+  content: '✕';
+  color: #C04040;
+  position: absolute;
+  left: 0;
+  font-size: 6pt;
+  top: 1.2mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   PAYMENT OPTIONS
+   ============================================================ */
+.payment-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.payment-option {
+  border: 1px solid #D8D0C4;
+  padding: 3.5mm 4mm;
+  position: relative;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.payment-option.highlighted {
+  border-color: #D4860A;
+  background: rgba(212,134,10,0.04);
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.po-badge {
+  position: absolute;
+  top: -1px; right: -1px;
+  background: #D4860A;
+  color: #FFFFFF;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 6pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.5mm 2mm;
+  text-transform: uppercase;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.po-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12pt;
+  color: #D4860A;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 1.5mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.po-desc {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 7.5pt;
+  color: #1A1A1A;
+  line-height: 1.5;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   DELIVERY ROW
+   ============================================================ */
+.delivery-row {
+  display: flex;
+  gap: 3mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.delivery-item {
+  flex: 1;
+  border: 1px solid #D8D0C4;
+  padding: 3mm 4mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.di-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8A8070;
+  margin-bottom: 1mm;
+  display: block;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.di-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 7.5pt;
+  color: #1A1A1A;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   TERMS
+   ============================================================ */
+.terms-list {
+  list-style: none;
+  padding: 0;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.terms-list li {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 7.5pt;
+  color: #1A1A1A;
+  padding: 1.8mm 0 1.8mm 5mm;
+  border-bottom: 1px solid #E8E4DE;
+  position: relative;
+  line-height: 1.45;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.terms-list li::before {
+  content: '—';
+  color: #D4860A;
+  position: absolute;
+  left: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 7pt;
+}
+
+/* ============================================================
+   SIGNATURE BLOCK
+   ============================================================ */
+.signature-block {
+  border: 1px solid #D8D0C4;
+  padding: 5mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.sig-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #D4860A;
+  margin-bottom: 1mm;
+  display: block;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.sig-line {
+  border-top: 1px solid #1A1A1A;
+  margin-top: 14mm;
+  margin-bottom: 1.5mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.sig-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 7.5pt;
+  color: #1A1A1A;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.sig-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 7pt;
+  color: #8A8070;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.date-field-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8A8070;
+  margin-bottom: 0.5mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+.date-field-line {
+  border-bottom: 1px solid #1A1A1A;
+  width: 32mm;
+  height: 6mm;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+/* ============================================================
+   PRINT BUTTON
+   ============================================================ */
+.print-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #D4860A;
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 28px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14pt;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(212,134,10,0.4);
+  z-index: 9999;
+  transition: background 0.15s;
+}
+.print-btn:hover { background: #F5A623; }
+
+@media print { .print-btn { display: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PÁGINA 1 — CAPA
+     ============================================================ -->
+<div class="page" id="page-1" style="background:#050709; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+  <!-- Blueprint Grid dark -->
+  <div class="blueprint-grid" style="print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;"></div>
+  <!-- Diagonal decorativa -->
+  <div class="diagonal-line"></div>
+  <!-- Corner Brackets -->
+  <div class="corner-brackets">
+    <div class="cb-tl"></div>
+    <div class="cb-tr"></div>
+    <div class="cb-br"></div>
+    <div class="cb-bl"></div>
+  </div>
+
+  <!-- TOPO: marca técnica -->
+  <div style="position:relative; z-index:5; padding:10mm 14mm 0 14mm; display:flex; justify-content:space-between; align-items:flex-start; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+    <div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:34pt; color:#FFFFFF; letter-spacing:0.08em; line-height:1; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+        NPT<span style="color:#D4860A;">.</span>
+      </div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:8pt; color:#F2EEE8; letter-spacing:0.35em; text-transform:uppercase; opacity:0.65; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+        Engenharia de Segurança
+      </div>
+    </div>
+    <div style="text-align:right; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      <div style="font-family:'DM Mono',monospace; font-size:7pt; color:#D4860A; letter-spacing:0.15em; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">DOC / PC-001</div>
+      <div style="font-family:'DM Mono',monospace; font-size:7pt; color:#F2EEE8; opacity:0.45; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">REV. 00 · CONFIDENCIAL</div>
+    </div>
+  </div>
+
+  <!-- CENTRO: Título principal -->
+  <div style="position:relative; z-index:5; flex:1; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:0 14mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+    <div style="font-family:'Barlow Condensed',sans-serif; font-size:8pt; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#D4860A; margin-bottom:3mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      Documento Técnico-Comercial
+    </div>
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:58pt; color:#FFFFFF; letter-spacing:0.04em; line-height:0.9; margin-bottom:4mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      PROPOSTA<br>COMERCIAL
+    </div>
+    <div style="width:28mm; height:2px; background:#D4860A; margin-bottom:5mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;"></div>
+    <div style="font-family:'DM Mono',monospace; font-size:10.5pt; color:#D4860A; letter-spacing:0.12em; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      REF: NPT-<span style="color:#F5A623;">[001]</span>-2026
+    </div>
+
+    <!-- Client Block -->
+    <div style="margin-top:16mm; border:1px solid rgba(212,134,10,0.45); padding:5mm 7mm; background:rgba(212,134,10,0.06); max-width:118mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:6.5pt; font-weight:700; letter-spacing:0.28em; text-transform:uppercase; color:#D4860A; margin-bottom:2.5mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Elaborado Para</div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:22pt; color:#FFFFFF; letter-spacing:0.06em; line-height:1; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">[NOME DO CLIENTE]</div>
+      <div style="font-family:'DM Mono',monospace; font-size:7.5pt; color:#F2EEE8; opacity:0.6; margin-top:2mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">[Razão Social ou Nome do Responsável]</div>
+    </div>
+
+    <!-- Service type tag -->
+    <div style="margin-top:5mm; display:flex; gap:2mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      <div style="font-family:'DM Mono',monospace; font-size:6.5pt; color:#D4860A; border:1px solid rgba(212,134,10,0.5); padding:1mm 3mm; letter-spacing:0.1em; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Pressurização de Escadas</div>
+      <div style="font-family:'DM Mono',monospace; font-size:6.5pt; color:#D4860A; border:1px solid rgba(212,134,10,0.5); padding:1mm 3mm; letter-spacing:0.1em; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">NBR 9077</div>
+      <div style="font-family:'DM Mono',monospace; font-size:6.5pt; color:#D4860A; border:1px solid rgba(212,134,10,0.5); padding:1mm 3mm; letter-spacing:0.1em; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">IT-11 CBPMESP</div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ DA CAPA -->
+  <div style="position:relative; z-index:5; padding:6mm 14mm; border-top:1px solid rgba(242,238,232,0.1); display:grid; grid-template-columns:1fr 1fr 1fr; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+    <div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:6.5pt; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#D4860A; margin-bottom:1mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Data de Emissão</div>
+      <div style="font-family:'DM Mono',monospace; font-size:8pt; color:#F2EEE8; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">[DD/MM/AAAA]</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:6.5pt; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#D4860A; margin-bottom:1mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Validade</div>
+      <div style="font-family:'DM Mono',monospace; font-size:8pt; color:#F2EEE8; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">15 dias corridos</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-size:6.5pt; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#D4860A; margin-bottom:1mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Engenheiro Responsável</div>
+      <div style="font-family:'DM Mono',monospace; font-size:8pt; color:#F2EEE8; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">[Nome do Engenheiro]</div>
+      <div style="font-family:'DM Mono',monospace; font-size:7pt; color:#F2EEE8; opacity:0.45; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">CREA-SP [000000-D]</div>
+    </div>
+  </div>
+  <div style="text-align:center; padding-bottom:4mm; font-family:'Bebas Neue',sans-serif; font-size:8pt; color:#D4860A; letter-spacing:0.2em; opacity:0.45; position:relative; z-index:5; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">01 / 05</div>
+</div><!-- /page-1 -->
+
+
+<!-- ============================================================
+     PÁGINA 2 — DADOS DO PROPONENTE E DO CLIENTE
+     ============================================================ -->
+<div class="page" id="page-2">
+  <div class="blueprint-grid-light"></div>
+
+  <div class="page-header">
+    <div class="logo-compact">NPT<span class="acc">.</span> <span class="sub">Engenharia de Segurança</span></div>
+    <div class="header-ref">
+      <strong>REF: NPT-[001]-2026</strong>
+      Identificação das Partes · Pág. 02 de 05
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Dados do Proponente -->
+    <div>
+      <div class="section-subtitle">Identificação do Proponente</div>
+      <div class="section-title">Dados da NPT Engenharia</div>
+    </div>
+
+    <div class="info-block">
+      <span class="block-label">NPT Engenharia de Segurança Contra Incêndio — Contratada</span>
+      <div class="two-col">
+        <div>
+          <div class="info-row">
+            <span class="ir-label">Razão Social</span>
+            <span class="ir-value">[NPT Engenharia Ltda.]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">CNPJ</span>
+            <span class="ir-value td-mono">[XX.XXX.XXX/0001-XX]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">CREA-SP Reg.</span>
+            <span class="ir-value td-mono">[000000-D]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Resp. Técnico</span>
+            <span class="ir-value">[Nome do Engenheiro]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Especialidade</span>
+            <span class="ir-value">Eng. Seg. Contra Incêndio e Pânico</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-row">
+            <span class="ir-label">Endereço</span>
+            <span class="ir-value">[Rua, Nº — Bairro, Cidade/SP]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">CEP</span>
+            <span class="ir-value td-mono">[00000-000]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Telefone</span>
+            <span class="ir-value td-mono">[+55 (11) 9 XXXX-XXXX]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">E-mail</span>
+            <span class="ir-value td-mono">[contato@nptengenharia.com.br]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Site</span>
+            <span class="ir-value td-mono">[www.nptengenharia.com.br]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dados do Cliente -->
+    <div>
+      <div class="section-subtitle">Identificação do Contratante</div>
+      <div class="section-title">Dados do Cliente</div>
+    </div>
+
+    <div class="info-block" style="border-left:3px solid #D4860A;">
+      <span class="block-label">Contratante — Empresa ou Pessoa Física Responsável pela Obra</span>
+      <div class="two-col">
+        <div>
+          <div class="info-row">
+            <span class="ir-label">Empresa / Nome</span>
+            <span class="ir-value ir-amber">[Nome do Cliente ou Empresa]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">CNPJ / CPF</span>
+            <span class="ir-value td-mono ir-amber">[XX.XXX.XXX/0001-XX]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Insc. Estadual</span>
+            <span class="ir-value ir-amber">[ISENTO / XXXXXXXXXX]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Endereço</span>
+            <span class="ir-value ir-amber">[Rua, Nº — Bairro]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Cidade / UF</span>
+            <span class="ir-value ir-amber">[Cidade — SP]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">CEP</span>
+            <span class="ir-value td-mono ir-amber">[00000-000]</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-row">
+            <span class="ir-label">Responsável</span>
+            <span class="ir-value ir-amber">[Nome do Responsável]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Cargo / Função</span>
+            <span class="ir-value ir-amber">[Proprietário / Gestor / Síndico]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">CPF Resp.</span>
+            <span class="ir-value td-mono ir-amber">[XXX.XXX.XXX-XX]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Telefone</span>
+            <span class="ir-value td-mono ir-amber">[+55 (11) 9 XXXX-XXXX]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">E-mail</span>
+            <span class="ir-value td-mono ir-amber">[email@cliente.com.br]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Whatsapp</span>
+            <span class="ir-value td-mono ir-amber">[+55 (11) 9 XXXX-XXXX]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Objeto da Proposta -->
+    <div>
+      <div class="section-subtitle">Caracterização do Objeto Contratado</div>
+      <div class="section-title">Objeto da Proposta</div>
+    </div>
+
+    <div class="info-block" style="border-left:3px solid #D4860A;">
+      <span class="block-label">Detalhamento da Edificação e do Serviço Proposto</span>
+      <div class="two-col">
+        <div>
+          <div class="info-row">
+            <span class="ir-label">Tipo de Projeto</span>
+            <span class="ir-value">Pressurização de Escadas de Emergência</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Norma Principal</span>
+            <span class="ir-value td-mono">ABNT NBR 9077:2001</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Normativa Estatal</span>
+            <span class="ir-value td-mono">IT-11 / CBPMESP</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Endereço da Obra</span>
+            <span class="ir-value ir-amber">[Endereço completo]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Município / CEP</span>
+            <span class="ir-value ir-amber">[Cidade/SP — 00000-000]</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-row">
+            <span class="ir-label">Nº de Pavimentos</span>
+            <span class="ir-value ir-amber">[XX pavimentos]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Uso / Ocupação</span>
+            <span class="ir-value ir-amber">[Residencial / Comercial / Misto]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Área Total (m²)</span>
+            <span class="ir-value ir-amber">[X.XXX,00 m²]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Tipo de Escada</span>
+            <span class="ir-value ir-amber">[Enclausurada / PFP]</span>
+          </div>
+          <div class="info-row">
+            <span class="ir-label">Fase</span>
+            <span class="ir-value ir-amber">[Projeto Novo / Regularização]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-text">NPT Engenharia · CNPJ [XX.XXX.XXX/0001-XX] · CREA-SP [000000-D] · REF: NPT-[001]-2026</span>
+    <span class="footer-page">02 / 05</span>
+  </div>
+</div><!-- /page-2 -->
+
+
+<!-- ============================================================
+     PÁGINA 3 — ESCOPO DOS SERVIÇOS
+     ============================================================ -->
+<div class="page" id="page-3">
+  <div class="blueprint-grid-light"></div>
+
+  <div class="page-header">
+    <div class="logo-compact">NPT<span class="acc">.</span> <span class="sub">Engenharia de Segurança</span></div>
+    <div class="header-ref">
+      <strong>REF: NPT-[001]-2026</strong>
+      Escopo de Serviços · Pág. 03 de 05
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div>
+      <div class="section-subtitle">Definição Técnica do Escopo</div>
+      <div class="section-title">Escopo dos Serviços</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:8mm;">Nº</th>
+          <th style="width:88mm;">Descrição do Serviço / Entregável</th>
+          <th style="width:16mm;" class="td-center">Incluso</th>
+          <th>Observações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">01</td>
+          <td><strong>Memorial de Cálculo</strong> — Dimensionamento completo do sistema de pressurização conforme NBR 9077 e IT-11/CBPMESP: definição de vazão de ar, pressão diferencial mínima, velocidade de ar na porta aberta e selagem de vãos por pavimento.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">NBR 9077 / IT-11</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">02</td>
+          <td><strong>Projeto Gráfico — Plantas Baixas</strong> — Representação técnica por pavimento com locação dos equipamentos (ventiladores, dampers, venezianas de sobrepressão), dutos de insuflação, rotas de ar e pontos de medição.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">DWG + PDF</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">03</td>
+          <td><strong>Corte Esquemático Vertical</strong> — Representação em corte da edificação com indicação de equipamentos por pavimento, dutos principais, cobertura técnica e diagrama de pressões diferenciais.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">DWG + PDF</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">04</td>
+          <td><strong>Memorial Descritivo</strong> — Documento técnico narrativo com descrição do sistema, especificação de materiais e equipamentos (ventiladores, dampers, CLPs, sensores), critérios de projeto adotados e normas de referência utilizadas.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">PDF</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">05</td>
+          <td><strong>Especificação Técnica de Equipamentos</strong> — Lista de materiais com especificações mínimas dos ventiladores, dampers automáticos, painéis de controle e sensores, para cotação junto a fornecedores pelo cliente.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">Excel / PDF</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">06</td>
+          <td><strong>Protocolo junto ao CBPMESP</strong> — Preparação e envio eletrônico do processo no sistema SIPREV / Bombeiros do Estado de São Paulo, com organização e conferência do dossiê técnico antes do protocolo.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">Via SIPREV</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">07</td>
+          <td><strong>Acompanhamento de Exigências CBPMESP</strong> — Análise das exigências emitidas pelo Corpo de Bombeiros, elaboração de respostas técnicas e adequação do projeto até a aprovação no 1º ciclo de análise.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">1 ciclo incluso</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">08</td>
+          <td><strong>ART de Projeto (CREA-SP)</strong> — Emissão da Anotação de Responsabilidade Técnica pelo engenheiro responsável, referente à elaboração do projeto de pressurização de escadas, com pagamento da taxa de recolhimento.</td>
+          <td class="td-center"><span class="tag-sim">SIM</span></td>
+          <td class="td-mono" style="font-size:7pt;">Taxa inclusa</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A;">09</td>
+          <td><strong>Laudo de Vistoria Prévia</strong> — Vistoria técnica na edificação para levantamento de condições existentes, identificação de interferências construtivas e avaliação de adequabilidade estrutural para implantação do sistema.</td>
+          <td class="td-center"><span class="tag-opc">OPC</span></td>
+          <td class="td-mono" style="font-size:7pt;">Sob solicitação</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Norm Tags -->
+    <div class="norm-tags">
+      <span class="norm-tag">ABNT NBR 9077</span>
+      <span class="norm-tag">IT-11 / CBPMESP</span>
+      <span class="norm-tag">NBR 14880</span>
+      <span class="norm-tag">NBR 10898</span>
+      <span class="norm-tag">CREA-SP</span>
+      <span class="norm-tag">SIPREV</span>
+    </div>
+
+    <!-- Escopo negativo -->
+    <div class="neg-scope">
+      <div class="neg-title">Serviços NÃO Inclusos nesta Proposta</div>
+      <ul>
+        <li>Projeto de execução / detalhamento construtivo para obras (disponível como serviço adicional)</li>
+        <li>Fornecimento, instalação ou comissionamento de equipamentos, dutos e materiais</li>
+        <li>Projetos de outros sistemas: hidrantes, sprinklers, detecção e alarme de incêndio</li>
+        <li>Ciclos adicionais de exigências CBPMESP além do 1º ciclo incluso</li>
+        <li>Vistorias pós-obras e emissão do Auto de Vistoria do Corpo de Bombeiros (AVCB)</li>
+        <li>Projetos de outras especialidades: elétrico, estrutural, hidrossanitário, climatização</li>
+        <li>Taxa de protocolo CBPMESP (recolhida pelo proprietário / responsável pela obra)</li>
+        <li>Regularização de outras pendências junto à Prefeitura ou demais órgãos fiscalizadores</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-text">Escopo válido conforme descrição acima · Alterações de escopo devem ser formalizadas por adendo · REF: NPT-[001]-2026</span>
+    <span class="footer-page">03 / 05</span>
+  </div>
+</div><!-- /page-3 -->
+
+
+<!-- ============================================================
+     PÁGINA 4 — PRAZO, INVESTIMENTO E CONDIÇÕES
+     ============================================================ -->
+<div class="page" id="page-4">
+  <div class="blueprint-grid-light"></div>
+
+  <div class="page-header">
+    <div class="logo-compact">NPT<span class="acc">.</span> <span class="sub">Engenharia de Segurança</span></div>
+    <div class="header-ref">
+      <strong>REF: NPT-[001]-2026</strong>
+      Prazo e Investimento · Pág. 04 de 05
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Cronograma -->
+    <div>
+      <div class="section-subtitle">Planejamento de Execução</div>
+      <div class="section-title">Cronograma de Desenvolvimento</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:10mm;">Fase</th>
+          <th>Atividade e Entregável</th>
+          <th style="width:26mm;" class="td-center">Prazo (dias úteis)</th>
+          <th style="width:28mm;" class="td-center">Responsável</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A; font-weight:600;">F1</td>
+          <td><strong>Recebimento e análise documental</strong> — Plantas arquitetônicas, memorial da edificação, dados técnicos da escada e número de pavimentos. Conferência de viabilidade técnica.</td>
+          <td class="td-mono td-center">1 – 2</td>
+          <td class="td-center" style="font-size:7.5pt;">NPT Engenharia</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A; font-weight:600;">F2</td>
+          <td><strong>Memorial de cálculo</strong> — Dimensionamento conforme NBR 9077: vazão de ar, pressão diferencial por pavimento, velocidade na porta, seleção de ventiladores e dampers.</td>
+          <td class="td-mono td-center">5 – 8</td>
+          <td class="td-center" style="font-size:7.5pt;">NPT Engenharia</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A; font-weight:600;">F3</td>
+          <td><strong>Projeto gráfico em CAD</strong> — Plantas baixas por pavimento e corte vertical do sistema. Locação de todos os equipamentos, dutos e rotas de ar.</td>
+          <td class="td-mono td-center">5 – 8</td>
+          <td class="td-center" style="font-size:7.5pt;">NPT Engenharia</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A; font-weight:600;">F4</td>
+          <td><strong>Memorial descritivo e especificação técnica</strong> — Documentação narrativa, lista de materiais e especificações de equipamentos para cotação.</td>
+          <td class="td-mono td-center">2 – 3</td>
+          <td class="td-center" style="font-size:7.5pt;">NPT Engenharia</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A; font-weight:600;">F5</td>
+          <td><strong>Revisão interna, ART e entrega</strong> — Verificação técnica final, emissão da ART CREA-SP e envio do dossiê completo ao cliente (PDF + DWG).</td>
+          <td class="td-mono td-center">2 – 3</td>
+          <td class="td-center" style="font-size:7.5pt;">NPT Engenharia</td>
+        </tr>
+        <tr>
+          <td class="td-mono td-center" style="color:#D4860A; font-weight:600;">F6</td>
+          <td><strong>Protocolo e acompanhamento CBPMESP</strong> — Organização do processo, protocolo no SIPREV e monitoramento de exigências até aprovação (1 ciclo incluso).</td>
+          <td class="td-mono td-center">Após entrega</td>
+          <td class="td-center" style="font-size:7.5pt;">NPT + Cliente</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="font-family:'DM Mono',monospace; font-size:7pt; color:#8A8070; padding:1mm 0; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      Prazo total estimado (F1 a F5): <strong style="color:#D4860A;">15 – 24 dias úteis</strong> contados a partir da assinatura e recebimento integral dos documentos técnicos da edificação.
+    </div>
+
+    <!-- Tabela de Investimento -->
+    <div>
+      <div class="section-subtitle">Valores Comerciais</div>
+      <div class="section-title">Tabela de Investimento</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Serviço / Entregável</th>
+          <th style="width:34mm;" class="td-right">Valor (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Projeto completo de pressurização de escadas de emergência (memorial de cálculo + plantas baixas por pavimento + corte + memorial descritivo)</td>
+          <td class="td-mono td-right" style="color:#D4860A; font-weight:500;">[X.XXX,00]</td>
+        </tr>
+        <tr>
+          <td>ART de projeto junto ao CREA-SP (inclui taxa de recolhimento)</td>
+          <td class="td-mono td-right" style="color:#D4860A; font-weight:500;">[XXX,00]</td>
+        </tr>
+        <tr>
+          <td>Protocolo e acompanhamento junto ao CBPMESP — 1 ciclo de exigências</td>
+          <td class="td-mono td-right" style="color:#D4860A; font-weight:500;">[XXX,00]</td>
+        </tr>
+        <tr>
+          <td>Especificação técnica de equipamentos e lista de materiais</td>
+          <td class="td-mono td-right">Incluso</td>
+        </tr>
+        <tr>
+          <td>1 rodada de revisão do projeto (conforme solicitação do cliente)</td>
+          <td class="td-mono td-right">Incluso</td>
+        </tr>
+        <tr class="row-total">
+          <td><strong>TOTAL DA PROPOSTA</strong></td>
+          <td class="td-right"><strong>[X.XXX,00]</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="font-family:'DM Mono',monospace; font-size:6.5pt; color:#8A8070; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      Valores em Reais (R$). Não incluem ISS (alíquota municipal vigente na data de emissão da nota fiscal).
+    </div>
+
+    <!-- Condições de Pagamento -->
+    <div>
+      <div class="section-subtitle">Formas de Pagamento Disponíveis</div>
+      <div class="section-title">Condições Comerciais</div>
+    </div>
+
+    <div class="payment-options">
+      <div class="payment-option highlighted">
+        <div class="po-badge">Recomendada</div>
+        <span class="po-label">Opção A</span>
+        <div class="po-desc">
+          <strong>50% na assinatura</strong> do contrato e <strong>50% na entrega</strong> do projeto completo.<br><br>
+          Formas aceitas: PIX, TED ou boleto bancário.<br><br>
+          Sem acréscimo sobre o valor total.
+        </div>
+      </div>
+      <div class="payment-option">
+        <span class="po-label">Opção B</span>
+        <div class="po-desc">
+          <strong>100% antecipado</strong> no ato da assinatura do contrato.<br><br>
+          <strong style="color:#D4860A;">Desconto de 5%</strong> sobre o valor total da proposta.<br><br>
+          Formas aceitas: PIX ou TED.
+        </div>
+      </div>
+      <div class="payment-option">
+        <span class="po-label">Opção C</span>
+        <div class="po-desc">
+          <strong>3× sem juros</strong> no cartão de crédito (sujeito a acordo prévio).<br><br>
+          Disponível somente para projetos acima de R$ 3.000,00.<br><br>
+          Consultar disponibilidade.
+        </div>
+      </div>
+    </div>
+
+    <!-- Validade e entrega -->
+    <div class="delivery-row">
+      <div class="delivery-item">
+        <span class="di-label">Validade desta Proposta</span>
+        <div class="di-value">15 dias corridos a partir da data de emissão</div>
+      </div>
+      <div class="delivery-item">
+        <span class="di-label">Formato de Entrega</span>
+        <div class="di-value">PDF + DWG (CAD) via e-mail</div>
+      </div>
+      <div class="delivery-item">
+        <span class="di-label">Revisões Incluídas</span>
+        <div class="di-value">1 rodada de revisão sem custo adicional</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-text">Preços sujeitos a revisão após vencimento da proposta · Ciclos adicionais CBPMESP: R$ [XXX,00]/ciclo</span>
+    <span class="footer-page">04 / 05</span>
+  </div>
+</div><!-- /page-4 -->
+
+
+<!-- ============================================================
+     PÁGINA 5 — TERMOS E ASSINATURA
+     ============================================================ -->
+<div class="page" id="page-5">
+  <div class="blueprint-grid-light"></div>
+
+  <div class="page-header">
+    <div class="logo-compact">NPT<span class="acc">.</span> <span class="sub">Engenharia de Segurança</span></div>
+    <div class="header-ref">
+      <strong>REF: NPT-[001]-2026</strong>
+      Termos e Aceite · Pág. 05 de 05
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div>
+      <div class="section-subtitle">Condições Gerais de Contratação</div>
+      <div class="section-title">Termos da Proposta</div>
+    </div>
+
+    <ul class="terms-list">
+      <li><strong>Objeto.</strong> Esta proposta refere-se exclusivamente ao escopo descrito na página 03. Qualquer serviço adicional será objeto de proposta complementar, com novo orçamento e aceite formal do contratante antes do início.</li>
+      <li><strong>Documentação necessária.</strong> O início dos trabalhos é condicionado ao recebimento das plantas arquitetônicas (DWG ou PDF legível), memorial de cálculo estrutural (quando exigido) e demais informações técnicas indicadas pelo responsável da NPT Engenharia. Atrasos no envio de documentação pelo cliente impactam diretamente o prazo de entrega.</li>
+      <li><strong>Prazo de execução.</strong> O prazo é contado em dias úteis a partir da assinatura desta proposta e do recebimento integral dos documentos técnicos. A NPT Engenharia não se responsabiliza por atrasos decorrentes de demoras do cliente no fornecimento de informações ou aprovações intermediárias.</li>
+      <li><strong>Revisões.</strong> Está inclusa uma (1) rodada de revisão, solicitada formalmente em até 10 dias corridos após o recebimento do projeto. Alterações de escopo, mudança de planta arquitetônica ou de uso após o início dos trabalhos configuram escopo adicional e serão orçadas separadamente.</li>
+      <li><strong>Propriedade intelectual.</strong> Os arquivos entregues são de uso exclusivo do contratante para a obra objeto desta proposta. É vedada a reprodução, cessão ou adaptação para outros empreendimentos sem autorização formal da NPT Engenharia e novo recolhimento de ART.</li>
+      <li><strong>Responsabilidade técnica.</strong> A NPT Engenharia responde tecnicamente pela conformidade do projeto com as normas ABNT e regulamentações do CBPMESP vigentes na data de emissão. Revisões normativas posteriores à entrega final não são de responsabilidade da contratada, sendo eventuais adequações objeto de nova proposta.</li>
+      <li><strong>Aprovação no CBPMESP.</strong> A NPT Engenharia envidará os melhores esforços para aprovação do projeto no Corpo de Bombeiros. Exigências além do 1º ciclo incluso — originadas de mudanças normativas, alterações de projeto pelo cliente ou informações incorretas fornecidas — configuram escopo adicional faturado separadamente.</li>
+      <li><strong>Cancelamento.</strong> Em caso de desistência após o início dos serviços, o contratante deverá remunerar os serviços proporcionalmente executados, apurados por relatório técnico apresentado pela NPT Engenharia, sem prejuízo de outros direitos previstos em lei.</li>
+      <li><strong>Confidencialidade.</strong> As informações técnicas e comerciais constantes nesta proposta são de caráter confidencial. O contratante compromete-se a não divulgá-las a terceiros sem consentimento prévio e por escrito da NPT Engenharia.</li>
+      <li><strong>Foro.</strong> As partes elegem o foro da comarca de [Cidade/SP] para dirimir eventuais litígios decorrentes desta contratação, com renúncia a qualquer outro, por mais privilegiado que seja.</li>
+    </ul>
+
+    <!-- Aceite -->
+    <div>
+      <div class="section-subtitle">Formalização do Acordo</div>
+      <div class="section-title">Aceite da Proposta</div>
+    </div>
+
+    <div style="font-family:'Barlow Condensed',sans-serif; font-size:8pt; color:#1A1A1A; line-height:1.5; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      Ao assinar este documento, o contratante declara ter lido, compreendido e aceito na íntegra os termos, o escopo, os valores e as condições comerciais descritos nesta proposta, e autoriza formalmente o início dos serviços da NPT Engenharia.
+    </div>
+
+    <div class="signature-block">
+      <!-- Assinatura Cliente -->
+      <div>
+        <span class="sig-label">Pelo Contratante</span>
+        <div class="sig-line"></div>
+        <div class="sig-name">[Nome Completo do Responsável]</div>
+        <div class="sig-sub">[Cargo] · [Empresa / CPF]</div>
+        <div style="display:flex; gap:8mm; margin-top:3mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+          <div>
+            <div class="date-field-label">Data de Aceite</div>
+            <div class="date-field-line"></div>
+          </div>
+          <div>
+            <div class="date-field-label">Local</div>
+            <div class="date-field-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assinatura NPT -->
+      <div>
+        <span class="sig-label">Pelo Proponente — NPT Engenharia</span>
+        <div class="sig-line"></div>
+        <div class="sig-name">[Nome do Engenheiro Responsável]</div>
+        <div class="sig-sub">Engenheiro Responsável · CREA-SP [000000-D]</div>
+        <div style="display:flex; gap:8mm; margin-top:3mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+          <div>
+            <div class="date-field-label">Data</div>
+            <div class="date-field-line"></div>
+          </div>
+          <div>
+            <div class="date-field-label">Carimbo / Visto</div>
+            <div class="date-field-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ART / Protocolo -->
+    <div style="border:1px dashed #D8D0C4; padding:3mm 5mm; display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:6.5pt; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#8A8070; margin-bottom:1mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Número ART CREA-SP</div>
+        <div style="font-family:'DM Mono',monospace; font-size:9pt; color:#D4860A; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">[XXXXXXXXXXXX]</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:6pt; color:#8A8070; margin-top:0.5mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Preenchido após emissão</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:6.5pt; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#8A8070; margin-bottom:1mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Registro CREA-SP</div>
+        <div style="font-family:'DM Mono',monospace; font-size:9pt; color:#D4860A; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">[000000-D]</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:6pt; color:#8A8070; margin-top:0.5mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Engenheiro responsável</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:6.5pt; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#8A8070; margin-bottom:1mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Protocolo CBPMESP</div>
+        <div style="font-family:'DM Mono',monospace; font-size:9pt; color:#D4860A; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">[Nº após protocolo]</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:6pt; color:#8A8070; margin-top:0.5mm; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">Sistema SIPREV</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer final página 5 -->
+  <div class="page-footer" style="flex-direction:column; align-items:stretch; gap:2mm; padding:3mm 12mm;">
+    <div style="height:1px; background:#D4860A; opacity:0.4; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;"></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      <span class="footer-text">Esta proposta foi elaborada de acordo com as normas ABNT vigentes e regulamentações do CBPMESP · Documento confidencial · REF: NPT-[001]-2026</span>
+      <span class="footer-page">05 / 05</span>
+    </div>
+    <div style="text-align:center; font-family:'DM Mono',monospace; font-size:6pt; color:#8A8070; letter-spacing:0.08em; print-color-adjust:exact !important; -webkit-print-color-adjust:exact !important;">
+      NPT Engenharia de Segurança · [contato@nptengenharia.com.br] · [+55 (11) 9 XXXX-XXXX] · CREA-SP [000000-D]
+    </div>
+  </div>
+</div><!-- /page-5 -->
+
+<!-- Botão de impressão -->
+<button class="print-btn" onclick="window.print()">Imprimir PDF</button>
+
+</body>
+</html>
