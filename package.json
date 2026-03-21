@@ -12,6 +12,7 @@
     "vite": "^6.4.1"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8"
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/sora": "^5.2.8"
   }
 }
