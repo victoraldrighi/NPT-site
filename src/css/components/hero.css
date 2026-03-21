@@ -79,11 +79,9 @@
   margin-top: 2px;
 }
 
-/* Coordenadas técnicas — no fluxo em mobile, absoluto no desktop */
+/* Coordenadas técnicas — oculto em mobile, absoluto no desktop */
 .hero__coords {
-  margin-top: var(--sp-6);
-  animation: fadeIn 0.5s 1.4s ease both;
-  opacity: 0;
+  display: none;
 }
 
 .hero__coords span {
@@ -401,13 +399,15 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /* Coords volta a ser absoluto no desktop — fica fora do fluxo do conteúdo */
+  /* Coords — absoluto ao .hero, canto inferior esquerdo fora do container */
   .hero__coords {
+    display: block;
     position: absolute;
     bottom: var(--sp-6);
     left: var(--sp-10);
-    margin-top: 0;
     z-index: 3;
+    animation: fadeIn 0.5s 1.4s ease both;
+    opacity: 0;
   }
 
   .hero__badge {
