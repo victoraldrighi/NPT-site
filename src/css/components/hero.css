@@ -16,24 +16,28 @@
   overflow: hidden;
 }
 
-/* Blueprint grid de fundo — o padrão que define o site */
+/* Blueprint grid de fundo — parallax via JS */
 .hero::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -10% 0;
   background-image: var(--blueprint-grid);
   background-size: 48px 48px;
   opacity: 1;
+  transform: translateY(var(--parallax-y, 0));
+  will-change: transform;
 }
 
 /* Grade maior com divisórias de módulo */
 .hero::after {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -10% 0;
   background-image: var(--blueprint-grid-strong);
   background-size: 240px 240px;
   opacity: 0.6;
+  transform: translateY(calc(var(--parallax-y, 0) * 0.6));
+  will-change: transform;
 }
 
 .hero__container {
@@ -220,10 +224,25 @@
   padding: var(--sp-5) var(--sp-6);
   position: relative;
   transition: background var(--t-base);
+  overflow: hidden;
+}
+
+/* Glow âmbar no hover — efeito de instrumento ativado */
+.hero__stat-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(212,134,10,0.12), transparent);
+  opacity: 0;
+  transition: opacity var(--t-base);
 }
 
 .hero__stat-item:hover {
   background: var(--ink-mid);
+}
+
+.hero__stat-item:hover::after {
+  opacity: 1;
 }
 
 /* Número de referência interno */

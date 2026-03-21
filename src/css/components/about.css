@@ -169,58 +169,104 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-6);
-  max-width: 60rem;
+  gap: 1px; /* gap técnico — como grade modular */
+  background: var(--ink-border);
+  border: 1px solid var(--ink-border);
+  max-width: 64rem;
   margin: 0 auto;
 }
 
+/* Card sem radius — Precision Industrial */
 .differential {
-  display: flex;
-  gap: var(--space-5);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-5);
   align-items: flex-start;
-  background: var(--gradient-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
+  background: var(--ink-soft);
+  padding: var(--sp-8) var(--sp-8);
+  position: relative;
+  transition: background var(--t-slow);
+  overflow: hidden;
+}
+
+/* Linha âmbar que cresce no hover — mesmo padrão do service-card */
+.differential::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+
+/* Número técnico de referência no canto */
+.differential::after {
+  content: attr(data-index);
+  position: absolute;
+  bottom: var(--sp-3);
+  right: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.12em;
 }
 
 .differential:hover {
-  border-color: var(--color-border-accent);
-  box-shadow: 0 8px 32px -8px rgba(245, 166, 35, 0.15);
+  background: var(--ink-mid);
 }
 
+.differential:hover::before {
+  transform: scaleX(1);
+}
+
+/* Ícone — borda técnica, sem radius */
 .differential__icon {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(245, 166, 35, 0.1);
-  border: 1px solid var(--color-border-accent);
-  border-radius: var(--radius-lg);
-  color: var(--color-brand-accent);
+  border: 1px solid var(--ink-border);
+  color: var(--amber);
   flex-shrink: 0;
+  transition: border-color var(--t-base), background var(--t-base);
+}
+
+.differential:hover .differential__icon {
+  border-color: var(--amber);
+  background: rgba(212,134,10,0.08);
 }
 
 .differential__icon svg {
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.25rem;
+  height: 1.25rem;
   display: block;
 }
 
 .differential__title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-heading);
-  margin-bottom: var(--space-1);
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chalk);
+  margin-bottom: var(--sp-2);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  transition: color var(--t-base);
+}
+
+.differential:hover .differential__title {
+  color: var(--amber-pale);
 }
 
 .differential__desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  line-height: var(--line-height-body);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
 }
 
 @media (min-width: 48rem) {
