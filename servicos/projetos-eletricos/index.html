@@ -89,9 +89,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para a página inicial">
-        <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
-          <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
-        </svg>
+        <span class="site-logo__mark">NPT</span><span class="site-logo__text">Engenharia</span>
       </a>
       <nav class="site-nav" aria-label="Navegação principal">
         <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Abrir menu de navegação" />
@@ -107,7 +105,7 @@
           <li><a href="/servicos/projetos-eletricos/">Elétrica</a></li>
           <li><a href="/sobre/">Sobre</a></li>
           <li><a href="/contato/">Contato</a></li>
-          <li><a href="tel:+55119XXXXXXXX" aria-label="Ligar para NPT Engenharia: (11) 9 0000-0000" class="nav-phone">(11) 9 0000-0000</a></li>
+          <li><a href="/contato/" class="nav-cta">Solicitar Orçamento</a></li>
         </ul>
       </nav>
     </div>
@@ -123,7 +121,7 @@
       </ol>
     </nav>
 
-    <article class="service-article">
+    <article class="service-article" data-reveal>
       <div class="container">
 
         <h1>Projetos Elétricos de Baixa Tensão</h1>
@@ -143,7 +141,7 @@
           aprovação junto a prefeituras e concessionárias de energia elétrica.
         </p>
 
-        <section>
+        <section data-reveal>
           <h2>Quando é obrigatório</h2>
           <p>
             Um projeto elétrico assinado por engenheiro eletricista com registro ativo no
@@ -167,7 +165,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-reveal>
           <h2>Como desenvolvemos o projeto</h2>
           <p>
             O desenvolvimento de projetos elétricos na NPT Engenharia segue quatro etapas
@@ -206,7 +204,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-reveal>
           <h2>Especificações técnicas</h2>
           <dl class="service-specs">
             <dt>Normas aplicáveis</dt>
@@ -232,7 +230,7 @@
           </dl>
         </section>
 
-        <section>
+        <section data-reveal>
           <h2>Por que escolher a NPT Engenharia</h2>
           <ul>
             <li>
@@ -263,7 +261,7 @@
           </ul>
         </section>
 
-        <section class="service-faq" aria-labelledby="faq-eletrica">
+        <section class="service-faq" aria-labelledby="faq-eletrica" data-reveal>
           <h2 id="faq-eletrica">Perguntas frequentes</h2>
           <details class="faq-item">
             <summary>O que inclui um projeto elétrico de baixa tensão conforme NBR 5410?</summary>
@@ -288,7 +286,7 @@
       </div>
     </article>
 
-    <section class="service-cta">
+    <section class="service-cta" data-reveal>
       <div class="container">
         <h2>Solicite um orçamento para seu projeto elétrico</h2>
         <p>Projetos NBR 5410 com ART para todo o Brasil, entrega em até 15 dias úteis.</p>
@@ -307,24 +305,54 @@
 
   </main>
 
-  <footer class="site-footer" id="contato">
+  <footer class="site-footer">
     <div class="container site-footer__inner">
-      <div class="site-footer__brand">
-        <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para o início">
-          <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" focusable="false">
-            <text x="0" y="30" font-family="sans-serif" font-size="28" font-weight="700" fill="currentColor">NPT</text>
-          </svg>
-        </a>
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para o início">
+            <span class="site-logo__mark">NPT</span><span class="site-logo__text">Engenharia</span>
+          </a>
+          <p class="site-footer__tagline">Projetos técnicos de engenharia predial com aprovação garantida.</p>
+        </div>
+        <nav class="site-footer__links" aria-label="Links do rodapé">
+          <div class="site-footer__col">
+            <p class="site-footer__col-title">Serviços</p>
+            <ul role="list">
+              <li><a href="/servicos/pressurizacao-escadas-emergencia/">Pressurização de Escadas</a></li>
+              <li><a href="/servicos/projetos-hidraulicos/">Projetos Hidráulicos</a></li>
+              <li><a href="/servicos/projetos-eletricos/">Projetos Elétricos</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__col">
+            <p class="site-footer__col-title">Empresa</p>
+            <ul role="list">
+              <li><a href="/sobre/">Sobre Nós</a></li>
+              <li><a href="/portfolio/">Portfólio</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__col">
+            <p class="site-footer__col-title">Contato</p>
+            <ul role="list">
+              <li class="site-footer__info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
+                <a href="mailto:contato@nptengenharia.com.br">contato@nptengenharia.com.br</a>
+              </li>
+              <li class="site-footer__info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/></svg>
+                <a href="tel:+5511900000000">+55 (11) 9 0000-0000</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <div class="site-footer__info">
-        <p>Engenheiro responsável: <strong>[Nome do Engenheiro]</strong></p>
-        <p><a href="https://consultaprofissional.confea.org.br/" target="_blank" rel="noopener noreferrer" aria-label="Verificar registro CREA-SP [000000-D] no portal CONFEA (abre em nova aba)">CREA-SP [000000-D]</a></p>
-        <p><a href="mailto:contato@nptengenharia.com.br">contato@nptengenharia.com.br</a></p>
-        <p>+55 (11) 9 0000-0000</p>
+      <div class="site-footer__divider"></div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
+        <p class="site-footer__crea">
+          <a href="https://consultaprofissional.confea.org.br/" target="_blank" rel="noopener noreferrer" aria-label="Verificar registro CREA-SP no portal CONFEA (abre em nova aba)">CREA-SP [000000-D]</a>
+          &mdash; Engenheiro responsável: [Nome do Engenheiro]
+        </p>
       </div>
-    </div>
-    <div class="container">
-      <p class="site-footer__copy">&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
     </div>
   </footer>
 
