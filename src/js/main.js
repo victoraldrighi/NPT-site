@@ -21,5 +21,6 @@ import '../css/components/service-page.css'
 import '../css/components/portfolio.css'
 import '../css/components/contact-form.css'
 import '../css/components/whatsapp-btn.css'
+import '../css/components/blog-list.css'
 
 import './scroll.js'

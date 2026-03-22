@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Eletrico Predial: Guia Completo 2026 | NPT Engenharia</title>
+  <meta name="description" content="Guia completo sobre projeto eletrico predial. Normas NBR 5410 e NR 10, etapas, dimensionamento, SPDA, custos e erros comuns. NPT Engenharia." />
+  <link rel="canonical" href="https://nptengenharia.com.br/blog/projeto-eletrico-predial-guia-completo/" />
+  <meta property="og:title" content="Projeto Eletrico Predial: Guia Completo 2026 | NPT Engenharia" />
+  <meta property="og:description" content="Guia completo sobre projeto eletrico predial. Normas NBR 5410 e NR 10, etapas, dimensionamento, SPDA, custos e erros comuns. NPT Engenharia." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nptengenharia.com.br/blog/projeto-eletrico-predial-guia-completo/" />
+  <meta property="og:image" content="https://nptengenharia.com.br/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="NPT Engenharia" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Projeto Eletrico Predial: Guia Completo 2026",
+    "description": "Guia completo sobre projeto eletrico predial. Normas NBR 5410 e NR 10, etapas, dimensionamento, SPDA, custos e erros comuns. NPT Engenharia.",
+    "author": {"@type": "Organization", "name": "NPT Engenharia", "url": "https://nptengenharia.com.br"},
+    "publisher": {"@type": "Organization", "name": "NPT Engenharia", "logo": {"@type": "ImageObject", "url": "https://nptengenharia.com.br/favicon.svg"}},
+    "datePublished": "2026-03-21",
+    "dateModified": "2026-03-21",
+    "mainEntityOfPage": "https://nptengenharia.com.br/blog/projeto-eletrico-predial-guia-completo/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nptengenharia.com.br/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nptengenharia.com.br/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Projeto Eletrico Predial: Guia Completo"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Qual a diferenca entre projeto eletrico residencial e predial?", "acceptedAnswer": {"@type": "Answer", "text": "O projeto eletrico residencial atende a uma unica unidade habitacional (casa ou apartamento individual), com demandas tipicamente ate 25 kW e alimentacao monofasica ou bifasica. Ja o projeto eletrico predial abrange toda a edificacao, incluindo areas comuns, subestacao, alimentacao em media tensao (13,8 kV), quadros de distribuicao geral e parciais, sistemas de emergencia, SPDA (para-raios), cabeamento estruturado e infraestrutura para elevadores, bombas e ar-condicionado central. A complexidade normativa tambem e maior: alem da NBR 5410, o projeto predial deve atender a NBR 14039 (media tensao), NBR 5419 (SPDA) e NR 10 (seguranca)."}},
+      {"@type": "Question", "name": "Quanto tempo leva para elaborar um projeto eletrico predial?", "acceptedAnswer": {"@type": "Answer", "text": "O prazo varia conforme o porte e a complexidade da edificacao. Para um edificio residencial de ate 20 pavimentos, o prazo tipico e de 30 a 45 dias uteis. Edificios comerciais ou de uso misto com subestacao propria podem exigir de 45 a 90 dias uteis. Projetos hospitalares ou industriais, que envolvem classificacao de areas, sistemas de emergencia criticos e requisitos normativos adicionais, podem ultrapassar 90 dias. Esses prazos consideram o projeto completo, incluindo aprovacao junto a concessionaria de energia."}},
+      {"@type": "Question", "name": "E obrigatorio ter subestacao propria em edificios?", "acceptedAnswer": {"@type": "Answer", "text": "Depende da demanda total da edificacao e das regras da concessionaria local. Em geral, quando a demanda ultrapassa 75 kW (em Sao Paulo, pela ENEL) ou o limite estabelecido pela concessionaria regional, e obrigatorio o fornecimento em media tensao (13,8 kV) com subestacao de transformacao propria. Edificios comerciais, hospitais, shopping centers e condominios de grande porte quase sempre necessitam de subestacao. A subestacao deve atender a NBR 14039 e aos padroes da concessionaria, e seu projeto requer aprovacao previa da distribuidora de energia."}},
+      {"@type": "Question", "name": "Qual a validade de um projeto eletrico predial aprovado?", "acceptedAnswer": {"@type": "Answer", "text": "A validade do projeto aprovado junto a concessionaria de energia varia conforme a distribuidora, mas geralmente e de 12 a 24 meses. Apos esse prazo, se a obra nao tiver sido executada, pode ser necessario revalidar ou refazer o projeto, especialmente se houver mudancas nas normas tecnicas ou nos padroes da concessionaria. Ja a aprovacao junto a prefeitura (como parte do projeto de instalacoes do alvara de construcao) segue a validade do proprio alvara. E fundamental iniciar a obra dentro do prazo de validade para evitar custos adicionais com reaprovacao."}},
+      {"@type": "Question", "name": "O projeto eletrico predial inclui o sistema de para-raios (SPDA)?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, o projeto de SPDA (Sistema de Protecao contra Descargas Atmosfericas) e parte integrante do projeto eletrico predial. Conforme a NBR 5419, toda edificacao deve passar por uma analise de risco (gerenciamento de risco) que determina a necessidade e o nivel de protecao do SPDA. Na pratica, a grande maioria dos edificios prediais necessita de SPDA. O projeto abrange os captores (terminais aereos), condutores de descida, sistema de aterramento dedicado e dispositivos de protecao contra surtos (DPS) nos quadros eletricos. O SPDA deve ser integrado ao projeto eletrico geral para garantir a equipotencializacao correta de todas as massas metalicas da edificacao."}}
+    ]
+  }
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6NX09NWHS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N6NX09NWHS');
+  </script>
+</head>
+<body class="page-blog-post">
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para a pagina inicial">
+        <span class="site-logo__mark">NPT</span><span class="site-logo__text">Engenharia</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegacao principal">
+        <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Abrir menu de navegacao" />
+        <label class="nav-hamburger" for="nav-toggle" aria-hidden="true">
+          <span class="nav-hamburger__line"></span>
+          <span class="nav-hamburger__line"></span>
+          <span class="nav-hamburger__line"></span>
+        </label>
+        <ul class="nav-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/servicos/pressurizacao-escadas-emergencia/">Pressurizacao</a></li>
+          <li><a href="/servicos/projetos-hidraulicos/">Hidraulica</a></li>
+          <li><a href="/servicos/projetos-eletricos/">Eletrica</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/sobre/">Sobre</a></li>
+          <li><a href="/contato/">Contato</a></li>
+          <li><a href="/contato/" class="nav-cta">Solicitar Orcamento</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <nav aria-label="Navegacao estrutural" class="breadcrumb">
+      <ol role="list">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li><a href="/blog/">Blog</a></li>
+        <li aria-hidden="true">›</li>
+        <li><span>Projeto Eletrico Predial: Guia Completo</span></li>
+      </ol>
+    </nav>
+
+    <article class="service-article" data-reveal>
+      <div class="container">
+        <span class="blog-post__category">Eletrica</span>
+        <h1>Projeto Eletrico Predial: Guia Completo 2026</h1>
+        <div class="blog-post__meta">
+          <time datetime="2026-03-21">21 de marco de 2026</time>
+          <span>· 22 min de leitura</span>
+        </div>
+        <p class="lead">O projeto eletrico predial e o documento tecnico que define toda a infraestrutura de distribuicao de energia de uma edificacao, desde a entrada de energia em media tensao ate os pontos de utilizacao em cada unidade e area comum. Um projeto bem elaborado garante seguranca contra choques eletricos e incendios, eficiencia energetica, conformidade normativa e economia na execucao da obra. Neste guia completo, abordamos todas as etapas, normas, criterios de dimensionamento, custos e os erros mais comuns que comprometem a qualidade das instalacoes eletricas prediais.</p>
+
+        <!-- Secao 1: O que e um projeto eletrico predial -->
+        <section data-reveal>
+          <h2>O que e um projeto eletrico predial</h2>
+
+          <p>O projeto eletrico predial e o conjunto de documentos tecnicos -- plantas, diagramas, memoriais de calculo e especificacoes -- que definem como a energia eletrica sera recebida, transformada, distribuida e utilizada em uma edificacao. Ele abrange desde a subestacao de entrada (quando necessaria) ate o ultimo ponto de tomada ou luminaria de cada pavimento.</p>
+
+          <p>Diferente de uma instalacao eletrica residencial simples, o projeto predial envolve niveis de complexidade significativamente maiores. Uma edificacao tipica de multiplos pavimentos possui demandas que podem ultrapassar centenas de quilowatts, circuitos que alimentam elevadores, bombas de recalque, sistemas de ar-condicionado central, iluminacao de emergencia, sistemas de deteccao e alarme de incendio, cabeamento estruturado para telecomunicacoes e, muitas vezes, subestacao propria com transformadores de media tensao.</p>
+
+          <p>O <a href="/servicos/projetos-eletricos/">projeto eletrico predial</a> e elaborado por engenheiro eletricista habilitado e registrado no CREA, e deve atender a um conjunto rigoroso de normas tecnicas brasileiras, com destaque para a NBR 5410 (instalacoes eletricas de baixa tensao), a NBR 14039 (instalacoes eletricas de media tensao), a NBR 5419 (protecao contra descargas atmosfericas) e a NR 10 (seguranca em instalacoes e servicos em eletricidade).</p>
+
+          <p>O projeto e composto por diversos documentos complementares: o diagrama unifilar geral, que mostra a hierarquia de distribuicao desde a entrada de energia; as plantas de distribuicao de pontos por pavimento, indicando a localizacao de tomadas, interruptores e luminarias; os detalhes dos quadros de distribuicao; o memorial de calculo de demanda e dimensionamento de condutores; o projeto de SPDA (para-raios); e as especificacoes tecnicas dos materiais e equipamentos.</p>
+
+          <p>A importancia de um projeto eletrico predial bem elaborado vai muito alem do cumprimento normativo. Instalacoes eletricas mal dimensionadas sao uma das principais causas de incendios em edificacoes no Brasil. Segundo dados do Corpo de Bombeiros, cerca de 25% dos incendios em edificios tem origem em falhas nas instalacoes eletricas -- curtos-circuitos, sobrecargas, mau contato e ausencia de protecao adequada. Um projeto tecnico criterioso elimina esses riscos na origem.</p>
+        </section>
+
+        <!-- Secao 2: Normas aplicaveis -->
+        <section data-reveal>
+          <h2>Normas aplicaveis ao projeto eletrico predial</h2>
+
+          <p>O projeto eletrico predial no Brasil e regulamentado por um conjunto abrangente de normas tecnicas e regulamentacoes que garantem a seguranca das instalacoes e das pessoas. O engenheiro projetista deve dominar cada uma dessas normas e aplica-las integralmente. A seguir, detalhamos as principais.</p>
+
+          <h3>NBR 5410 -- Instalacoes eletricas de baixa tensao</h3>
+
+          <p>A NBR 5410 e a norma fundamental para o projeto eletrico predial. Ela estabelece as condicoes minimas que as instalacoes eletricas de baixa tensao (ate 1.000 V em corrente alternada ou 1.500 V em corrente continua) devem atender para garantir a seguranca de pessoas, animais domesticos e conservacao de bens. A norma abrange o dimensionamento de condutores, a protecao contra choques eletricos (por contato direto e indireto), a protecao contra sobrecorrentes (sobrecarga e curto-circuito), a protecao contra sobretensoes, o aterramento e a equipotencializacao, e os requisitos para selecao e instalacao de componentes.</p>
+
+          <p>A NBR 5410 define conceitos essenciais como o esquema de aterramento (TN-S, TN-C-S, TT, IT), a classificacao das influencias externas que afetam a selecao dos componentes, e os metodos de referencia para o dimensionamento de condutores em funcao da forma de instalacao (eletrodutos embutidos, eletrocalhas, leitos, bandejamento). E a norma que o projetista mais consulta durante a elaboracao do projeto.</p>
+
+          <h3>NR 10 -- Seguranca em instalacoes e servicos em eletricidade</h3>
+
+          <p>A NR 10 e uma Norma Regulamentadora do Ministerio do Trabalho que estabelece os requisitos e condicoes minimas para garantir a seguranca e a saude dos trabalhadores que interagem com instalacoes eletricas e servicos com eletricidade. Embora seja voltada primariamente para a seguranca do trabalho, a NR 10 impacta diretamente o projeto eletrico predial, pois exige que as instalacoes sejam projetadas de forma a permitir a manutencao segura.</p>
+
+          <p>A norma exige, por exemplo, que os quadros eletricos sejam acessiveis e possuam espaco adequado para manobras de manutencao, que os dispositivos de seccionamento sejam claramente identificados e acessiveis, que haja iluminacao adequada nos locais de servico, e que seja possível realizar a desenergizacao segura dos circuitos para intervencoes. O projetista deve prever seletividade nas protecoes, sinalizacao adequada e documentacao atualizada das instalacoes -- requisitos que influenciam diretamente as escolhas de projeto.</p>
+
+          <h3>NBR 5419 -- Protecao contra descargas atmosfericas (SPDA)</h3>
+
+          <p>A <a href="/blog/normas-abnt-construcao-civil/">NBR 5419</a> estabelece os requisitos para a protecao de estruturas contra os efeitos das descargas atmosfericas (raios). A norma e dividida em quatro partes: principios gerais (parte 1), gerenciamento de risco (parte 2), danos fisicos a estruturas e perigo a vida (parte 3), e sistemas eletricos e eletronicos internos na estrutura (parte 4).</p>
+
+          <p>Para o projeto eletrico predial, a NBR 5419 e fundamental. A analise de gerenciamento de risco (parte 2) determina se a edificacao necessita de SPDA e qual o nivel de protecao requerido (I, II, III ou IV). A parte 3 define os captores, condutores de descida e sistema de aterramento do SPDA. A parte 4 define os dispositivos de protecao contra surtos (DPS) que devem ser instalados nos quadros eletricos para proteger os equipamentos eletronicos. Na pratica, a grande maioria dos edificios prediais requer SPDA, e o projeto de protecao contra descargas atmosfericas e parte integrante do projeto eletrico.</p>
+
+          <h3>NBR 14039 -- Instalacoes eletricas de media tensao</h3>
+
+          <p>A NBR 14039 aplica-se as instalacoes eletricas de media tensao, com tensoes nominais entre 1,0 kV e 36,2 kV. No contexto predial, essa norma e aplicavel quando a edificacao possui subestacao propria de transformacao, o que ocorre quando a demanda total ultrapassa o limite de fornecimento em baixa tensao da concessionaria (tipicamente 75 kW em Sao Paulo).</p>
+
+          <p>A norma define os requisitos para o projeto da subestacao, incluindo o dimensionamento dos transformadores, a protecao contra sobrecorrentes em media tensao, o sistema de aterramento da subestacao, as distancias de seguranca, os dispositivos de seccionamento e protecao, e os requisitos construtivos da sala de transformadores. O projeto de media tensao deve ser submetido a aprovacao da concessionaria de energia antes da execucao.</p>
+
+          <h3>Normas complementares</h3>
+
+          <ul>
+            <li><strong>NBR 13570</strong> -- Instalacoes eletricas em locais de afluencia de publico (shopping centers, igrejas, cinemas, estadios)</li>
+            <li><strong>NBR 13534</strong> -- Instalacoes eletricas em estabelecimentos assistenciais de saude (hospitais, clinicas)</li>
+            <li><strong>NBR 10898</strong> -- Iluminacao de emergencia</li>
+            <li><strong>NBR 5418</strong> -- Instalacoes eletricas em atmosferas explosivas</li>
+            <li><strong>NBR 16384</strong> -- Seguranca em instalacoes eletricas -- recomendacoes de selecao de equipamentos</li>
+          </ul>
+        </section>
+
+        <!-- Secao 3: Componentes do projeto -->
+        <section data-reveal>
+          <h2>Componentes do projeto eletrico predial</h2>
+
+          <p>Um projeto eletrico predial completo e composto por diversos subsistemas que, juntos, formam a infraestrutura eletrica da edificacao. Cada componente desempenha uma funcao especifica e deve ser dimensionado e especificado de acordo com as normas vigentes. Conhea os principais componentes.</p>
+
+          <h3>Subestacao e entrada de energia</h3>
+
+          <p>A entrada de energia e o ponto de conexao entre a rede da concessionaria e a instalacao da edificacao. Em edificios de grande porte, a entrada e feita em media tensao (tipicamente 13,8 kV), exigindo uma subestacao de transformacao com um ou mais transformadores que reduzem a tensao para o nivel de utilizacao (220/127 V ou 380/220 V, dependendo da regiao e da concessionaria). A subestacao inclui chaves seccionadoras, fusíveis ou disjuntores de media tensao, transformadores de potencia, dispositivos de protecao e medicao, e o sistema de aterramento.</p>
+
+          <h3>Quadros de distribuicao</h3>
+
+          <p>Os quadros de distribuicao sao os centros nervosos da instalacao eletrica. O Quadro Geral de Baixa Tensao (QGBT) recebe a energia dos transformadores e distribui para os quadros parciais de cada pavimento ou bloco. Os quadros parciais, por sua vez, alimentam os circuitos terminais de iluminacao, tomadas e equipamentos especificos. Cada quadro contem disjuntores de protecao, dispositivos diferenciais residuais (DR), barramentos de fase, neutro e terra, e dispositivos de protecao contra surtos (DPS).</p>
+
+          <p>O dimensionamento dos quadros deve considerar a demanda calculada, o fator de simultaneidade, a reserva para ampliacao futura (a NBR 5410 recomenda no minimo 15% de espacos reserva) e a acessibilidade para manutencao conforme a NR 10.</p>
+
+          <h3>Circuitos terminais</h3>
+
+          <p>Os circuitos terminais sao os circuitos que alimentam diretamente os pontos de utilizacao: luminarias, tomadas de uso geral (TUG), tomadas de uso especifico (TUE) e equipamentos fixos. A NBR 5410 estabelece que circuitos de iluminacao e de tomadas devem ser independentes entre si, e que cada circuito deve ser protegido individualmente por disjuntor adequado. A norma tambem limita a corrente maxima de cada circuito terminal (tipicamente 10 A ou 20 A para circuitos de iluminacao e tomadas de uso geral) e exige protecao por dispositivo DR para tomadas em areas molhadas (banheiros, cozinhas, areas de servico, areas externas).</p>
+
+          <h3>Sistema de aterramento e equipotencializacao</h3>
+
+          <p>O sistema de aterramento e essencial para a seguranca da instalacao. Ele garante que, em caso de falha de isolamento, a corrente de falta tenha um caminho de baixa impedancia para a terra, permitindo a atuacao rapida dos dispositivos de protecao (disjuntores e DRs). O projeto deve definir o esquema de aterramento adotado (TN-S, TN-C-S ou TT), dimensionar a malha de aterramento (eletrodos, hastes e condutores de aterramento) e prever a equipotencializacao principal (BEP) e as equipotencializacoes suplementares.</p>
+
+          <p>A resistencia de aterramento deve atender aos limites estabelecidos pela concessionaria (tipicamente 10 ohms para subestacoes) e pela NBR 5410. O projeto de aterramento deve ser integrado ao projeto de SPDA para garantir a equipotencializacao completa da edificacao.</p>
+
+          <h3>SPDA -- Sistema de Protecao contra Descargas Atmosfericas</h3>
+
+          <p>O SPDA e projetado conforme a NBR 5419 e compreende o subsistema externo (captores ou terminais aereos, condutores de descida e aterramento) e o subsistema interno (equipotencializacao e DPS). Os captores podem ser do tipo haste (Franklin), cabos esticados (gaiola de Faraday) ou a combinacao de ambos, conforme o nivel de protecao calculado. Os condutores de descida devem ser distribuidos pelo perimetro da edificacao com espaamento maximo definido pela norma. Os DPS devem ser instalados no QGBT e nos quadros parciais para proteger os equipamentos contra surtos induzidos por descargas atmosfericas.</p>
+
+          <h3>Cabeamento estruturado</h3>
+
+          <p>Embora nem sempre executado pelo mesmo projetista eletrico, o cabeamento estruturado (rede de dados e telecomunicacoes) deve ser previsto no projeto eletrico predial. A infraestrutura de eletrodutos, eletrocalhas e caixas de passagem para o cabeamento estruturado deve ser compativel e coordenada com a infraestrutura eletrica, respeitando as distancias minimas de separacao entre cabos de energia e cabos de dados para evitar interferencia eletromagnetica. O projeto deve prever a sala de equipamentos (DG -- distribuidor geral), as salas de telecomunicacoes em cada pavimento e os pontos de rede nas unidades e areas comuns.</p>
+        </section>
+
+        <!-- Secao 4: Etapas do desenvolvimento do projeto -->
+        <section data-reveal>
+          <h2>Etapas do desenvolvimento do projeto</h2>
+
+          <p>O desenvolvimento de um <a href="/servicos/projetos-eletricos/">projeto eletrico predial</a> segue uma sequencia logica de etapas que garantem a adequacao tecnica, a conformidade normativa e a viabilidade de execucao. Pular ou simplificar qualquer etapa pode resultar em erros graves, retrabalho e custos adicionais.</p>
+
+          <h3>1. Levantamento de dados e analise arquitetonica</h3>
+
+          <p>A primeira etapa consiste na coleta de todas as informacoes necessarias para o projeto. O engenheiro eletricista analisa o projeto arquitetonico completo, identifica os ambientes e suas funcoes (residencial, comercial, areas comuns, garagens, areas tecnicas), verifica as areas de cada unidade e pavimento, e coleta informacoes sobre os equipamentos previstos (elevadores, bombas, ar-condicionado, sistemas de seguranca). Tambem e necessario consultar a concessionaria de energia local para verificar a tensao de fornecimento, o padrao de entrada e os limites de demanda para fornecimento em baixa ou media tensao.</p>
+
+          <h3>2. Calculo de demanda</h3>
+
+          <p>Com base nos dados levantados, o engenheiro calcula a demanda total da edificacao. O calculo considera a potencia de iluminacao (conforme a NBR 5410, minimo de 100 VA para comodos de ate 6 m2 e mais 60 VA para cada 4 m2 excedentes ou fracao), a potencia de tomadas de uso geral e especifico, a carga de equipamentos fixos (elevadores, bombas, ar-condicionado) e os fatores de demanda e simultaneidade aplicaveis. A demanda calculada determina se sera necessario fornecimento em media tensao com subestacao propria e define a capacidade dos transformadores.</p>
+
+          <h3>3. Definicao do esquema de distribuicao</h3>
+
+          <p>Nesta etapa, o engenheiro define a hierarquia de distribuicao eletrica: localizacao e capacidade da subestacao (se necessaria), posicionamento do QGBT, localizacao dos quadros parciais em cada pavimento, e o percurso das prumadas eletricas (shafts verticais). O esquema de distribuicao e representado no diagrama unifilar geral, que mostra todos os niveis de distribuicao, protecoes e medicoes.</p>
+
+          <h3>4. Dimensionamento de condutores e protecoes</h3>
+
+          <p>Cada circuito alimentador e terminal e dimensionado individualmente, considerando tres criterios simultaneos: capacidade de corrente (ampacidade) do condutor, limite de queda de tensao admissivel e capacidade de curto-circuito. O condutor selecionado deve atender ao criterio mais restritivo. Os dispositivos de protecao (disjuntores, fusiveis, DRs, DPS) sao especificados para cada circuito conforme a corrente nominal, a corrente de curto-circuito presumida e o requisito de seletividade com os demais dispositivos.</p>
+
+          <h3>5. Projeto dos subsistemas complementares</h3>
+
+          <p>Alem da distribuicao de energia, o projeto eletrico predial inclui subsistemas como: iluminacao de emergencia (conforme NBR 10898), sistema de aterramento e equipotencializacao, SPDA (conforme NBR 5419), infraestrutura para cabeamento estruturado, infraestrutura para sistemas de deteccao e alarme de incendio, e sistema de geracao de emergencia (grupo gerador), quando aplicavel. Cada subsistema e projetado conforme sua norma especifica e integrado ao projeto geral.</p>
+
+          <h3>6. Elaboracao do projeto executivo</h3>
+
+          <p>O projeto executivo e o conjunto completo de documentos que permite a execucao da obra. Inclui: diagrama unifilar geral e parciais, plantas de distribuicao de pontos por pavimento, detalhes dos quadros de distribuicao (diagrama trifilar), planta de cabeamento e eletrodutos, planta do SPDA, memorial de calculo (demanda, dimensionamento de condutores, queda de tensao, curto-circuito), especificacao tecnica dos materiais e equipamentos, e quadro de cargas de cada circuito. O projeto e submetido a aprovacao da concessionaria de energia e da prefeitura.</p>
+
+          <h3>7. Acompanhamento da execucao e comissionamento</h3>
+
+          <p>Apos a aprovacao, o engenheiro projetista acompanha a execucao da obra, verificando a conformidade da instalacao com o projeto. Ao termino da instalacao, realiza-se o comissionamento: medicao de resistencia de isolamento dos condutores, medicao de resistencia de aterramento, teste de continuidade dos condutores de protecao, verificacao da seletividade dos dispositivos de protecao, teste de funcionamento da iluminacao de emergencia e teste do SPDA. Os resultados sao documentados em laudo tecnico que atesta a conformidade da instalacao.</p>
+        </section>
+
+        <!-- Secao 5: Dimensionamento de condutores e protecoes -->
+        <section data-reveal>
+          <h2>Dimensionamento de condutores e protecoes</h2>
+
+          <p>O dimensionamento correto dos condutores e dispositivos de protecao e o nucleo tecnico do projeto eletrico predial. Um condutor subdimensionado pode aquecer excessivamente, deteriorar a isolacao e provocar incendio. Um condutor superdimensionado gera desperdicio de material e custo desnecessario. O equilibrio e encontrado pela aplicacao rigorosa dos criterios normativos.</p>
+
+          <h3>Criterio da capacidade de corrente (ampacidade)</h3>
+
+          <p>A NBR 5410 define a capacidade de conducao de corrente de cada secao de condutor em funcao do metodo de instalacao (referencia), da temperatura ambiente, do numero de circuitos agrupados no mesmo eletroduto ou eletrocalha, e do tipo de isolacao do condutor (PVC, EPR ou XLPE). O condutor selecionado deve ter ampacidade igual ou superior a corrente de projeto do circuito, ja aplicados os fatores de correcao por temperatura e agrupamento.</p>
+
+          <h3>Criterio da queda de tensao</h3>
+
+          <p>A NBR 5410 limita a queda de tensao maxima admissivel em 7% entre a origem da instalacao (ponto de entrega da concessionaria) e qualquer ponto de utilizacao. Esse limite e distribuido entre o circuito alimentador (tipicamente 4% a 5%) e o circuito terminal (2% a 3%). A queda de tensao e calculada em funcao da corrente do circuito, do comprimento do condutor, da secao do condutor e do fator de potencia da carga. Em edificios de grande porte, com distancias longas entre a subestacao e os pavimentos superiores, o criterio de queda de tensao frequentemente determina secoes de condutor maiores do que as exigidas pelo criterio de ampacidade.</p>
+
+          <h3>Calculo de demanda e fator de potencia</h3>
+
+          <p>O calculo de demanda e a base para o dimensionamento de toda a instalacao. Ele determina a potencia maxima que a instalacao consumira simultaneamente, considerando que nem todas as cargas operam ao mesmo tempo. A NBR 5410 e os regulamentos das concessionarias definem os fatores de demanda para cada tipo de carga (iluminacao, tomadas, chuveiros eletricos, motores, ar-condicionado). O fator de potencia, que indica a relacao entre a potencia ativa (kW) e a potencia aparente (kVA), deve ser considerado no dimensionamento dos transformadores e condutores de alimentacao. Edificacoes com grande quantidade de motores e equipamentos de refrigeracao podem apresentar fator de potencia abaixo de 0,92 (minimo exigido pela ANEEL), sendo necessario prever a correcao por meio de banco de capacitores.</p>
+
+          <h3>Protecao contra sobrecorrentes</h3>
+
+          <p>Cada circuito deve ser protegido contra sobrecarga e curto-circuito. Os disjuntores termomagnticos atuam por sobreaquecimento (protecao contra sobrecarga) e por acao eletromagnetica rapida (protecao contra curto-circuito). A coordenacao entre a capacidade do condutor e a corrente nominal do disjuntor deve atender a relacao: Ib (menor ou igual a) In (menor ou igual a) Iz, onde Ib e a corrente de projeto, In e a corrente nominal do disjuntor e Iz e a ampacidade do condutor. Os disjuntores devem ter capacidade de interrupcao (Icu ou Ics) igual ou superior a corrente de curto-circuito presumida no ponto de instalacao.</p>
+
+          <h3>Protecao diferencial residual (DR)</h3>
+
+          <p>Os dispositivos diferenciais residuais (DR) protegem contra choques eletricos por contato indireto e contra correntes de fuga que podem causar incendio. A NBR 5410 exige protecao por DR de alta sensibilidade (30 mA) em circuitos que alimentam tomadas em areas molhadas ou molhaveis (banheiros, cozinhas, lavanderias, areas externas), tomadas em areas internas com corrente nominal ate 32 A, e todos os circuitos que alimentam pontos em locais contendo banheira ou chuveiro. Para protecao contra incendios, recomenda-se DR de 300 mA ou 500 mA na origem da instalacao.</p>
+
+          <h3>Seletividade</h3>
+
+          <p>A seletividade e o principio pelo qual, em caso de falha, apenas o dispositivo de protecao mais proximo do defeito atua, mantendo o restante da instalacao energizada. Em um projeto predial, a seletividade entre os disjuntores do QGBT, dos quadros parciais e dos circuitos terminais e essencial para evitar que uma falha em um apartamento provoque o desligamento de todo o edificio. A seletividade pode ser obtida por coordenacao de curvas (seletividade amperimetrica), por temporizacao (seletividade cronometrica) ou por combinacao de ambas.</p>
+        </section>
+
+        <!-- Secao 6: Classificacao de areas e cargas -->
+        <section data-reveal>
+          <h2>Classificacao de areas e cargas</h2>
+
+          <p>O projeto eletrico predial exige a classificacao detalhada de cada ambiente e tipo de carga para o correto dimensionamento e a aplicacao das normas especificas. Diferentes tipos de carga possuem caracteristicas eletricas distintas que impactam o projeto de maneiras diferentes.</p>
+
+          <h3>Iluminacao</h3>
+
+          <p>A carga de iluminacao e determinada pela NBR 5410 com base na area de cada comodo. O criterio minimo e de 100 VA para comodos de ate 6 m2, acrescidos de 60 VA para cada 4 m2 adicionais ou fracao. Nas areas comuns do edificio (halls, corredores, garagens, salao de festas), a carga de iluminacao e calculada conforme a iluminancia requerida pela NBR 8995-1, que define niveis minimos de iluminamento para cada tipo de atividade. A iluminacao de areas externas (fachada, jardins, estacionamento) tambem deve ser considerada. Alem disso, a NBR 10898 exige iluminacao de emergencia autonoma em todas as rotas de fuga, escadas, halls de elevadores e areas comuns.</p>
+
+          <h3>Tomadas de uso geral (TUG) e uso especifico (TUE)</h3>
+
+          <p>As tomadas de uso geral (TUG) atendem a equipamentos moveis de baixa potencia (100 VA a 600 VA cada, conforme a localizacao). As tomadas de uso especifico (TUE) atendem a equipamentos fixos ou de alta potencia com circuito proprio: chuveiros eletricos (5.500 W a 7.500 W), fornos eletricos (1.500 W a 2.500 W), maquinas de lavar (1.000 W a 1.500 W), secadoras (3.000 W a 5.000 W), entre outros. Cada TUE deve ter circuito exclusivo com condutor e protecao dimensionados para a potencia do equipamento.</p>
+
+          <h3>Sistemas de ar-condicionado</h3>
+
+          <p>A carga de ar-condicionado e frequentemente a maior carga individual de uma edificacao comercial. Sistemas de ar-condicionado central (chillers, fan-coils, VRF) demandam circuitos de grande capacidade, alimentacao trifasica e protecao especifica para cargas com motores. O fator de potencia dos compressores e tipicamente entre 0,75 e 0,85, o que impacta o dimensionamento dos transformadores e pode exigir correcao de fator de potencia. O projeto deve considerar a corrente de partida dos compressores (que pode ser 6 a 8 vezes a corrente nominal) no dimensionamento dos condutores e na selecao dos dispositivos de protecao.</p>
+
+          <h3>Elevadores</h3>
+
+          <p>Os elevadores sao cargas criticas que exigem circuitos exclusivos, alimentacao trifasica e alta confiabilidade. A potencia de cada elevador varia conforme a capacidade (passageiros ou carga) e a velocidade, tipicamente entre 7,5 kW e 30 kW para edificios residenciais e ate 50 kW ou mais para edificios comerciais de alta velocidade. O projeto deve prever circuito dedicado para cada elevador, com protecoes dimensionadas para a corrente de partida do motor (que pode ser 6 a 10 vezes a corrente nominal em motores com partida direta). Elevadores modernos com inversores de frequencia reduzem significativamente a corrente de partida.</p>
+
+          <h3>Bombas de recalque e incendio</h3>
+
+          <p>As bombas de recalque de agua potavel e as bombas do sistema de combate a incendio sao cargas essenciais que devem operar ininterruptamente. As bombas de incendio, em particular, devem ser alimentadas por circuito de seguranca com comutacao automatica para gerador de emergencia, conforme a <a href="/blog/projeto-incendio-predial/">NBR 13714</a> e as instrucoes tecnicas do Corpo de Bombeiros. O dimensionamento do circuito deve considerar a corrente de partida (para motores com partida direta) ou a corrente de rotor bloqueado, e a protecao contra curto-circuito nao deve desligar o motor em condicao de sobrecarga momentanea.</p>
+
+          <h3>Areas especiais</h3>
+
+          <p>Determinados ambientes exigem classificacao especial e aplicacao de normas adicionais. Estacionamentos fechados podem exigir sistema de ventilacao mecanica com circuito de seguranca. Areas com risco de explosao (depositos de combustiveis, areas de pintura) devem atender a NBR 5418 com equipamentos a prova de explosao. Edificios hospitalares devem atender a NBR 13534, com requisitos rigorosos de continuidade de energia e sistema IT medico em salas cirurgicas e UTIs.</p>
+        </section>
+
+        <!-- Secao 7: Quanto custa um projeto eletrico predial -->
+        <section data-reveal>
+          <h2>Quanto custa um projeto eletrico predial</h2>
+
+          <p>O custo de um projeto eletrico predial varia conforme a complexidade da edificacao, o numero de pavimentos, a area total construida, o tipo de ocupacao e a regiao do pais. A contratacao de um projeto tecnico bem elaborado e um investimento que se paga pela economia na execucao, pela reducao de desperdicio de materiais e pela prevencao de problemas futuros.</p>
+
+          <h3>Faixas de investimento para o projeto tecnico</h3>
+
+          <ul>
+            <li><strong>Edificio residencial de ate 10 pavimentos (sem subestacao):</strong> R$ 8.000 a R$ 18.000</li>
+            <li><strong>Edificio residencial de 10 a 25 pavimentos (com subestacao):</strong> R$ 18.000 a R$ 35.000</li>
+            <li><strong>Edificio comercial de ate 20 pavimentos:</strong> R$ 25.000 a R$ 50.000</li>
+            <li><strong>Shopping center ou edificio de uso misto:</strong> R$ 50.000 a R$ 120.000</li>
+            <li><strong>Hospital ou edificio hospitalar:</strong> R$ 80.000 a R$ 200.000</li>
+            <li><strong>Projetos de retrofit ou adequacao de edificios existentes:</strong> acrescimo de 30% a 50% sobre os valores acima</li>
+          </ul>
+
+          <h3>O que esta incluso no valor do projeto</h3>
+
+          <p>Um projeto eletrico predial completo deve incluir: levantamento de dados e analise arquitetonica, calculo de demanda e memorial de calculo, diagrama unifilar geral e parciais, plantas de distribuicao de pontos por pavimento, detalhes dos quadros de distribuicao, projeto de SPDA, especificacao tecnica de materiais, lista de materiais quantificada, aprovacao junto a concessionaria de energia, e acompanhamento tecnico durante a execucao. Alguns escritorios cobram separadamente o acompanhamento de obra e o comissionamento.</p>
+
+          <h3>Fatores que influenciam o custo</h3>
+
+          <ul>
+            <li><strong>Numero de pavimentos e area construida:</strong> maior area implica mais circuitos, mais quadros e mais detalhamento</li>
+            <li><strong>Subestacao:</strong> a necessidade de subestacao com projeto de media tensao aumenta significativamente o custo</li>
+            <li><strong>Tipo de ocupacao:</strong> hospitais, industrias e locais de reuniao de publico possuem exigencias normativas adicionais</li>
+            <li><strong>SPDA:</strong> edificacoes com geometria complexa ou nivel de protecao elevado exigem projeto de SPDA mais detalhado</li>
+            <li><strong>Retrofit:</strong> projetos de adequacao de edificios existentes exigem levantamento in loco e adaptacoes que encarecem o projeto</li>
+            <li><strong>Prazo:</strong> prazos acelerados podem implicar custos adicionais por hora extra de engenharia</li>
+            <li><strong>Experiencia do escritorio:</strong> projetistas com mais experiencia e portfolio comprovado tendem a cobrar valores mais altos, porem entregam projetos mais completos e com menor probabilidade de problemas na execucao</li>
+          </ul>
+
+          <p>E importante ressaltar que o custo do projeto representa tipicamente de 2% a 5% do custo total da instalacao eletrica. Economizar no projeto pode resultar em custos muito maiores na execucao, por conta de superdimensionamento de materiais, retrabalho e adequacoes necessarias para a aprovacao da concessionaria ou do Corpo de Bombeiros.</p>
+        </section>
+
+        <!-- Secao 8: Erros comuns em projetos eletricos -->
+        <section data-reveal>
+          <h2>Erros comuns em projetos eletricos prediais</h2>
+
+          <p>A experiencia em projetos eletricos prediais revela que determinados erros se repetem com frequencia, comprometendo a seguranca, a conformidade normativa e a economia da instalacao. Identificar esses erros e essencial para evita-los.</p>
+
+          <h3>1. Calculo de demanda incorreto</h3>
+
+          <p>O erro mais fundamental e calcular a demanda de forma imprecisa -- seja por subestimacao (que leva a sobrecarga de transformadores e condutores) ou por superestimacao excessiva (que resulta em equipamentos superdimensionados e custo desnecessario). Frequentemente, o projetista aplica fatores de demanda incorretos ou nao considera adequadamente as cargas de ar-condicionado, elevadores e equipamentos especiais.</p>
+
+          <p><strong>Como evitar:</strong> aplicar rigorosamente os fatores de demanda da NBR 5410 e dos regulamentos da concessionaria, levantar todas as cargas previstas com o arquiteto e os demais projetistas (mecanico, hidraulico) e considerar uma reserva de 15% a 20% para ampliacao futura.</p>
+
+          <h3>2. Desconsiderar a queda de tensao</h3>
+
+          <p>Em edificios de grande porte, os circuitos alimentadores percorrem distancias consideraveis desde a subestacao ate os quadros dos pavimentos superiores. Se o dimensionamento dos condutores considerar apenas o criterio de ampacidade, sem verificar a queda de tensao, os equipamentos nos andares mais altos podem receber tensao abaixo do minimo admissivel, prejudicando seu desempenho e reduzindo sua vida util.</p>
+
+          <p><strong>Como evitar:</strong> calcular a queda de tensao em cada trecho de alimentador e circuito terminal, respeitando o limite total de 7% da NBR 5410. Em prumadas longas, considerar a elevacao da secao do condutor ou a instalacao de transformadores auxiliares em pavimentos intermediarios.</p>
+
+          <h3>3. Ausencia de seletividade entre protecoes</h3>
+
+          <p>A falta de coordenacao entre os dispositivos de protecao (disjuntores) nos diferentes niveis da instalacao (QGBT, quadros parciais, circuitos terminais) pode fazer com que uma falha em um unico circuito provoque o desligamento de todo o edificio. Esse e um problema grave em edificios residenciais, onde um curto-circuito em um apartamento pode deixar todos os demais sem energia.</p>
+
+          <p><strong>Como evitar:</strong> realizar o estudo de seletividade (coordenacao de protecoes) com base nas curvas tempo-corrente dos disjuntores selecionados, garantindo que o disjuntor a montante (mais proximo da fonte) atue somente apos o disjuntor a jusante (mais proximo da carga) nao conseguir eliminar o defeito.</p>
+
+          <h3>4. Projeto de SPDA inadequado ou ausente</h3>
+
+          <p>Alguns projetos eletricos prediais nao incluem o SPDA ou o projetam de forma incompleta, sem a analise de gerenciamento de risco exigida pela NBR 5419 ou sem a especificacao adequada dos DPS. A consequencia e a vulnerabilidade da edificacao a descargas atmosfericas, com risco de danos aos equipamentos eletronicos, incendio e ate fatalidades.</p>
+
+          <p><strong>Como evitar:</strong> realizar a analise de gerenciamento de risco conforme a NBR 5419 parte 2, projetar o SPDA conforme o nivel de protecao determinado, e especificar DPS em todos os quadros de distribuicao (tipo 1 no QGBT, tipo 2 nos quadros parciais e tipo 3 nos equipamentos sensiveis).</p>
+
+          <h3>5. Nao prever infraestrutura para cabeamento estruturado</h3>
+
+          <p>A omissao da infraestrutura de cabeamento estruturado no projeto eletrico resulta na necessidade de improvisacoes durante a obra ou apos a entrega, com instalacao de canaletas aparentes, furacao de lajes e paredes, e interferencia eletromagnetica entre cabos de energia e cabos de dados instalados sem separacao adequada.</p>
+
+          <p><strong>Como evitar:</strong> prever no projeto eletrico toda a infraestrutura (eletrodutos, eletrocalhas, caixas de passagem, sala de equipamentos) para o cabeamento estruturado, respeitando as distancias minimas de separacao entre circuitos de energia e de dados.</p>
+
+          <h3>6. Subdimensionamento do sistema de aterramento</h3>
+
+          <p>Um sistema de aterramento com resistencia excessiva compromete a atuacao dos dispositivos de protecao (especialmente os DRs) e a eficacia do SPDA. Esse erro e comum em solos rochosos ou arenosos com alta resistividade, onde o projetista nao considera tratamento quimico do solo ou hastes de aterramento adicionais.</p>
+
+          <p><strong>Como evitar:</strong> solicitar a medicao de resistividade do solo antes do projeto, dimensionar a malha de aterramento para atender aos limites normativos e prever hastes adicionais ou tratamento quimico do solo quando necessario.</p>
+
+          <h3>7. Falta de documentacao e memorial de calculo</h3>
+
+          <p>Projetos entregues sem memorial de calculo, sem especificacao tecnica detalhada ou sem lista de materiais quantificada dificultam a execucao da obra, a fiscalizacao e a futura manutencao. A ausencia de documentacao tecnica tambem pode resultar na reprovacao do projeto pela concessionaria ou pela prefeitura.</p>
+
+          <p><strong>Como evitar:</strong> elaborar o projeto completo com todos os documentos exigidos pela NBR 5410, pela concessionaria e pela legislacao municipal, incluindo memorial de calculo, especificacoes tecnicas, lista de materiais e as-built ao final da obra.</p>
+        </section>
+
+        <!-- Especificacoes tecnicas -->
+        <section data-reveal>
+          <h2>Especificacoes tecnicas do projeto</h2>
+          <dl class="service-specs">
+            <div class="service-specs__item">
+              <dt>Norma principal (baixa tensao)</dt>
+              <dd>NBR 5410</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Norma de media tensao</dt>
+              <dd>NBR 14039</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Norma de seguranca do trabalho</dt>
+              <dd>NR 10</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Norma de SPDA</dt>
+              <dd>NBR 5419</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Queda de tensao maxima admissivel</dt>
+              <dd>7% (origem ao ponto de utilizacao)</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Fator de potencia minimo (ANEEL)</dt>
+              <dd>0,92</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Sensibilidade DR areas molhadas</dt>
+              <dd>30 mA</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Reserva minima em quadros</dt>
+              <dd>15% de espacos</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Iluminacao minima (comodo ate 6 m2)</dt>
+              <dd>100 VA</dd>
+            </div>
+            <div class="service-specs__item">
+              <dt>Resistencia de aterramento (subestacao)</dt>
+              <dd>Maximo 10 ohms</dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- FAQ -->
+        <section class="service-faq" aria-labelledby="faq-eletrico" data-reveal>
+          <h2 id="faq-eletrico">Perguntas frequentes</h2>
+
+          <details class="faq-item">
+            <summary>Qual a diferenca entre projeto eletrico residencial e predial?</summary>
+            <div class="faq-item__answer">
+              <p>O projeto eletrico residencial atende a uma unica unidade habitacional (casa ou apartamento individual), com demandas tipicamente ate 25 kW e alimentacao monofasica ou bifasica. Ja o projeto eletrico predial abrange toda a edificacao, incluindo areas comuns, subestacao, alimentacao em media tensao (13,8 kV), quadros de distribuicao geral e parciais, sistemas de emergencia, SPDA (para-raios), cabeamento estruturado e infraestrutura para elevadores, bombas e ar-condicionado central.</p>
+              <p>A complexidade normativa tambem e maior: alem da NBR 5410, o projeto predial deve atender a NBR 14039 (media tensao), NBR 5419 (SPDA) e NR 10 (seguranca). Solicite uma avaliacao do seu projeto com a <a href="/contato/">NPT Engenharia</a>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Quanto tempo leva para elaborar um projeto eletrico predial?</summary>
+            <div class="faq-item__answer">
+              <p>O prazo varia conforme o porte e a complexidade da edificacao. Para um edificio residencial de ate 20 pavimentos, o prazo tipico e de 30 a 45 dias uteis. Edificios comerciais ou de uso misto com subestacao propria podem exigir de 45 a 90 dias uteis.</p>
+              <p>Projetos hospitalares ou industriais, que envolvem classificacao de areas, sistemas de emergencia criticos e requisitos normativos adicionais, podem ultrapassar 90 dias. Esses prazos consideram o projeto completo, incluindo aprovacao junto a concessionaria de energia.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>E obrigatorio ter subestacao propria em edificios?</summary>
+            <div class="faq-item__answer">
+              <p>Depende da demanda total da edificacao e das regras da concessionaria local. Em geral, quando a demanda ultrapassa 75 kW (em Sao Paulo, pela ENEL) ou o limite estabelecido pela concessionaria regional, e obrigatorio o fornecimento em media tensao (13,8 kV) com subestacao de transformacao propria.</p>
+              <p>Edificios comerciais, hospitais, shopping centers e condominios de grande porte quase sempre necessitam de subestacao. A subestacao deve atender a NBR 14039 e aos padroes da concessionaria, e seu projeto requer aprovacao previa da distribuidora de energia.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Qual a validade de um projeto eletrico predial aprovado?</summary>
+            <div class="faq-item__answer">
+              <p>A validade do projeto aprovado junto a concessionaria de energia varia conforme a distribuidora, mas geralmente e de 12 a 24 meses. Apos esse prazo, se a obra nao tiver sido executada, pode ser necessario revalidar ou refazer o projeto, especialmente se houver mudancas nas normas tecnicas ou nos padroes da concessionaria.</p>
+              <p>Ja a aprovacao junto a prefeitura (como parte do projeto de instalacoes do alvara de construcao) segue a validade do proprio alvara. E fundamental iniciar a obra dentro do prazo de validade para evitar custos adicionais com reaprovacao.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>O projeto eletrico predial inclui o sistema de para-raios (SPDA)?</summary>
+            <div class="faq-item__answer">
+              <p>Sim, o projeto de SPDA (Sistema de Protecao contra Descargas Atmosfericas) e parte integrante do projeto eletrico predial. Conforme a NBR 5419, toda edificacao deve passar por uma analise de risco (gerenciamento de risco) que determina a necessidade e o nivel de protecao do SPDA. Na pratica, a grande maioria dos edificios prediais necessita de SPDA.</p>
+              <p>O projeto abrange os captores (terminais aereos), condutores de descida, sistema de aterramento dedicado e dispositivos de protecao contra surtos (DPS) nos quadros eletricos. O SPDA deve ser integrado ao projeto eletrico geral para garantir a equipotencializacao correta de todas as massas metalicas da edificacao.</p>
+            </div>
+          </details>
+        </section>
+
+      </div>
+    </article>
+
+    <!-- Artigos relacionados -->
+    <section class="blog-related">
+      <div class="container">
+        <h2 class="blog-related__title">Artigos Relacionados</h2>
+        <div class="blog-related__grid">
+          <a href="/blog/normas-abnt-construcao-civil/" class="blog-card" data-index="01" data-reveal>
+            <div class="blog-card__meta"><span class="blog-card__category">Normas</span></div>
+            <h3 class="blog-card__title">Normas ABNT para Construcao Civil</h3>
+            <p class="blog-card__excerpt">Conheca as principais normas ABNT aplicaveis a construcao civil e como garantir conformidade nos seus projetos de engenharia.</p>
+            <span class="blog-card__link">Ler artigo</span>
+          </a>
+          <a href="/blog/projeto-incendio-predial/" class="blog-card" data-index="02" data-reveal>
+            <div class="blog-card__meta"><span class="blog-card__category">Seguranca</span></div>
+            <h3 class="blog-card__title">Projeto de Incendio Predial</h3>
+            <p class="blog-card__excerpt">Guia completo sobre projeto de prevencao e combate a incendio predial, normas aplicaveis e requisitos do Corpo de Bombeiros.</p>
+            <span class="blog-card__link">Ler artigo</span>
+          </a>
+          <a href="/blog/projeto-hidraulico-predial-guia-completo/" class="blog-card" data-index="03" data-reveal>
+            <div class="blog-card__meta"><span class="blog-card__category">Hidraulica</span></div>
+            <h3 class="blog-card__title">Projeto Hidraulico Predial: Guia Completo</h3>
+            <p class="blog-card__excerpt">Tudo sobre projeto hidraulico predial: normas, dimensionamento, materiais, custos e erros comuns em instalacoes hidraulicas.</p>
+            <span class="blog-card__link">Ler artigo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="service-cta" data-reveal>
+      <div class="container">
+        <h2>Precisa de um projeto eletrico predial?</h2>
+        <p>Solicite um orcamento e receba uma proposta tecnica em ate 24 horas uteis.</p>
+        <div class="service-cta__actions">
+          <a href="/contato/" class="btn btn--primary">Solicitar Orcamento</a>
+          <a href="https://wa.me/5511900000000" class="btn btn--secondary" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <a href="/" class="site-logo" aria-label="NPT Engenharia — ir para o inicio">
+            <span class="site-logo__mark">NPT</span><span class="site-logo__text">Engenharia</span>
+          </a>
+          <p class="site-footer__tagline">Projetos aprovados. Na primeira vistoria. Pressurizacao · Hidraulica · Eletrica.</p>
+        </div>
+        <nav class="site-footer__links" aria-label="Links do rodape">
+          <div class="site-footer__col">
+            <p class="site-footer__col-title">Servicos</p>
+            <ul role="list">
+              <li><a href="/servicos/pressurizacao-escadas-emergencia/">Pressurizacao de Escadas</a></li>
+              <li><a href="/servicos/projetos-hidraulicos/">Projetos Hidraulicos</a></li>
+              <li><a href="/servicos/projetos-eletricos/">Projetos Eletricos</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__col">
+            <p class="site-footer__col-title">Empresa</p>
+            <ul role="list">
+              <li><a href="/sobre/">Sobre Nos</a></li>
+              <li><a href="/portfolio/">Portfolio</a></li>
+              <li><a href="/blog/">Blog</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__col">
+            <p class="site-footer__col-title">Contato</p>
+            <ul role="list">
+              <li class="site-footer__info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
+                <a href="mailto:contato@nptengenharia.com.br">contato@nptengenharia.com.br</a>
+              </li>
+              <li class="site-footer__info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/></svg>
+                <a href="tel:+5511900000000">+55 (11) 9 0000-0000</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="site-footer__divider"></div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">&copy; 2026 NPT Engenharia. Todos os direitos reservados.</p>
+        <p class="site-footer__crea">
+          <a href="https://consultaprofissional.confea.org.br/" target="_blank" rel="noopener noreferrer">CREA-SP [000000-D]</a>
+          &mdash; Engenheiro responsavel: [Nome do Engenheiro]
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

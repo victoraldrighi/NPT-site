@@ -206,7 +206,9 @@
 .page-home .nav-links a[href="/"],
 .page-sobre .nav-links a[href="/sobre/"],
 .page-contato .nav-links a[href="/contato/"],
-.page-portfolio .nav-links a[href="/portfolio/"] {
+.page-portfolio .nav-links a[href="/portfolio/"],
+.page-blog .nav-links a[href="/blog/"],
+.page-blog-post .nav-links a[href="/blog/"] {
   color: var(--amber-bright);
 }
 

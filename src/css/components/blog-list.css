@@ -1,0 +1,286 @@
+/* ============================================================
+   BLOG LIST — Precision Industrial
+   Grid de cards para listagem de artigos
+   ============================================================ */
+
+.blog-list {
+  padding: var(--sp-24) 0;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-list::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--blueprint-grid);
+  background-size: 48px 48px;
+  opacity: 0.35;
+}
+
+.blog-list::after {
+  content: 'BLOG_MODULE';
+  position: absolute;
+  top: var(--sp-8);
+  right: var(--sp-10);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.2em;
+}
+
+.blog-list__header {
+  text-align: left;
+  margin-bottom: var(--sp-16);
+  position: relative;
+  z-index: 1;
+  max-width: 40rem;
+}
+
+.blog-list__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  margin-bottom: var(--sp-6);
+}
+
+.blog-list__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  max-width: 52ch;
+  line-height: var(--leading-body);
+  border-left: 2px solid var(--amber);
+  padding-left: var(--sp-4);
+}
+
+/* Grid de cards */
+.blog-list__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--ink-border);
+  border: 1px solid var(--ink-border);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 48rem) {
+  .blog-list__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 80rem) {
+  .blog-list__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card individual */
+.blog-card {
+  background: var(--ink);
+  padding: var(--sp-8) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background var(--t-base);
+  overflow: hidden;
+}
+
+/* Linha âmbar que cresce no hover */
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--amber);
+  transition: width var(--t-slow);
+}
+
+.blog-card:hover {
+  background: var(--ink-mid);
+}
+
+.blog-card:hover::before {
+  width: 100%;
+}
+
+/* Referência numérica */
+.blog-card::after {
+  content: attr(data-index);
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.1em;
+}
+
+/* Meta: data + categoria */
+.blog-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.blog-card__date {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--chalk-ghost);
+  letter-spacing: 0.06em;
+}
+
+.blog-card__category {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--amber);
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+/* Título */
+.blog-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--sp-4);
+  transition: color var(--t-base);
+}
+
+.blog-card:hover .blog-card__title {
+  color: var(--amber-pale);
+}
+
+/* Excerpt */
+.blog-card__excerpt {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
+  flex: 1;
+  margin-bottom: var(--sp-6);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Link */
+.blog-card__link {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--amber);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: color var(--t-base), gap var(--t-base);
+  align-self: flex-start;
+}
+
+.blog-card__link::after {
+  content: '→';
+  transition: transform var(--t-base);
+}
+
+.blog-card:hover .blog-card__link {
+  color: var(--amber-bright);
+}
+
+.blog-card:hover .blog-card__link::after {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   BLOG POST META — dentro do service-article
+   ============================================================ */
+
+.blog-post__category {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--amber);
+  padding: 2px 10px;
+  display: inline-block;
+  margin-bottom: var(--sp-4);
+}
+
+.blog-post__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--chalk-ghost);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--sp-8);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--ink-border);
+}
+
+/* ============================================================
+   BLOG RELATED — Artigos relacionados no fim do post
+   ============================================================ */
+
+.blog-related {
+  padding: var(--sp-16) 0;
+  background: var(--ink-mid);
+  border-top: 1px solid var(--ink-border);
+}
+
+.blog-related .container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-left: var(--sp-6);
+  padding-right: var(--sp-6);
+}
+
+.blog-related__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.03em;
+  margin-bottom: var(--sp-8);
+}
+
+.blog-related__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--ink-border);
+  border: 1px solid var(--ink-border);
+}
+
+@media (min-width: 48rem) {
+  .blog-related__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .blog-related .container {
+    padding-left: var(--sp-10);
+    padding-right: var(--sp-10);
+  }
+}
