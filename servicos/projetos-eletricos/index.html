@@ -112,6 +112,17 @@
     </div>
   </header>
 
+  <!-- Urgency Ticker -->
+  <div class="urgency-ticker" aria-label="Avisos técnicos" aria-live="off">
+    <div class="urgency-ticker__track">
+      <span class="urgency-ticker__item"><span class="urgency-ticker__bullet">▸</span> Prazo AVCB: renovação obrigatória a cada 3 anos — não perca o prazo</span>
+      <span class="urgency-ticker__item"><span class="urgency-ticker__bullet">▸</span> Reprovação no Corpo de Bombeiros: multa de até R$ 50.000</span>
+      <span class="urgency-ticker__item"><span class="urgency-ticker__bullet">▸</span> Habite-se bloqueado sem AVCB aprovado — riscos contratuais</span>
+      <span class="urgency-ticker__item"><span class="urgency-ticker__bullet">▸</span> Projetos elétricos entregues em até 20 dias úteis com ART inclusa</span>
+      <span class="urgency-ticker__item"><span class="urgency-ticker__bullet">▸</span> Atendimento nacional: pressurização · hidráulica · elétrica · CREA-SP</span>
+    </div>
+  </div>
+
   <main>
 
     <nav aria-label="Navegação estrutural" class="breadcrumb">
@@ -287,6 +298,128 @@
       </div>
     </article>
 
+    <!-- Tech Spec Accordion -->
+    <section class="spec-accordion" aria-label="Especificações técnicas detalhadas" data-reveal>
+      <div class="container">
+        <div class="spec-accordion__header">
+          <span class="spec-accordion__label">// ESPECIFICAÇÕES TÉCNICAS</span>
+          <h2 class="spec-accordion__title">Detalhes do projeto</h2>
+        </div>
+        <div class="spec-accordion__items">
+          <div class="spec-accordion__item">
+            <button class="spec-accordion__trigger" aria-expanded="false" aria-controls="spec-el-1">
+              <span class="spec-accordion__trigger-num">01</span>
+              <span class="spec-accordion__trigger-text">Normas e regulamentações aplicáveis</span>
+              <span class="spec-accordion__trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="spec-accordion__body" id="spec-el-1" hidden>
+              <div class="spec-accordion__body-inner">
+                <p>Os projetos elétricos de baixa tensão são desenvolvidos conforme a <span class="spec-accordion__value">NBR 5410</span> (Instalações elétricas de baixa tensão) e a <span class="spec-accordion__value">NBR 5419</span> (Proteção contra descargas atmosféricas — SPDA). Em edificações que exigem sistema de proteção contra descargas atmosféricas, o projeto SPDA é elaborado concomitantemente. As normas de concessionárias (Enel, CPFL, RGE, entre outras) são atendidas para ligações novas e ampliações.</p>
+              </div>
+            </div>
+          </div>
+          <div class="spec-accordion__item">
+            <button class="spec-accordion__trigger" aria-expanded="false" aria-controls="spec-el-2">
+              <span class="spec-accordion__trigger-num">02</span>
+              <span class="spec-accordion__trigger-text">Sistemas e instalações projetadas</span>
+              <span class="spec-accordion__trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="spec-accordion__body" id="spec-el-2" hidden>
+              <div class="spec-accordion__body-inner">
+                <p>Desenvolvemos projetos para: <span class="spec-accordion__value">instalações de baixa tensão</span> (distribuição, quadros, circuitos), <span class="spec-accordion__value">iluminação</span> (normal, emergência e escapes luminosos), <span class="spec-accordion__value">SPDA</span> (captação, descida e aterramento), <span class="spec-accordion__value">grupos geradores</span> (transferência automática e distribuição em emergência), <span class="spec-accordion__value">QGBT</span> (quadro geral de baixa tensão) e regularização de instalações existentes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="spec-accordion__item">
+            <button class="spec-accordion__trigger" aria-expanded="false" aria-controls="spec-el-3">
+              <span class="spec-accordion__trigger-num">03</span>
+              <span class="spec-accordion__trigger-text">Entregáveis e documentação</span>
+              <span class="spec-accordion__trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="spec-accordion__body" id="spec-el-3" hidden>
+              <div class="spec-accordion__body-inner">
+                <p>Entregamos: plantas DWG e PDF por pavimento, diagrama unifilar, quadro de cargas, memorial de cálculo (demanda, curto-circuito, carga instalada), especificação de materiais e <span class="spec-accordion__value">ART CREA</span> assinada. O prazo médio é de <span class="spec-accordion__value">10 a 20 dias úteis</span> após recebimento das plantas arquitetônicas e dados da concessionária.</p>
+              </div>
+            </div>
+          </div>
+          <div class="spec-accordion__item">
+            <button class="spec-accordion__trigger" aria-expanded="false" aria-controls="spec-el-4">
+              <span class="spec-accordion__trigger-num">04</span>
+              <span class="spec-accordion__trigger-text">Laudos e regularização</span>
+              <span class="spec-accordion__trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="spec-accordion__body" id="spec-el-4" hidden>
+              <div class="spec-accordion__body-inner">
+                <p>Para edificações existentes que necessitam de regularização, emitimos <span class="spec-accordion__value">laudos técnicos</span> com diagnóstico das não conformidades NBR 5410, indicação das adequações necessárias e ART de vistoria. Esses laudos são aceitos pela prefeitura, seguradoras e administradoras de condomínio para fins de regularização predial.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-timeline" aria-label="Nosso processo de trabalho" data-reveal>
+      <div class="container">
+        <div class="process-timeline__header">
+          <span class="process-timeline__label">// PROCESSO</span>
+          <h2 class="process-timeline__title">Do briefing à entrega</h2>
+        </div>
+        <ol class="process-timeline__list" role="list">
+          <li class="process-timeline__step">
+            <div class="process-timeline__node" aria-hidden="true"></div>
+            <div class="process-timeline__connector" aria-hidden="true"></div>
+            <div class="process-timeline__content">
+              <span class="process-timeline__step-label">Etapa 01</span>
+              <h3 class="process-timeline__step-title">Briefing e levantamento</h3>
+              <p class="process-timeline__step-desc">Recebemos as plantas arquitetônicas, dados da concessionária e levantamos cargas, sistemas requeridos e padrão de entrada.</p>
+              <span class="process-timeline__step-time">Dia 1</span>
+            </div>
+          </li>
+          <li class="process-timeline__step">
+            <div class="process-timeline__node" aria-hidden="true"></div>
+            <div class="process-timeline__connector" aria-hidden="true"></div>
+            <div class="process-timeline__content">
+              <span class="process-timeline__step-label">Etapa 02</span>
+              <h3 class="process-timeline__step-title">Cálculo e dimensionamento</h3>
+              <p class="process-timeline__step-desc">Calculamos demanda, curto-circuito, carga instalada, dimensionamento de condutores e proteções conforme NBR 5410.</p>
+              <span class="process-timeline__step-time">Dias 2–8</span>
+            </div>
+          </li>
+          <li class="process-timeline__step">
+            <div class="process-timeline__node" aria-hidden="true"></div>
+            <div class="process-timeline__connector" aria-hidden="true"></div>
+            <div class="process-timeline__content">
+              <span class="process-timeline__step-label">Etapa 03</span>
+              <h3 class="process-timeline__step-title">Pranchas e unifilar</h3>
+              <p class="process-timeline__step-desc">Elaboramos plantas por pavimento, diagrama unifilar, quadro de cargas e detalhes de instalação em DWG e PDF.</p>
+              <span class="process-timeline__step-time">Dias 9–16</span>
+            </div>
+          </li>
+          <li class="process-timeline__step">
+            <div class="process-timeline__node" aria-hidden="true"></div>
+            <div class="process-timeline__connector" aria-hidden="true"></div>
+            <div class="process-timeline__content">
+              <span class="process-timeline__step-label">Etapa 04</span>
+              <h3 class="process-timeline__step-title">Revisão e ART</h3>
+              <p class="process-timeline__step-desc">Revisão técnica completa e assinatura da ART CREA pelo engenheiro responsável.</p>
+              <span class="process-timeline__step-time">Dias 17–20</span>
+            </div>
+          </li>
+          <li class="process-timeline__step">
+            <div class="process-timeline__node" aria-hidden="true"></div>
+            <div class="process-timeline__connector" aria-hidden="true"></div>
+            <div class="process-timeline__content">
+              <span class="process-timeline__step-label">Etapa 05</span>
+              <h3 class="process-timeline__step-title">Entrega e suporte</h3>
+              <p class="process-timeline__step-desc">Entregamos todos os arquivos e prestamos suporte durante o processo de aprovação junto à prefeitura e concessionária.</p>
+              <span class="process-timeline__step-time">Após entrega</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <section class="service-cta" data-reveal>
       <div class="container">
         <h2>Solicite um orçamento para seu projeto elétrico</h2>
@@ -364,6 +497,30 @@
       <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
     </svg>
   </a>
+
+  <!-- Sticky CTA Sidebar — desktop ≥1200px -->
+  <aside class="sticky-cta" aria-label="Solicitar orçamento rápido" id="sticky-cta">
+    <div class="sticky-cta__inner">
+      <div class="sticky-cta__header">
+        <span class="sticky-cta__label">ORÇAMENTO</span>
+        <span class="sticky-cta__dot" aria-hidden="true"></span>
+      </div>
+      <p class="sticky-cta__tagline">Proposta em<br><strong>24h úteis</strong></p>
+      <div class="sticky-cta__actions">
+        <a href="/contato/" class="sticky-cta__btn">Solicitar agora</a>
+        <a href="https://wa.me/5511900000000" class="sticky-cta__btn sticky-cta__btn--secondary" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (abre WhatsApp)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="sticky-cta__footer">
+        <span class="sticky-cta__norm">CREA-SP · ART inclusa</span>
+      </div>
+      <button class="sticky-cta__close" aria-label="Fechar painel de orçamento">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </aside>
 
   <script type="module" src="/src/js/main.js"></script>
 </body>

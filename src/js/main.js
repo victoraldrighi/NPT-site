@@ -22,5 +22,7 @@ import '../css/components/portfolio.css'
 import '../css/components/contact-form.css'
 import '../css/components/whatsapp-btn.css'
 import '../css/components/blog-list.css'
+import '../css/components/urgency-ticker.css'
+import '../css/components/interactive-components.css'
 
 import './scroll.js'

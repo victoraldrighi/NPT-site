@@ -69,6 +69,14 @@
   padding-bottom: var(--space-20);
 }
 
+/* Mobile padding fix */
+@media (max-width: 47.99rem) {
+  .service-article {
+    padding-left: var(--sp-4);
+    padding-right: var(--sp-4);
+  }
+}
+
 .service-article h1 {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-black);
@@ -176,7 +184,7 @@ dl.service-specs,
 @media (min-width: 48rem) {
   .service-specs {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: minmax(12rem, max-content) 1fr;
   }
 
   .service-specs dt {

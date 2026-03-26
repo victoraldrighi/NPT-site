@@ -336,3 +336,169 @@
     });
   }, { passive: true });
 })();
+
+// --- 11. Urgency Ticker — scroll infinito ---
+(function () {
+  var ticker = document.querySelector('.urgency-ticker');
+  if (!ticker) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var track = ticker.querySelector('.urgency-ticker__track');
+  if (!track) return;
+
+  // Duplicar itens para loop infinito
+  var items = Array.from(track.children);
+  items.forEach(function (item) {
+    var clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  var x = 0;
+  var speed = window.innerWidth < 768 ? 30 : 40; // px/s
+  var lastTime = null;
+  var paused = false;
+  var halfWidth = 0;
+
+  function init() {
+    // Largura da metade (itens originais apenas)
+    var total = 0;
+    for (var i = 0; i < items.length; i++) {
+      total += items[i].offsetWidth;
+    }
+    halfWidth = total;
+  }
+
+  ticker.addEventListener('mouseenter', function () { paused = true; });
+  ticker.addEventListener('mouseleave', function () { paused = false; });
+
+  function tick(ts) {
+    if (!lastTime) lastTime = ts;
+    var dt = (ts - lastTime) / 1000; // segundos
+    lastTime = ts;
+
+    if (!paused) {
+      x -= speed * dt;
+      if (halfWidth > 0 && -x >= halfWidth) {
+        x += halfWidth; // reset invisível
+      }
+      track.style.transform = 'translateX(' + x + 'px)';
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  // Inicializa após render
+  requestAnimationFrame(function () {
+    init();
+    requestAnimationFrame(tick);
+  });
+})();
+
+// --- 12. Sticky CTA Sidebar ---
+(function () {
+  var sidebar = document.getElementById('sticky-cta');
+  if (!sidebar) return;
+  if (window.innerWidth < 1200) return;
+
+  var dismissed = false;
+  var SCROLL_THRESHOLD = 300;
+
+  function updateVisibility() {
+    if (dismissed) return;
+    var scrolled = window.scrollY > SCROLL_THRESHOLD;
+    // Ocultar próximo ao footer
+    var footer = document.querySelector('.site-footer');
+    var nearFooter = false;
+    if (footer) {
+      var footerTop = footer.getBoundingClientRect().top;
+      nearFooter = footerTop < window.innerHeight + 100;
+    }
+    if (scrolled && !nearFooter) {
+      sidebar.classList.add('is-visible');
+      sidebar.classList.remove('is-hidden');
+    } else {
+      sidebar.classList.remove('is-visible');
+      sidebar.classList.add('is-hidden');
+    }
+  }
+
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+  updateVisibility();
+
+  // Botão fechar
+  var closeBtn = sidebar.querySelector('.sticky-cta__close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      dismissed = true;
+      sidebar.classList.remove('is-visible');
+      sidebar.classList.add('is-hidden');
+    });
+  }
+})();
+
+// --- 13. Spec Accordion — aria-expanded + max-height transition ---
+(function () {
+  var accordions = document.querySelectorAll('.spec-accordion');
+  if (!accordions.length) return;
+
+  accordions.forEach(function (accordion) {
+    var triggers = accordion.querySelectorAll('.spec-accordion__trigger');
+    triggers.forEach(function (trigger) {
+      var bodyId = trigger.getAttribute('aria-controls');
+      var body = bodyId ? document.getElementById(bodyId) : null;
+      if (!body) return;
+
+      // Remove hidden e fecha via max-height
+      body.removeAttribute('hidden');
+      body.style.maxHeight = '0';
+      body.style.overflow = 'hidden';
+      body.style.transition = 'max-height 0.4s cubic-bezier(0.16,1,0.3,1)';
+
+      trigger.addEventListener('click', function () {
+        var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+        // Fechar todos no mesmo accordion
+        triggers.forEach(function (t) {
+          var bId = t.getAttribute('aria-controls');
+          var b = bId ? document.getElementById(bId) : null;
+          if (b && t !== trigger) {
+            t.setAttribute('aria-expanded', 'false');
+            b.style.maxHeight = '0';
+          }
+        });
+
+        // Toggle atual
+        if (isOpen) {
+          trigger.setAttribute('aria-expanded', 'false');
+          body.style.maxHeight = '0';
+        } else {
+          trigger.setAttribute('aria-expanded', 'true');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+})();
+
+// --- 14. Process Timeline — stagger reveal via IntersectionObserver ---
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+
+  var timelines = document.querySelectorAll('.process-timeline__list');
+  timelines.forEach(function (list) {
+    var steps = list.querySelectorAll('.process-timeline__step');
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        steps.forEach(function (step, i) {
+          setTimeout(function () {
+            step.classList.add('is-visible');
+          }, i * 120);
+        });
+        obs.unobserve(list);
+      });
+    }, { threshold: 0.1 });
+    obs.observe(list);
+  });
+})();
