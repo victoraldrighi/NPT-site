@@ -502,3 +502,116 @@
     obs.observe(list);
   });
 })();
+
+// --- Blueprint grid pulses ---
+(function () {
+  var canvas = document.getElementById('hero-grid-pulses');
+  if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var ctx = canvas.getContext('2d');
+  var CELL = 48;         // deve coincidir com background-size da grade CSS
+  var MAX_PULSES = 3;    // poucos pulsos por vez
+  var SPEED = 90;        // px/s — lento, sutil
+  var pulses = [];
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Cria um pulso: escolhe aleatoriamente uma linha H ou V e uma posição
+  function spawnPulse() {
+    var w = canvas.width;
+    var h = canvas.height;
+    var horiz = Math.random() < 0.5;
+    if (horiz) {
+      // linha horizontal: escolhe uma linha da grade
+      var row = Math.floor(Math.random() * Math.ceil(h / CELL)) * CELL;
+      var dir = Math.random() < 0.5 ? 1 : -1;
+      pulses.push({
+        horiz: true,
+        x: dir > 0 ? -60 : w + 60,
+        y: row,
+        dir: dir,
+        len: CELL * (1.5 + Math.random()),   // comprimento do pulso
+        alpha: 0.55 + Math.random() * 0.25
+      });
+    } else {
+      // linha vertical
+      var col = Math.floor(Math.random() * Math.ceil(w / CELL)) * CELL;
+      var dir = Math.random() < 0.5 ? 1 : -1;
+      pulses.push({
+        horiz: false,
+        x: col,
+        y: dir > 0 ? -60 : h + 60,
+        dir: dir,
+        len: CELL * (1.5 + Math.random()),
+        alpha: 0.55 + Math.random() * 0.25
+      });
+    }
+  }
+
+  // Intervalo entre novos pulsos — espaçado para não poluir
+  var spawnTimer = 0;
+  var SPAWN_INTERVAL = 1.4; // segundos entre cada spawn
+
+  var lastTime = null;
+
+  function draw(ts) {
+    if (!lastTime) lastTime = ts;
+    var dt = Math.min((ts - lastTime) / 1000, 0.1);
+    lastTime = ts;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Spawn
+    spawnTimer += dt;
+    if (spawnTimer >= SPAWN_INTERVAL && pulses.length < MAX_PULSES) {
+      spawnPulse();
+      spawnTimer = 0;
+    }
+
+    // Move e desenha
+    for (var i = pulses.length - 1; i >= 0; i--) {
+      var p = pulses[i];
+      p.x += (p.horiz ? SPEED * p.dir * dt : 0);
+      p.y += (p.horiz ? 0 : SPEED * p.dir * dt);
+
+      // Remove quando saiu completamente
+      var outH = p.horiz && (p.dir > 0 ? p.x - p.len > canvas.width : p.x + p.len < 0);
+      var outV = !p.horiz && (p.dir > 0 ? p.y - p.len > canvas.height : p.y + p.len < 0);
+      if (outH || outV) { pulses.splice(i, 1); continue; }
+
+      // Gradiente linear: transparente → amber → transparente
+      var gx0 = p.horiz ? p.x - p.len * (p.dir > 0 ? 1 : 0) : p.x;
+      var gy0 = p.horiz ? p.y : p.y - p.len * (p.dir > 0 ? 1 : 0);
+      var gx1 = p.horiz ? p.x + p.len * (p.dir > 0 ? 0 : 1) : p.x;
+      var gy1 = p.horiz ? p.y : p.y + p.len * (p.dir > 0 ? 0 : 1);
+
+      var grad = ctx.createLinearGradient(gx0, gy0, gx1, gy1);
+      grad.addColorStop(0,   'rgba(245,166,35,0)');
+      grad.addColorStop(0.4, 'rgba(245,166,35,' + p.alpha + ')');
+      grad.addColorStop(0.7, 'rgba(255,212,122,' + (p.alpha * 0.9) + ')');
+      grad.addColorStop(1,   'rgba(245,166,35,0)');
+
+      ctx.beginPath();
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 1.5;
+      if (p.horiz) {
+        ctx.moveTo(gx0, p.y);
+        ctx.lineTo(gx1, p.y);
+      } else {
+        ctx.moveTo(p.x, gy0);
+        ctx.lineTo(p.x, gy1);
+      }
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  requestAnimationFrame(draw);
+})();
