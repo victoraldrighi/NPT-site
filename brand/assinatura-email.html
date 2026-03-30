@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assinatura de E-mail — NPT Engenharia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0C1017;
+      font-family: 'DM Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .instructions {
+      background: #050709;
+      border: 1px solid #1E2733;
+      border-left: 3px solid #D4860A;
+      padding: 1.5rem 2rem;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .instructions h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: #F5A623;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+
+    .instructions ol {
+      list-style: decimal;
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .instructions li {
+      font-size: 0.72rem;
+      color: #9BA3AE;
+      line-height: 1.6;
+    }
+
+    .instructions li strong { color: #F2EEE8; }
+
+    .instructions .note {
+      margin-top: 1rem;
+      font-size: 0.68rem;
+      color: #3D4855;
+      border-top: 1px solid #1E2733;
+      padding-top: 0.75rem;
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D4860A;
+      align-self: flex-start;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .signature-wrapper {
+      max-width: 600px;
+      width: 100%;
+      background: #F0EDE8;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .signature-wrapper::after {
+      content: 'COPY ZONE';
+      position: absolute;
+      top: 0.5rem;
+      right: 0.75rem;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: #9BA3AE;
+    }
+
+    .copy-btn {
+      margin-top: 1.25rem;
+      background: #D4860A;
+      color: #050709;
+      border: none;
+      padding: 10px 24px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover { background: #F5A623; }
+
+    .copy-status {
+      font-size: 0.7rem;
+      color: #F5A623;
+      margin-top: 0.5rem;
+      min-height: 1em;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #1E2733;
+      border: 1px solid #1E2733;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .spec-item {
+      background: #050709;
+      padding: 0.75rem 1rem;
+    }
+
+    .spec-key {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D4860A;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .spec-val {
+      font-size: 0.72rem;
+      color: #9BA3AE;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="instructions">
+    <h2>// Como instalar</h2>
+    <ol>
+      <li><strong>Gmail:</strong> Configurações (⚙) → Ver todas as configurações → Assinatura → Nova → clique em "Copiar assinatura" abaixo e cole.</li>
+      <li><strong>Outlook Desktop:</strong> Arquivo → Opções → Email → Assinaturas → Nova → cole no editor HTML.</li>
+      <li><strong>Apple Mail:</strong> Mail → Preferências → Assinaturas → clique em + → edite nome → arraste o HTML para a área de assinatura.</li>
+      <li>Substitua os campos <strong style="color:#F5A623">[ENTRE COLCHETES]</strong> pelos dados reais antes de instalar.</li>
+      <li>A assinatura usa fontes de fallback (Impact, Courier New) quando Google Fonts não carrega — funciona offline.</li>
+    </ol>
+    <p class="note">Layout table-based: compatível com Gmail · Outlook 2016+ · Apple Mail · Thunderbird · Superhuman. Sem imagens externas — zero bloqueio por firewall corporativo.</p>
+  </div>
+
+  <!-- ══════════════════════════════
+       ASSINATURA COMPLETA
+  ══════════════════════════════ -->
+  <div class="section-label">// Versão completa — e-mails de primeiro contato</div>
+
+  <div class="signature-wrapper">
+    <div id="sig-full">
+      <!-- TABLE-BASED SIGNATURE — inline styles obrigatórios para Outlook -->
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;max-width:560px;width:100%;font-family:Arial,sans-serif;">
+        <tbody>
+          <tr>
+            <!-- Col esquerda: logo dark -->
+            <td style="background-color:#050709;padding:18px 20px;vertical-align:top;width:148px;border-right:3px solid #D4860A;">
+              <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:38px;color:#F2EEE8;line-height:1;display:block;letter-spacing:0.04em;">NPT</span>
+              <span style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:#D4860A;display:block;margin-top:1px;">Engenharia</span>
+              <div style="width:28px;height:1px;background-color:#D4860A;margin:10px 0;"></div>
+              <span style="font-family:'DM Mono','Courier New',monospace;font-size:8.5px;color:#3D4855;letter-spacing:0.08em;display:block;line-height:1.6;">CREA-SP<br>[000000-D]<br>CONFEA · ABNT</span>
+            </td>
+            <!-- Col direita: dados -->
+            <td style="padding:18px 0 18px 20px;vertical-align:top;border-top:2px solid #050709;">
+              <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:21px;color:#050709;line-height:1;letter-spacing:0.04em;display:block;margin-bottom:1px;">[NOME DO ENGENHEIRO]</span>
+              <span style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;display:block;margin-bottom:12px;">Engenheiro Civil · CREA-SP [000000-D]</span>
+
+              <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+                <tr>
+                  <td style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;padding-right:8px;padding-bottom:3px;white-space:nowrap;vertical-align:middle;">Email</td>
+                  <td style="font-family:'DM Mono','Courier New',monospace;font-size:10.5px;color:#1A1A1A;padding-bottom:3px;vertical-align:middle;"><a href="mailto:contato@nptengenharia.com.br" style="color:#1A1A1A;text-decoration:none;">contato@nptengenharia.com.br</a></td>
+                </tr>
+                <tr>
+                  <td style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;padding-right:8px;padding-bottom:3px;white-space:nowrap;vertical-align:middle;">Tel</td>
+                  <td style="font-family:'DM Mono','Courier New',monospace;font-size:10.5px;color:#1A1A1A;padding-bottom:3px;vertical-align:middle;"><a href="tel:+5511900000000" style="color:#1A1A1A;text-decoration:none;">+55 (11) 9 0000-0000</a></td>
+                </tr>
+                <tr>
+                  <td style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;padding-right:8px;padding-bottom:3px;white-space:nowrap;vertical-align:middle;">WA</td>
+                  <td style="font-family:'DM Mono','Courier New',monospace;font-size:10.5px;color:#1A1A1A;padding-bottom:3px;vertical-align:middle;"><a href="https://wa.me/5511900000000" style="color:#1A1A1A;text-decoration:none;">+55 (11) 9 0000-0000</a></td>
+                </tr>
+                <tr>
+                  <td style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;padding-right:8px;white-space:nowrap;vertical-align:middle;">Site</td>
+                  <td style="font-family:'DM Mono','Courier New',monospace;font-size:10.5px;color:#1A1A1A;vertical-align:middle;"><a href="https://nptengenharia.com.br" style="color:#1A1A1A;text-decoration:none;">nptengenharia.com.br</a></td>
+                </tr>
+              </table>
+
+              <div style="margin-top:12px;padding-top:10px;border-top:1px solid #D8D4CE;font-family:'DM Mono','Courier New',monospace;font-size:8.5px;color:#9BA3AE;letter-spacing:0.08em;">
+                Pressurização · Hidráulica · Elétrica · Atendimento nacional
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding:0;">
+              <div style="background-color:#D4860A;height:2px;"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="copy-btn" onclick="copySig('sig-full','status-full')">Copiar assinatura completa</button>
+    <p class="copy-status" id="status-full"></p>
+  </div>
+
+  <!-- ══════════════════════════════
+       ASSINATURA COMPACTA
+  ══════════════════════════════ -->
+  <div class="section-label">// Versão compacta — respostas e threads</div>
+
+  <div class="signature-wrapper">
+    <div id="sig-compact">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;max-width:480px;font-family:Arial,sans-serif;">
+        <tbody>
+          <tr>
+            <td style="padding-right:14px;border-right:2px solid #D4860A;vertical-align:middle;">
+              <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;color:#050709;letter-spacing:0.04em;line-height:1;display:block;">NPT</span>
+              <span style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#D4860A;display:block;margin-top:1px;">Engenharia</span>
+            </td>
+            <td style="padding-left:14px;vertical-align:middle;">
+              <span style="font-family:'Bebas Neue',Impact,sans-serif;font-size:15px;color:#050709;display:block;letter-spacing:0.04em;line-height:1.1;">[NOME DO ENGENHEIRO]</span>
+              <span style="font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:9px;color:#D4860A;display:block;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Eng. Civil · CREA-SP [000000-D]</span>
+              <span style="font-family:'Courier New',monospace;font-size:10px;color:#555;display:block;">
+                <a href="mailto:contato@nptengenharia.com.br" style="color:#555;text-decoration:none;">contato@nptengenharia.com.br</a>
+                &nbsp;·&nbsp;
+                <a href="https://nptengenharia.com.br" style="color:#555;text-decoration:none;">nptengenharia.com.br</a>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding-top:8px;">
+              <div style="background-color:#D4860A;height:1px;"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="copy-btn" onclick="copySig('sig-compact','status-compact')">Copiar versão compacta</button>
+    <p class="copy-status" id="status-compact"></p>
+  </div>
+
+  <!-- Especificações técnicas -->
+  <div class="section-label">// Especificações técnicas</div>
+
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-key">Largura máxima</span>
+      <span class="spec-val">560px (completa) · 480px (compacta)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-key">Layout</span>
+      <span class="spec-val">Table-based · Inline styles obrigatórios Outlook</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-key">Fontes primárias</span>
+      <span class="spec-val">Bebas Neue · DM Mono · Barlow Condensed</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-key">Fontes fallback</span>
+      <span class="spec-val">Impact · Courier New · Arial Narrow</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-key">Imagens externas</span>
+      <span class="spec-val">Nenhuma — zero risco de bloqueio</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-key">Compatibilidade</span>
+      <span class="spec-val">Gmail · Outlook 2016+ · Apple Mail · Thunderbird</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-key">Cor âmbar</span>
+      <span class="spec-val">#D4860A (queimado) · #F5A623 (bright)</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-key">Cor fundo logo</span>
+      <span class="spec-val">#050709 (ink — preto técnico)</span>
+    </div>
+  </div>
+
+  <script>
+    function copySig(id, statusId) {
+      var el = document.getElementById(id);
+      var range = document.createRange();
+      range.selectNodeContents(el);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      try {
+        document.execCommand('copy');
+        document.getElementById(statusId).textContent = '✓ Copiado — cole diretamente no cliente de email.';
+      } catch (e) {
+        document.getElementById(statusId).textContent = 'Selecione manualmente (Ctrl+A na área) e copie com Ctrl+C.';
+      }
+      sel.removeAllRanges();
+    }
+  </script>
+</body>
+</html>

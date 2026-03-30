@@ -1,0 +1,76 @@
+/* urgency-ticker.css */
+.urgency-ticker {
+  background: var(--ink-border);  /* linha fina de 36px de altura */
+  border-bottom: 1px solid var(--amber);
+  overflow: hidden;
+  height: 2.25rem;  /* 36px */
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 99;  /* abaixo do header (z-index 100+) */
+}
+
+/* Gradients fadeout nas bordas */
+.urgency-ticker::before,
+.urgency-ticker::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.urgency-ticker::before {
+  left: 0;
+  background: linear-gradient(to right, var(--ink-border), transparent);
+}
+.urgency-ticker::after {
+  right: 0;
+  background: linear-gradient(to left, var(--ink-border), transparent);
+}
+
+.urgency-ticker__track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  will-change: transform;
+  /* JS controla a animação via requestAnimationFrame para loop perfeito */
+}
+
+.urgency-ticker__item {
+  font-family: var(--font-label);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--chalk-dim);
+  text-transform: uppercase;
+  padding: 0 var(--sp-6);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.urgency-ticker__bullet {
+  color: var(--amber);
+  font-size: var(--text-xs);
+}
+
+/* Palavras-chave em destaque amber */
+.urgency-ticker__item strong {
+  color: var(--amber-bright);
+  font-weight: 600;
+}
+
+/* Pausar ao hover */
+.urgency-ticker:hover .urgency-ticker__track {
+  animation-play-state: paused;
+}
+
+/* Reduced motion: sem animação */
+@media (prefers-reduced-motion: reduce) {
+  .urgency-ticker__track {
+    animation: none !important;
+  }
+}

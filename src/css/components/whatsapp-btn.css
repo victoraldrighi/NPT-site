@@ -1,0 +1,47 @@
+/* ============================================================
+   whatsapp-btn.css — WhatsApp floating action button
+   Exception: #25D366 (WhatsApp brand green) and #FFFFFF are
+   the ONLY allowed hex values in this file.
+   The button ships with the HTML `hidden` attribute.
+   To activate: remove `hidden` from the element and set the
+   real phone number in href.
+   ============================================================ */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), var(--shadow-md);
+  text-decoration: none;
+  z-index: 900;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  animation: wapp-pulse 2.5s ease-in-out infinite;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+  animation: none;
+  color: #FFFFFF;
+}
+
+.whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+@keyframes wapp-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), var(--shadow-md); }
+  50%       { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.6), 0 0 0 8px rgba(37, 211, 102, 0.1); }
+}

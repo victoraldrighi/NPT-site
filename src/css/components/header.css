@@ -1,0 +1,297 @@
+/* ============================================================
+   HEADER — Precision Industrial
+   Linha fina no topo, mono técnica, sem glassmorphism
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(5,7,9,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ink-border);
+  transition: border-color var(--t-slow);
+}
+
+/* Linha de acento âmbar no topo — como régua de calibração */
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--amber) 20%,
+    var(--amber-bright) 50%,
+    var(--amber) 80%,
+    transparent 100%);
+  opacity: 0.6;
+}
+
+.site-header--scrolled {
+  border-bottom-color: var(--amber);
+  border-bottom-width: 1px;
+}
+
+.site-header--scrolled::before {
+  opacity: 1;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+  gap: var(--sp-4);
+}
+
+/* Logo — sem borda arredondada, geométrico */
+.site-logo {
+  color: var(--chalk);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  text-decoration: none;
+  flex-shrink: 0;
+  cursor: crosshair;
+}
+
+.site-logo__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--amber);
+  /* Clip-path geométrico — corte diagonal característico */
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25%);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  transition: background var(--t-base), clip-path var(--t-slow);
+}
+
+.site-logo:hover .site-logo__mark {
+  background: var(--amber-bright);
+}
+
+.site-logo__text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  color: var(--chalk);
+  line-height: 1;
+}
+
+.site-logo__tagline {
+  display: none;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--chalk-ghost);
+  letter-spacing: 0.04em;
+}
+
+/* Nav */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Hamburger — mobile */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: crosshair;
+  padding: var(--sp-2);
+}
+
+.nav-hamburger__line {
+  display: block;
+  width: 1.25rem;
+  height: 1px;
+  background: var(--chalk);
+  transition: transform 300ms var(--ease-in-out), opacity var(--t-base), width var(--t-base);
+}
+
+.nav-hamburger__line:nth-child(2) {
+  width: 0.875rem;
+}
+
+.nav-hamburger:hover .nav-hamburger__line {
+  background: var(--amber);
+}
+
+.nav-toggle:checked ~ .nav-hamburger .nav-hamburger__line:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.nav-toggle:checked ~ .nav-hamburger .nav-hamburger__line:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.nav-toggle:checked ~ .nav-hamburger .nav-hamburger__line:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+.nav-toggle:focus-visible ~ .nav-hamburger {
+  outline: 1px solid var(--amber);
+  outline-offset: 4px;
+}
+
+/* Nav links — mobile */
+.nav-links {
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(5,7,9,0.98);
+  border-bottom: 1px solid var(--ink-border);
+  transition: max-height 400ms var(--ease-in-out), visibility var(--t-base);
+  padding: 0;
+}
+
+.nav-toggle:checked ~ .nav-links {
+  visibility: visible;
+  max-height: 30rem;
+}
+
+.nav-links a {
+  display: block;
+  font-family: var(--font-label);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  padding: var(--sp-4) var(--sp-6);
+  border-bottom: 1px solid var(--ink-border);
+  text-decoration: none;
+  transition: color var(--t-base), padding-left var(--t-base);
+}
+
+.nav-links a:hover {
+  color: var(--amber);
+  padding-left: var(--sp-10);
+}
+
+.nav-links .nav-cta a {
+  color: var(--amber);
+  border: none;
+}
+
+/* Active link */
+.page-home .nav-links a[href="/"],
+.page-sobre .nav-links a[href="/sobre/"],
+.page-contato .nav-links a[href="/contato/"],
+.page-portfolio .nav-links a[href="/portfolio/"],
+.page-blog .nav-links a[href="/blog/"],
+.page-blog-post .nav-links a[href="/blog/"] {
+  color: var(--amber-bright);
+}
+
+/* Desktop */
+@media (min-width: 48rem) {
+  .site-header__inner {
+    height: 4rem;
+  }
+
+  .site-logo__tagline {
+    display: block;
+  }
+
+  .nav-hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    visibility: visible;
+    max-height: none;
+    overflow: visible;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-links a {
+    padding: var(--sp-2) var(--sp-4);
+    border: none;
+    font-size: var(--text-xs);
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: var(--sp-4);
+    right: var(--sp-4);
+    height: 1px;
+    background: var(--amber);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--t-slow);
+  }
+
+  .nav-links a:hover {
+    color: var(--chalk);
+    padding-left: var(--sp-4);
+  }
+
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .nav-links .nav-cta {
+    margin-left: var(--sp-4);
+  }
+
+  .nav-links .nav-cta a {
+    background: var(--amber);
+    color: var(--ink);
+    padding: var(--sp-2) var(--sp-5);
+    font-weight: 700;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: background var(--t-base), clip-path var(--t-slow);
+  }
+
+  .nav-links .nav-cta a:hover {
+    background: var(--amber-bright);
+    color: var(--ink);
+    padding-left: var(--sp-5);
+  }
+
+  .nav-links .nav-cta a::after {
+    display: none;
+  }
+
+  .site-header--minimal .site-header__inner {
+    justify-content: center;
+  }
+}

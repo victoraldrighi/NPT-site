@@ -1,0 +1,248 @@
+/* ============================================================
+   contact-form.css — Precision Industrial Dark
+   ============================================================ */
+
+.contact-page {
+  padding-top: var(--sp-20);
+  padding-bottom: var(--sp-24);
+  background: var(--ink);
+  min-height: 100svh;
+}
+
+.contact-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: var(--sp-5);
+}
+
+.contact-page__eyebrow::before {
+  content: '//';
+  color: var(--chalk-ghost);
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+.contact-page h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--chalk);
+  margin-bottom: var(--sp-5);
+}
+
+.contact-page__intro {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
+  margin-bottom: var(--sp-12);
+  max-width: 52ch;
+  border-left: 2px solid var(--amber);
+  padding-left: var(--sp-4);
+}
+
+/* Two-column grid */
+.contact-page__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+@media (min-width: 80rem) {
+  .contact-page__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--sp-12);
+    align-items: start;
+  }
+}
+
+/* ------------------------------------------------------------
+   Contact form
+   ------------------------------------------------------------ */
+.contact-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: var(--sp-6);
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: var(--sp-2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Required asterisk */
+.form-label .required {
+  color: var(--amber-bright);
+  margin-left: var(--sp-1);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: var(--sp-4);
+  min-height: 44px;
+  border: 1px solid var(--ink-border);
+  border-top: none;
+  border-left: 2px solid var(--chalk-ghost);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  background: var(--ink-soft);
+  color: var(--chalk);
+  transition: border-color var(--t-base), background var(--t-base);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--chalk-ghost);
+}
+
+.form-control:focus {
+  border-left-color: var(--amber);
+  border-color: var(--amber);
+  border-top: 1px solid var(--amber);
+  background: var(--ink-mid);
+  box-shadow: inset 0 0 0 1px rgba(212,134,10,0.15);
+}
+
+.form-control--textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Select variant */
+.form-control--select {
+  background-color: var(--ink-soft);
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path fill="%23D4860A" d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right var(--sp-4) center;
+  background-size: 12px;
+  padding-right: var(--sp-10);
+  cursor: pointer;
+  color: var(--chalk);
+}
+
+.form-control--select option {
+  background: var(--ink-soft);
+  color: var(--chalk);
+}
+
+/* Helper text */
+.form-helper {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--chalk-ghost);
+  margin-top: var(--sp-2);
+  letter-spacing: 0.04em;
+}
+
+/* Submit button */
+.form-submit {
+  margin-top: var(--sp-8);
+}
+
+/* ------------------------------------------------------------
+   Contact info card (aside)
+   ------------------------------------------------------------ */
+.contact-info {
+  background: var(--ink-mid);
+  border: 1px solid var(--ink-border);
+  border-left: 2px solid var(--amber);
+  padding: var(--sp-8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Corner mark top-right */
+.contact-info::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 14px;
+  height: 14px;
+  border-top: 1px solid var(--amber);
+  border-right: 1px solid var(--amber);
+}
+
+/* Section tag */
+.contact-info::after {
+  content: 'CONTATO_DATA';
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.16em;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chalk);
+  margin-bottom: var(--sp-6);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-top: var(--sp-4);
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--ink-border);
+}
+
+.contact-info__item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.contact-info__item svg {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--amber);
+  margin-top: 0.125rem;
+  display: block;
+}
+
+.contact-info__item a {
+  color: var(--chalk-dim);
+  text-decoration: none;
+  transition: color var(--t-base);
+}
+
+.contact-info__item a:hover {
+  color: var(--amber);
+}

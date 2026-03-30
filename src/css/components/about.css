@@ -1,0 +1,326 @@
+/* ============================================================
+   About Hero — engineer profile — dark premium
+   ============================================================ */
+.about-hero {
+  padding: var(--space-20) 0 var(--space-16);
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 30% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 30% 50%, black 30%, transparent 100%);
+}
+
+.about-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-10);
+  position: relative;
+  z-index: 1;
+}
+
+/* Photo */
+.about-photo {
+  width: 280px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Amber accent corner */
+.about-photo::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  width: 4rem;
+  height: 4rem;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.about-photo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text content */
+.about-hero__text {
+  text-align: left;
+}
+
+.about-hero__text h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.03em;
+  line-height: var(--line-height-heading);
+}
+
+.about-hero__role {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-body);
+}
+
+.about-hero__role a {
+  color: var(--color-brand-accent);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.about-hero__role a:hover {
+  color: var(--color-brand-accent-light);
+}
+
+.about-hero__specialization {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+  max-width: 44ch;
+}
+
+@media (min-width: 48rem) {
+  .about-hero__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16);
+  }
+
+  .about-hero__text {
+    flex: 1;
+  }
+
+  .about-hero__text h1 {
+    font-size: var(--font-size-5xl);
+  }
+
+  .about-photo {
+    width: 320px;
+  }
+}
+
+/* ============================================================
+   Mission
+   ============================================================ */
+.about-mission {
+  padding: var(--space-20) 0;
+  background: var(--gradient-section);
+  text-align: center;
+}
+
+.about-mission h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.02em;
+}
+
+.about-mission p {
+  max-width: 52ch;
+  margin: 0 auto;
+  line-height: var(--line-height-body);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+}
+
+/* ============================================================
+   Differentials
+   ============================================================ */
+.about-differentials {
+  padding: var(--space-20) 0;
+  background: var(--color-bg-page);
+}
+
+.about-differentials h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-12);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.differentials__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px; /* gap técnico — como grade modular */
+  background: var(--ink-border);
+  border: 1px solid var(--ink-border);
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* Card sem radius — Precision Industrial */
+.differential {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-5);
+  align-items: flex-start;
+  background: var(--ink-soft);
+  padding: var(--sp-8) var(--sp-8);
+  position: relative;
+  transition: background var(--t-slow);
+  overflow: hidden;
+}
+
+/* Linha âmbar que cresce no hover — mesmo padrão do service-card */
+.differential::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+
+/* Número técnico de referência no canto */
+.differential::after {
+  content: attr(data-index);
+  position: absolute;
+  bottom: var(--sp-3);
+  right: var(--sp-4);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.12em;
+}
+
+.differential:hover {
+  background: var(--ink-mid);
+}
+
+.differential:hover::before {
+  transform: scaleX(1);
+}
+
+/* Ícone — borda técnica, sem radius */
+.differential__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink-border);
+  color: var(--amber);
+  flex-shrink: 0;
+  transition: border-color var(--t-base), background var(--t-base);
+}
+
+.differential:hover .differential__icon {
+  border-color: var(--amber);
+  background: rgba(212,134,10,0.08);
+}
+
+.differential__icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+}
+
+.differential__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chalk);
+  margin-bottom: var(--sp-2);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  transition: color var(--t-base);
+}
+
+.differential:hover .differential__title {
+  color: var(--amber-pale);
+}
+
+.differential__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
+}
+
+@media (min-width: 48rem) {
+  .differentials__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   Obrigado page
+   ============================================================ */
+.obrigado-main {
+  text-align: center;
+  padding: var(--space-32) 0;
+  background: var(--gradient-section);
+  min-height: 60svh;
+  display: flex;
+  align-items: center;
+}
+
+.obrigado-main .container {
+  width: 100%;
+}
+
+.obrigado-icon {
+  width: 5rem;
+  height: 5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-8);
+  color: var(--color-feedback-success);
+}
+
+.obrigado-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+}
+
+.obrigado-main h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.obrigado-main p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  line-height: var(--line-height-body);
+}

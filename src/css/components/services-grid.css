@@ -1,0 +1,253 @@
+/* ============================================================
+   SERVICES GRID — Precision Industrial
+   Layout assimétrico: coluna de numeração + cards sem radius
+   Hover: linha de acento cresce da esquerda para direita
+   ============================================================ */
+
+.services {
+  padding: var(--sp-24) 0;
+  background: var(--ink-mid);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blueprint grid de fundo sutil */
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--blueprint-grid);
+  background-size: 48px 48px;
+  opacity: 0.4;
+}
+
+/* Linha de divisão horizontal técnica no topo */
+.services::after {
+  content: 'SRV_MODULE';
+  position: absolute;
+  top: var(--sp-8);
+  right: var(--sp-10);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.2em;
+}
+
+.services__header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--sp-16);
+  /* Alinhado à esquerda — quebra com o padrão centralizado */
+  text-align: left;
+  max-width: 40rem;
+}
+
+.services__header .section-label {
+  display: block;
+  margin-bottom: var(--sp-4);
+}
+
+.services__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  margin-bottom: var(--sp-6);
+}
+
+.services__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  max-width: 52ch;
+  line-height: var(--leading-body);
+  border-left: 2px solid var(--amber);
+  padding-left: var(--sp-4);
+}
+
+/* Grid — coluna única com separadores horizontais */
+.services__grid {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--ink-border);
+}
+
+/* Service card — linha horizontal, não coluna vertical */
+.service-card {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: var(--sp-6);
+  padding: var(--sp-8) 0;
+  border-bottom: 1px solid var(--ink-border);
+  position: relative;
+  cursor: crosshair;
+  transition: background var(--t-slow);
+}
+
+/* Linha de acento âmbar que cresce no hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.service-card:hover {
+  background: rgba(242,238,232,0.02);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Coluna número */
+.service-card__number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--ink-border);
+  line-height: 1;
+  padding-top: 4px;
+  transition: color var(--t-base);
+  /* Remove absolute positioning */
+  position: static;
+}
+
+.service-card:hover .service-card__number {
+  color: var(--amber);
+}
+
+/* Coluna conteúdo */
+.service-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* Linha superior: ícone + título */
+.service-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+/* Ícone — sem fundo arredondado, apenas borda técnica */
+.service-card__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink-border);
+  color: var(--amber);
+  flex-shrink: 0;
+  transition: border-color var(--t-base), background var(--t-base);
+}
+
+.service-card:hover .service-card__icon {
+  border-color: var(--amber);
+  background: rgba(212,134,10,0.08);
+}
+
+.service-card__icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  transition: color var(--t-base);
+}
+
+.service-card:hover .service-card__title {
+  color: var(--amber-pale);
+}
+
+.service-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
+  max-width: 60ch;
+}
+
+/* Rodapé do card: norma + link */
+.service-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.service-card__norm {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--amber);
+  border: 1px solid rgba(212,134,10,0.3);
+  padding: 2px var(--sp-3);
+  letter-spacing: 0.06em;
+  background: rgba(212,134,10,0.05);
+  /* sem border-radius */
+}
+
+.service-card__link {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--chalk-ghost);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: color var(--t-base), gap var(--t-base);
+}
+
+.service-card__link::after {
+  content: '→';
+  display: inline-block;
+  transition: transform var(--t-base);
+}
+
+.service-card__link:hover {
+  color: var(--amber);
+  gap: var(--sp-3);
+}
+
+.service-card__link:hover::after {
+  transform: translateX(4px);
+}
+
+/* Desktop — layout de 2 colunas para cards */
+@media (min-width: 48rem) {
+  .service-card {
+    grid-template-columns: 4rem 1fr 1fr;
+    gap: var(--sp-8);
+    align-items: start;
+    padding: var(--sp-10) 0;
+  }
+
+  .service-card__body {
+    gap: var(--sp-4);
+  }
+
+  .service-card__head {
+    grid-column: 2 / 3;
+  }
+}

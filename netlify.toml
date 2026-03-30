@@ -1,0 +1,117 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/obrigado"
+  to = "/obrigado/"
+  status = 301
+
+[[redirects]]
+  from = "/contato"
+  to = "/contato/"
+  status = 301
+
+[[redirects]]
+  from = "/sobre"
+  to = "/sobre/"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/portfolio/"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/pressurizacao-escadas-emergencia"
+  to = "/servicos/pressurizacao-escadas-emergencia/"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/projetos-hidraulicos"
+  to = "/servicos/projetos-hidraulicos/"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/projetos-eletricos"
+  to = "/servicos/projetos-eletricos/"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/pressurizacao-escadas-emergencia-guia-completo"
+  to = "/blog/pressurizacao-escadas-emergencia-guia-completo/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/nbr-9077-requisitos-saidas-emergencia"
+  to = "/blog/nbr-9077-requisitos-saidas-emergencia/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/it-11-corpo-bombeiros-requisitos"
+  to = "/blog/it-11-corpo-bombeiros-requisitos/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/projeto-hidraulico-predial-guia-completo"
+  to = "/blog/projeto-hidraulico-predial-guia-completo/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/projeto-eletrico-predial-guia-completo"
+  to = "/blog/projeto-eletrico-predial-guia-completo/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/avcb-auto-vistoria-corpo-bombeiros"
+  to = "/blog/avcb-auto-vistoria-corpo-bombeiros/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/clcb-certificado-licenciamento"
+  to = "/blog/clcb-certificado-licenciamento/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/diferenca-avcb-clcb"
+  to = "/blog/diferenca-avcb-clcb/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/sistema-pressurizacao-escadas-como-funciona"
+  to = "/blog/sistema-pressurizacao-escadas-como-funciona/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/normas-abnt-construcao-civil"
+  to = "/blog/normas-abnt-construcao-civil/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/projeto-incendio-predial"
+  to = "/blog/projeto-incendio-predial/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/quanto-custa-projeto-hidraulico"
+  to = "/blog/quanto-custa-projeto-hidraulico/"
+  status = 301

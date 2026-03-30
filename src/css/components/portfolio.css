@@ -1,0 +1,196 @@
+/* ============================================================
+   portfolio.css — dark premium portfolio layout
+   All colors via var() tokens only — no hex values.
+   ============================================================ */
+
+.portfolio-page {
+  padding-bottom: var(--space-24);
+  background: var(--gradient-section);
+  min-height: 100svh;
+}
+
+/* ------------------------------------------------------------
+   Portfolio hero / intro section
+   ------------------------------------------------------------ */
+.portfolio-hero {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding-top: var(--space-16);
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.portfolio-hero h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-heading);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 48rem) {
+  .portfolio-hero h1 {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+.portfolio-hero p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+/* ------------------------------------------------------------
+   Portfolio grid
+   ------------------------------------------------------------ */
+.portfolio-grid {
+  margin-top: var(--space-8);
+}
+
+/* ------------------------------------------------------------
+   Portfolio case study card
+   ------------------------------------------------------------ */
+.portfolio-case {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.portfolio-case:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-amber);
+}
+
+/* Left accent */
+.portfolio-case::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--space-8);
+  bottom: var(--space-8);
+  width: 3px;
+  background: var(--gradient-accent);
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+.portfolio-case h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-heading);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.03em;
+}
+
+.portfolio-case h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-accent);
+  margin-bottom: var(--space-3);
+  margin-top: var(--space-8);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+}
+
+/* ------------------------------------------------------------
+   Case metadata
+   ------------------------------------------------------------ */
+.portfolio-case__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-6);
+}
+
+.portfolio-case__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ------------------------------------------------------------
+   Norms definition list
+   ------------------------------------------------------------ */
+.portfolio-case__norms {
+  margin-bottom: var(--space-6);
+}
+
+.portfolio-case__norms dt {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  color: var(--color-brand-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.portfolio-case__norms dd {
+  margin: 0;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+/* ------------------------------------------------------------
+   Scope of deliverables
+   ------------------------------------------------------------ */
+.portfolio-case__scope {
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-5);
+}
+
+.portfolio-case__scope li {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+.portfolio-case__scope li::marker {
+  color: var(--color-brand-accent);
+}
+
+/* ------------------------------------------------------------
+   Result paragraph
+   ------------------------------------------------------------ */
+.portfolio-case__result {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+  margin-bottom: var(--space-6);
+  background: rgba(245, 166, 35, 0.04);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+}
+
+/* ------------------------------------------------------------
+   Photo note / disclaimer
+   ------------------------------------------------------------ */
+.portfolio-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+  opacity: 0.6;
+  margin-top: var(--space-4);
+}

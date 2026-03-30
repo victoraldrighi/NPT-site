@@ -1,0 +1,210 @@
+/* ============================================================
+   HOW WE WORK — Precision Industrial
+   Timeline vertical com linha de progresso animada
+   Números grandes como marcações de medição
+   ============================================================ */
+
+.how-we-work {
+  padding: var(--sp-24) 0;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-we-work::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--blueprint-grid);
+  background-size: 48px 48px;
+  opacity: 0.35;
+}
+
+/* Marcação lateral de seção */
+.how-we-work::after {
+  content: 'PROC_MODULE';
+  position: absolute;
+  top: var(--sp-8);
+  right: var(--sp-10);
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.2em;
+}
+
+.how-we-work__header {
+  text-align: left;
+  margin-bottom: var(--sp-16);
+  position: relative;
+  z-index: 1;
+  max-width: 40rem;
+}
+
+.how-we-work__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  margin-bottom: var(--sp-6);
+}
+
+.how-we-work__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  max-width: 52ch;
+  line-height: var(--leading-body);
+  border-left: 2px solid var(--amber);
+  padding-left: var(--sp-4);
+}
+
+/* Steps — lista com linha de timeline */
+.how-we-work__steps {
+  list-style: none;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  counter-reset: steps;
+  border-left: 1px solid var(--ink-border);
+  margin-left: var(--sp-6);
+  padding-left: var(--sp-10);
+}
+
+/* Step individual */
+.how-we-work__step {
+  padding: var(--sp-8) 0;
+  border-bottom: 1px solid var(--ink-border);
+  position: relative;
+  transition: background var(--t-slow);
+}
+
+/* Marcador na linha — círculo técnico */
+.how-we-work__step::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--sp-10) - 4px);
+  top: calc(var(--sp-8) + 2px);
+  width: 9px;
+  height: 9px;
+  background: var(--ink);
+  border: 1px solid var(--chalk-ghost);
+  transition: border-color var(--t-base), background var(--t-base);
+}
+
+.how-we-work__step:hover::before {
+  border-color: var(--amber);
+  background: var(--amber);
+}
+
+/* Número grande como anotação técnica de margem */
+.how-we-work__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  color: var(--ink-border);
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--sp-3);
+  transition: color var(--t-base);
+  /* Número posicionado à direita como anotação */
+  float: right;
+  margin-left: var(--sp-6);
+}
+
+.how-we-work__step:hover .how-we-work__number {
+  color: rgba(212,134,10,0.25);
+}
+
+.how-we-work__title-step {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chalk);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--sp-3);
+  transition: color var(--t-base);
+}
+
+.how-we-work__step:hover .how-we-work__title-step {
+  color: var(--amber-pale);
+}
+
+.how-we-work__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--chalk-dim);
+  line-height: var(--leading-body);
+  max-width: 56ch;
+  clear: both;
+}
+
+/* Desktop — grid de 4 colunas horizontais */
+@media (min-width: 48rem) {
+  .how-we-work__steps {
+    flex-direction: row;
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--ink-border);
+    gap: 0;
+    /* Linha de progresso âmbar que cresce da esquerda */
+    position: relative;
+  }
+
+  /* Linha de progresso âmbar que aparece acima da border-top */
+  .how-we-work__steps::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 1px;
+    background: var(--amber);
+    width: 0;
+    transition: width 1.2s cubic-bezier(.16,1,.3,1);
+    z-index: 2;
+  }
+
+  /* Quando a seção entrar no viewport, JS adiciona .is-visible */
+  .how-we-work__steps.is-visible::before {
+    width: 100%;
+  }
+
+  .how-we-work__step {
+    flex: 1;
+    padding: var(--sp-8) var(--sp-6);
+    border-bottom: none;
+    border-right: 1px solid var(--ink-border);
+    background: transparent;
+  }
+
+  .how-we-work__step:last-child {
+    border-right: none;
+  }
+
+  /* Marcador no topo da linha horizontal */
+  .how-we-work__step::before {
+    left: var(--sp-6);
+    top: -5px;
+  }
+
+  /* Marcador âmbar ativo quando passo em hover */
+  .how-we-work__step:hover::before {
+    border-color: var(--amber);
+    background: var(--amber);
+    box-shadow: 0 0 8px rgba(212,134,10,0.5);
+  }
+
+  .how-we-work__number {
+    float: none;
+    margin-left: 0;
+  }
+
+  .how-we-work__desc {
+    max-width: none;
+  }
+}

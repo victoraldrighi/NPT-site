@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NPT Engenharia — Manual de Identidade Visual v1.0</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap');
+
+/* ============================================================
+   TOKENS & RESET
+   ============================================================ */
+:root {
+  --ink:          #050709;
+  --ink-mid:      #0C1017;
+  --ink-soft:     #141B26;
+  --ink-border:   #1E2733;
+  --amber:        #D4860A;
+  --amber-bright: #F5A623;
+  --amber-pale:   #FFD47A;
+  --chalk:        #F2EEE8;
+  --chalk-dim:    #9BA3AE;
+  --chalk-ghost:  #3D4855;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'DM Mono', monospace;
+  --font-label:   'Barlow Condensed', sans-serif;
+
+  --scale-xs:   0.625rem;
+  --scale-sm:   0.75rem;
+  --scale-base: 0.875rem;
+  --scale-md:   1rem;
+  --scale-lg:   1.25rem;
+  --scale-xl:   1.5rem;
+  --scale-2xl:  2rem;
+  --scale-3xl:  3rem;
+  --scale-4xl:  4rem;
+  --scale-hero: 7rem;
+
+  --nav-w: 200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--chalk);
+  font-family: var(--font-body);
+  font-size: var(--scale-base);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   BLUEPRINT GRID
+   ============================================================ */
+.blueprint-bg {
+  position: relative;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(rgba(212,134,10,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,134,10,0.04) 1px, transparent 1px),
+    linear-gradient(rgba(212,134,10,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,134,10,0.02) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+}
+
+.blueprint-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(5,7,9,0.7) 100%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   GRAIN OVERLAY
+   ============================================================ */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ============================================================
+   LATERAL NAV
+   ============================================================ */
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--nav-w);
+  height: 100vh;
+  background: var(--ink-mid);
+  border-right: 1px solid var(--ink-border);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  overflow-y: auto;
+}
+
+.side-nav .nav-logo {
+  padding: 0 1.25rem 2rem;
+  border-bottom: 1px solid var(--ink-border);
+  margin-bottom: 1.5rem;
+}
+
+.side-nav .nav-logo span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--amber-bright);
+  line-height: 1;
+}
+
+.side-nav .nav-logo small {
+  font-family: var(--font-label);
+  font-size: 0.6rem;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.side-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--chalk-ghost);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+  color: var(--amber-bright);
+  border-left-color: var(--amber-bright);
+  background: rgba(212,134,10,0.06);
+}
+
+.side-nav a .nav-num {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--chalk-ghost);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+.main {
+  margin-left: var(--nav-w);
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+section {
+  min-height: 100vh;
+  padding: 5rem 4rem 5rem 4.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--ink-border);
+}
+
+.section-ref {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--amber);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-ref::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--amber);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 0.04em;
+  color: var(--chalk);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-label);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--chalk-dim);
+  letter-spacing: 0.08em;
+  margin-bottom: 3rem;
+}
+
+/* ============================================================
+   CORNER BRACKETS
+   ============================================================ */
+.bracket {
+  position: relative;
+}
+
+.bracket::before,
+.bracket::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--amber);
+  border-style: solid;
+}
+
+.bracket::before {
+  top: -4px;
+  left: -4px;
+  border-width: 2px 0 0 2px;
+}
+
+.bracket::after {
+  bottom: -4px;
+  right: -4px;
+  border-width: 0 2px 2px 0;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+/* ============================================================
+   01 — CAPA
+   ============================================================ */
+#capa {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+#capa .diagonal-line {
+  position: absolute;
+  width: 200%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber) 30%, var(--amber-bright) 50%, var(--amber) 70%, transparent);
+  transform: rotate(-12deg);
+  top: 48%;
+  left: -50%;
+  opacity: 0.4;
+}
+
+#capa .diagonal-line-2 {
+  position: absolute;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--amber) 20%, transparent 80%);
+  transform: rotate(-12deg);
+  top: 52%;
+  left: -50%;
+  opacity: 0.15;
+}
+
+.cover-logo-mark {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
+.cover-logo-text {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 14vw, 10rem);
+  letter-spacing: 0.08em;
+  color: var(--chalk);
+  line-height: 0.9;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-logo-text .amber-letter {
+  color: var(--amber-bright);
+}
+
+.cover-tagline {
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  position: relative;
+  z-index: 2;
+  margin-top: 1rem;
+}
+
+.cover-meta {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--chalk-ghost);
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cover-meta::before,
+.cover-meta::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--chalk-ghost);
+  opacity: 0.4;
+}
+
+.cover-corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: var(--amber);
+  border-style: solid;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.cover-corner.tl { top: 2rem; left: 2rem; border-width: 2px 0 0 2px; }
+.cover-corner.tr { top: 2rem; right: 2rem; border-width: 2px 2px 0 0; }
+.cover-corner.bl { bottom: 2rem; left: 2rem; border-width: 0 0 2px 2px; }
+.cover-corner.br { bottom: 2rem; right: 2rem; border-width: 0 2px 2px 0; }
+
+/* ============================================================
+   02 — LOGOTIPO
+   ============================================================ */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.logo-card {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 200px;
+  position: relative;
+}
+
+.logo-card.dark-bg   { background: var(--ink); border: 1px solid var(--ink-border); }
+.logo-card.light-bg  { background: var(--chalk); }
+.logo-card.mono-bg   { background: #2A2A2A; border: 1px solid #333; }
+
+.logo-card-label {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.logo-card.dark-bg  .logo-card-label { color: var(--chalk-ghost); }
+.logo-card.light-bg .logo-card-label { color: #64748B; }
+.logo-card.mono-bg  .logo-card-label { color: #888; }
+
+/* LOGO SVG inline renderings */
+.logo-render {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.logo-npt {
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.logo-eng {
+  font-family: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.logo-bar {
+  width: 100%;
+  height: 2px;
+}
+
+/* dark variation */
+.logo-card.dark-bg .logo-npt  { font-size: 3.5rem; color: var(--chalk); }
+.logo-card.dark-bg .logo-bar  { background: var(--amber); }
+.logo-card.dark-bg .logo-eng  { font-size: 0.55rem; color: var(--chalk-dim); }
+
+/* light variation */
+.logo-card.light-bg .logo-npt { font-size: 3.5rem; color: #0C1017; }
+.logo-card.light-bg .logo-bar { background: var(--amber); }
+.logo-card.light-bg .logo-eng { font-size: 0.55rem; color: #64748B; }
+
+/* mono variation */
+.logo-card.mono-bg .logo-npt  { font-size: 3.5rem; color: #fff; }
+.logo-card.mono-bg .logo-bar  { background: #fff; }
+.logo-card.mono-bg .logo-eng  { font-size: 0.55rem; color: #aaa; }
+
+/* clearspace */
+.clearspace-diagram {
+  border: 1px dashed var(--amber);
+  padding: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto 3rem;
+}
+
+.clearspace-diagram .cs-x-label {
+  position: absolute;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+}
+
+.cs-x-label.top    { top: -1.2rem; left: 50%; transform: translateX(-50%); }
+.cs-x-label.bottom { bottom: -1.2rem; left: 50%; transform: translateX(-50%); }
+.cs-x-label.left   { left: -1.8rem; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+.cs-x-label.right  { right: -1.8rem; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+/* incorrect uses */
+.incorrect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.incorrect-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-border);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.incorrect-card::after {
+  content: '✕';
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 20px;
+  height: 20px;
+  background: #B91C1C;
+  color: #fff;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+}
+
+.incorrect-label {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  color: #B91C1C;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.incorrect-desc {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--chalk-dim);
+  margin-top: 0.25rem;
+}
+
+/* logo specs table */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+}
+
+.spec-table th {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-bottom: 1px solid var(--ink-border);
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+.spec-table td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--ink-border);
+  color: var(--chalk-dim);
+}
+
+.spec-table td:first-child { color: var(--chalk); }
+.spec-table tr:last-child td { border-bottom: none; }
+
+/* ============================================================
+   03 — PALETA
+   ============================================================ */
+.color-group {
+  margin-bottom: 3rem;
+}
+
+.color-group-title {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-bottom: 1px solid var(--ink-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.color-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--ink-border);
+}
+
+.swatch-chip {
+  height: 80px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.4rem;
+}
+
+.swatch-chip-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+
+.swatch-body {
+  padding: 0.75rem;
+  background: var(--ink-soft);
+  flex: 1;
+}
+
+.swatch-var {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  color: var(--amber-pale);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.swatch-hex {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--chalk);
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+
+.swatch-rgb {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  color: var(--chalk-dim);
+  margin-bottom: 0.5rem;
+}
+
+.swatch-use {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   04 — TIPOGRAFIA
+   ============================================================ */
+.type-specimen {
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-border);
+  padding: 2rem 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.type-specimen-label {
+  font-family: var(--font-label);
+  font-size: 0.62rem;
+  color: var(--amber);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.type-alphabet {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--chalk);
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  word-break: break-all;
+}
+
+.type-numbers {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--amber-bright);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+.type-mono-sample {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--chalk-dim);
+  line-height: 1.8;
+}
+
+.type-mono-special {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--amber-pale);
+  letter-spacing: 0.1em;
+  margin-top: 0.5rem;
+}
+
+.type-scale-table {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.type-scale-row {
+  display: grid;
+  grid-template-columns: 80px 80px 1fr;
+  align-items: baseline;
+  border-bottom: 1px solid var(--ink-border);
+  padding: 0.75rem 0;
+  gap: 1rem;
+}
+
+.type-scale-row .ts-name {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  color: var(--amber);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.type-scale-row .ts-size {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--chalk-ghost);
+}
+
+.type-scale-row .ts-sample {
+  font-family: var(--font-display);
+  color: var(--chalk);
+  line-height: 1.1;
+}
+
+/* ============================================================
+   05 — ICONOGRAFIA & ELEMENTOS
+   ============================================================ */
+.element-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.element-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-border);
+  padding: 2rem;
+}
+
+.element-card-title {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.25rem;
+}
+
+.element-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--chalk-dim);
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+/* bracket demo */
+.bracket-demo {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bracket-item {
+  position: relative;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  color: var(--chalk-dim);
+  letter-spacing: 0.08em;
+}
+
+.bracket-item::before,
+.bracket-item::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--amber);
+  border-style: solid;
+}
+
+.bracket-item::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.bracket-item::after  { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+
+/* amber lines */
+.amber-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.amber-line-demo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.amber-line-demo span {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  color: var(--chalk-ghost);
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.a-line {
+  background: var(--amber);
+  flex: 1;
+}
+
+/* norm tags */
+.norm-tags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.norm-tag {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber-bright);
+  border: 1px solid var(--amber);
+  padding: 0.2rem 0.5rem;
+  background: rgba(212,134,10,0.08);
+}
+
+/* technical markers */
+.tech-markers {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tech-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-marker .symbol {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  color: var(--amber-bright);
+}
+
+.tech-marker .m-label {
+  font-family: var(--font-label);
+  font-size: 0.6rem;
+  color: var(--chalk-ghost);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ============================================================
+   06 — VOZ & TOM
+   ============================================================ */
+.personality-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.personality-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-border);
+  border-top: 2px solid var(--amber);
+  padding: 2rem 1.5rem;
+}
+
+.personality-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--amber);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.personality-word {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--chalk);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.personality-desc {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--chalk-dim);
+  line-height: 1.7;
+}
+
+/* copy comparison */
+.copy-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.copy-block {
+  padding: 1.5rem;
+  border: 1px solid var(--ink-border);
+}
+
+.copy-block.correct  { border-left: 3px solid #16A34A; background: rgba(22,163,74,0.05); }
+.copy-block.incorrect { border-left: 3px solid #B91C1C; background: rgba(185,28,28,0.05); }
+
+.copy-block-label {
+  font-family: var(--font-label);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.copy-block.correct  .copy-block-label { color: #16A34A; }
+.copy-block.incorrect .copy-block-label { color: #B91C1C; }
+
+.copy-block p {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--chalk-dim);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* glossary */
+.glossary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.glossary-item {
+  padding: 1rem;
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-border);
+}
+
+.glossary-term {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--amber-bright);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+}
+
+.glossary-def {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  color: var(--chalk-dim);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   07 — APLICAÇÕES / MOCKUPS
+   ============================================================ */
+.mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.mockup-wrap {
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-border);
+  padding: 1.5rem;
+}
+
+.mockup-title {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mockup-title::after {
+  content: '';
+  display: block;
+  height: 1px;
+  flex: 1;
+  background: var(--ink-border);
+}
+
+/* Email header mockup */
+.mock-email {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  overflow: hidden;
+}
+
+.mock-email-header {
+  background: var(--ink);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--amber);
+}
+
+.mock-email-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--chalk);
+  letter-spacing: 0.1em;
+}
+
+.mock-email-logo span { color: var(--amber-bright); }
+
+.mock-email-contact {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  color: var(--chalk-dim);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.mock-email-body {
+  padding: 1.5rem;
+  background: #F8F9FA;
+}
+
+.mock-email-greeting {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  color: #1E293B;
+  margin-bottom: 0.5rem;
+}
+
+.mock-email-text {
+  font-size: 0.7rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+
+.mock-email-footer {
+  background: var(--ink-mid);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  color: var(--chalk-ghost);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Slide mockup */
+.mock-slide {
+  background: var(--ink);
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.mock-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,134,10,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,134,10,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.mock-slide-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mock-slide-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--chalk);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.mock-slide-title span { color: var(--amber-bright); }
+
+.mock-slide-bar {
+  width: 60px;
+  height: 2px;
+  background: var(--amber);
+  margin: 0.75rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.mock-slide-sub {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  color: var(--chalk-dim);
+  position: relative;
+  z-index: 1;
+}
+
+.mock-slide-corner {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--chalk);
+  letter-spacing: 0.08em;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.mock-slide-accent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--amber-bright), var(--amber), transparent);
+}
+
+/* Document mockup */
+.mock-doc {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.mock-doc-header {
+  background: var(--ink);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 3px solid var(--amber);
+}
+
+.mock-doc-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--chalk);
+  letter-spacing: 0.1em;
+}
+
+.mock-doc-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--chalk-ghost);
+}
+
+.mock-doc-type {
+  font-family: var(--font-label);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+}
+
+.mock-doc-body {
+  padding: 1.5rem;
+}
+
+.mock-doc-title {
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.mock-doc-meta {
+  font-size: 0.6rem;
+  color: #94A3B8;
+  margin-bottom: 1rem;
+  font-family: var(--font-body);
+}
+
+.mock-doc-line {
+  height: 6px;
+  background: #E2E8F0;
+  margin-bottom: 0.4rem;
+}
+
+.mock-doc-line.short { width: 60%; }
+.mock-doc-line.medium { width: 80%; }
+
+.mock-doc-norm {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 0.1rem 0.35rem;
+  margin-top: 0.75rem;
+}
+
+/* Hero site mockup */
+.mock-hero {
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 220px;
+}
+
+.mock-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,134,10,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,134,10,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.mock-hero-bar {
+  width: 2px;
+  height: 40px;
+  background: var(--amber);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mock-hero-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mock-hero-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--chalk);
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.04em;
+}
+
+.mock-hero-title em {
+  color: var(--amber-bright);
+  font-style: normal;
+}
+
+.mock-hero-sub {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  color: var(--chalk-dim);
+  margin: 0.75rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.mock-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--amber);
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+}
+
+.mock-hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ink-border);
+  z-index: 2;
+}
+
+.mock-hero-nav-logo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--chalk);
+  letter-spacing: 0.1em;
+}
+
+.mock-hero-nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.mock-hero-nav-links span {
+  font-family: var(--font-label);
+  font-size: 0.55rem;
+  color: var(--chalk-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+.mt-1  { margin-top: 0.5rem; }
+.mt-2  { margin-top: 1rem; }
+.mt-3  { margin-top: 1.5rem; }
+.mt-4  { margin-top: 2rem; }
+.mt-6  { margin-top: 3rem; }
+.mb-1  { margin-bottom: 0.5rem; }
+.mb-2  { margin-bottom: 1rem; }
+.mb-3  { margin-bottom: 1.5rem; }
+.mb-4  { margin-bottom: 2rem; }
+.mb-6  { margin-bottom: 3rem; }
+
+.text-amber  { color: var(--amber-bright); }
+.text-dim    { color: var(--chalk-dim); }
+.text-ghost  { color: var(--chalk-ghost); }
+.text-chalk  { color: var(--chalk); }
+
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-label);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber-bright);
+  border: 1px solid var(--amber);
+  padding: 0.15rem 0.5rem;
+  background: rgba(212,134,10,0.06);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--ink-border);
+  margin: 2rem 0;
+}
+
+.amber-rule {
+  border: none;
+  border-top: 2px solid var(--amber);
+  width: 60px;
+  margin: 1.5rem 0;
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  .side-nav { display: none !important; }
+  .main { margin-left: 0 !important; }
+
+  section {
+    page-break-before: always;
+    min-height: auto;
+    padding: 3rem 3.5rem;
+  }
+
+  section:first-child { page-break-before: auto; }
+
+  #capa {
+    min-height: 100vh;
+    page-break-after: always;
+  }
+
+  .fade-up {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  :root { --nav-w: 0px; }
+  .side-nav { display: none; }
+  .main { margin-left: 0; }
+  section { padding: 3rem 1.5rem; }
+  .logo-grid, .incorrect-grid { grid-template-columns: 1fr; }
+  .copy-compare, .glossary { grid-template-columns: 1fr; }
+  .mockup-grid { grid-template-columns: 1fr; }
+  .personality-grid { grid-template-columns: 1fr; }
+  .element-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="grain">
+
+<!-- ============================================================
+     LATERAL NAV
+     ============================================================ -->
+<nav class="side-nav" aria-label="Navegação do brandbook">
+  <div class="nav-logo">
+    <span>NPT</span>
+    <small>Engenharia · Brand</small>
+  </div>
+  <a href="#capa"><span class="nav-num">00</span> Capa</a>
+  <a href="#logotipo"><span class="nav-num">01</span> Logotipo</a>
+  <a href="#paleta"><span class="nav-num">02</span> Paleta</a>
+  <a href="#tipografia"><span class="nav-num">03</span> Tipografia</a>
+  <a href="#iconografia"><span class="nav-num">04</span> Iconografia</a>
+  <a href="#voz"><span class="nav-num">05</span> Voz &amp; Tom</a>
+  <a href="#aplicacoes"><span class="nav-num">06</span> Aplicações</a>
+</nav>
+
+<!-- ============================================================
+     MAIN
+     ============================================================ -->
+<main class="main">
+
+  <!-- ===== 00 — CAPA ===== -->
+  <section id="capa" class="blueprint-bg">
+    <div class="cover-corner tl"></div>
+    <div class="cover-corner tr"></div>
+    <div class="cover-corner bl"></div>
+    <div class="cover-corner br"></div>
+
+    <div class="diagonal-line"></div>
+    <div class="diagonal-line-2"></div>
+
+    <div class="cover-logo-mark fade-up">
+      <div class="cover-logo-text fade-up delay-1">
+        <span style="color:var(--chalk)">N</span><span class="amber-letter">P</span><span style="color:var(--chalk)">T</span>
+      </div>
+      <div style="width:100%;height:3px;background:linear-gradient(90deg,transparent,var(--amber-bright),transparent);margin:0.5rem 0;" class="fade-up delay-2"></div>
+      <div style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--chalk-dim);" class="fade-up delay-3">
+        Engenharia
+      </div>
+    </div>
+
+    <div class="cover-tagline fade-up delay-4" style="margin-top:2.5rem;">
+      Projetos de Pressurização · Hidráulica · Elétrica
+    </div>
+
+    <div class="cover-meta fade-up delay-5">
+      Manual de Identidade Visual &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; 2026
+    </div>
+  </section>
+
+  <!-- ===== 01 — LOGOTIPO ===== -->
+  <section id="logotipo" class="blueprint-bg">
+    <p class="section-ref fade-up">REF-01 / IDENTIDADE</p>
+    <h2 class="section-title fade-up delay-1">Logotipo</h2>
+    <p class="section-subtitle fade-up delay-2">Variações, clearspace, usos incorretos e especificações técnicas</p>
+
+    <!-- Variações -->
+    <h3 class="fade-up delay-2" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;">
+      01.1 — Variações do Logotipo
+    </h3>
+    <div class="logo-grid fade-up delay-3">
+      <!-- Dark principal -->
+      <div class="logo-card dark-bg bracket">
+        <div class="logo-render">
+          <div class="logo-npt" style="font-family:var(--font-display);font-size:3.5rem;color:var(--chalk);letter-spacing:0.1em;">NPT</div>
+          <div class="logo-bar" style="background:var(--amber);width:100%;height:2px;"></div>
+          <div class="logo-eng" style="font-family:var(--font-label);font-weight:600;font-size:0.55rem;letter-spacing:0.3em;color:var(--chalk-dim);text-transform:uppercase;">ENGENHARIA</div>
+        </div>
+        <span class="logo-card-label">Versão Principal — Dark Background</span>
+      </div>
+      <!-- Light -->
+      <div class="logo-card light-bg bracket">
+        <div class="logo-render">
+          <div style="font-family:var(--font-display);font-size:3.5rem;color:#0C1017;letter-spacing:0.1em;line-height:1;">NPT</div>
+          <div style="background:var(--amber);width:100%;height:2px;"></div>
+          <div style="font-family:var(--font-label);font-weight:600;font-size:0.55rem;letter-spacing:0.3em;color:#64748B;text-transform:uppercase;">ENGENHARIA</div>
+        </div>
+        <span class="logo-card-label" style="color:#64748B;">Versão Secundária — Light Background</span>
+      </div>
+      <!-- Mono -->
+      <div class="logo-card mono-bg bracket">
+        <div class="logo-render">
+          <div style="font-family:var(--font-display);font-size:3.5rem;color:#fff;letter-spacing:0.1em;line-height:1;">NPT</div>
+          <div style="background:#fff;width:100%;height:2px;"></div>
+          <div style="font-family:var(--font-label);font-weight:600;font-size:0.55rem;letter-spacing:0.3em;color:#aaa;text-transform:uppercase;">ENGENHARIA</div>
+        </div>
+        <span class="logo-card-label">Versão Monocromática</span>
+      </div>
+    </div>
+
+    <!-- Clearspace -->
+    <h3 class="fade-up" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;">
+      01.2 — Área de Proteção (Clearspace)
+    </h3>
+    <div class="fade-up" style="display:flex;align-items:flex-start;gap:3rem;margin-bottom:3rem;flex-wrap:wrap;">
+      <div class="clearspace-diagram">
+        <span class="cs-x-label top">× altura</span>
+        <span class="cs-x-label bottom">× altura</span>
+        <span class="cs-x-label left">× alt.</span>
+        <span class="cs-x-label right">× alt.</span>
+        <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--chalk);letter-spacing:0.1em;">NPT</div>
+      </div>
+      <div style="max-width:380px;">
+        <p style="font-family:var(--font-body);font-size:0.75rem;color:var(--chalk-dim);line-height:1.8;margin-bottom:1rem;">
+          A área de proteção é definida pela altura da letra "N" em todas as direções. Nenhum elemento gráfico, texto ou borda deve invadir essa área.
+        </p>
+        <div style="font-family:var(--font-body);font-size:0.68rem;color:var(--chalk-ghost);line-height:1.8;">
+          <span style="color:var(--amber);">// </span>Tamanho mínimo digital: <span style="color:var(--chalk);">120px</span> de largura<br>
+          <span style="color:var(--amber);">// </span>Tamanho mínimo impresso: <span style="color:var(--chalk);">30mm</span> de largura<br>
+          <span style="color:var(--amber);">// </span>Proporção: <span style="color:var(--chalk);">fixada</span>, nunca distorcer
+        </div>
+      </div>
+    </div>
+
+    <!-- Usos incorretos -->
+    <h3 class="fade-up" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;">
+      01.3 — Usos Incorretos
+    </h3>
+    <div class="incorrect-grid fade-up">
+      <div class="incorrect-card">
+        <div style="padding:1.5rem;background:var(--ink);text-align:center;display:flex;align-items:center;justify-content:center;min-height:100px;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:2.5rem;color:#3B82F6;letter-spacing:0.1em;">NPT</div>
+            <div style="background:#3B82F6;width:100%;height:2px;"></div>
+            <div style="font-family:var(--font-label);font-size:0.5rem;letter-spacing:0.3em;color:#93C5FD;">ENGENHARIA</div>
+          </div>
+        </div>
+        <p class="incorrect-label">Cor errada</p>
+        <p class="incorrect-desc">Nunca substituir âmbar por outra cor de acento. A paleta de cor é parte da identidade.</p>
+      </div>
+      <div class="incorrect-card">
+        <div style="padding:1.5rem;background:var(--ink);text-align:center;display:flex;align-items:center;justify-content:center;min-height:100px;">
+          <div style="transform:scaleX(1.6);transform-origin:center;">
+            <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--chalk);letter-spacing:0.1em;">NPT</div>
+            <div style="background:var(--amber);width:100%;height:2px;"></div>
+            <div style="font-family:var(--font-label);font-size:0.5rem;letter-spacing:0.3em;color:var(--chalk-dim);">ENGENHARIA</div>
+          </div>
+        </div>
+        <p class="incorrect-label">Proporção errada</p>
+        <p class="incorrect-desc">Nunca esticar ou comprimir o logo. Manter sempre a proporção original travada.</p>
+      </div>
+      <div class="incorrect-card">
+        <div style="padding:1.5rem;background:linear-gradient(135deg,#7C3AED,#3B82F6);text-align:center;display:flex;align-items:center;justify-content:center;min-height:100px;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--chalk);letter-spacing:0.1em;">NPT</div>
+            <div style="background:var(--amber);width:100%;height:2px;"></div>
+            <div style="font-family:var(--font-label);font-size:0.5rem;letter-spacing:0.3em;color:rgba(255,255,255,0.7);">ENGENHARIA</div>
+          </div>
+        </div>
+        <p class="incorrect-label">Fundo inadequado</p>
+        <p class="incorrect-desc">Nunca aplicar sobre gradientes coloridos ou imagens sem overlay de contraste suficiente.</p>
+      </div>
+    </div>
+
+    <!-- Specs -->
+    <h3 class="fade-up" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;">
+      01.4 — Especificações Técnicas
+    </h3>
+    <table class="spec-table fade-up">
+      <thead>
+        <tr>
+          <th>Parâmetro</th>
+          <th>Valor</th>
+          <th>Observação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Tamanho mínimo digital</td><td>120 × 56 px</td><td>Abaixo disso usar versão compacta</td></tr>
+        <tr><td>Tamanho mínimo impresso</td><td>30 × 14 mm</td><td>Para papéis A4 e menores</td></tr>
+        <tr><td>Tipografia "NPT"</td><td>Bebas Neue Regular</td><td>Letter-spacing: 0.1em</td></tr>
+        <tr><td>Tipografia "ENGENHARIA"</td><td>Barlow Condensed SemiBold</td><td>Letter-spacing: 0.3em, uppercase</td></tr>
+        <tr><td>Barra separadora</td><td>2px altura</td><td>Cor: --amber #D4860A</td></tr>
+        <tr><td>Proporção largura/altura</td><td>2.15 : 1</td><td>Travar proporção em todos os formatos</td></tr>
+        <tr><td>Zona de exclusão</td><td>1× altura do "N"</td><td>Em todas as direções</td></tr>
+        <tr><td>Formatos de arquivo</td><td>SVG, PNG, PDF</td><td>SVG para digital, PDF para impressão</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== 02 — PALETA ===== -->
+  <section id="paleta" class="blueprint-bg">
+    <p class="section-ref fade-up">REF-02 / IDENTIDADE</p>
+    <h2 class="section-title fade-up delay-1">Paleta de Cores</h2>
+    <p class="section-subtitle fade-up delay-2">Hierarquia cromática, variáveis CSS e aplicações recomendadas</p>
+
+    <!-- PRIMÁRIAS — Fundo -->
+    <div class="color-group fade-up delay-2">
+      <p class="color-group-title">02.1 — Primárias / Fundo (Ink System)</p>
+      <div class="color-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#050709;">
+            <div class="swatch-chip-check" style="background:rgba(255,255,255,0.1);"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--ink</div>
+            <div class="swatch-hex">#050709</div>
+            <div class="swatch-rgb">rgb(5, 7, 9)</div>
+            <div class="swatch-use">Fundo principal. Usado em corpo de página, seções de destaque e capa.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#0C1017;">
+            <div class="swatch-chip-check"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--ink-mid</div>
+            <div class="swatch-hex">#0C1017</div>
+            <div class="swatch-rgb">rgb(12, 16, 23)</div>
+            <div class="swatch-use">Superfície elevada. Nav, sidebars, headers de seção.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#141B26;">
+            <div class="swatch-chip-check"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--ink-soft</div>
+            <div class="swatch-hex">#141B26</div>
+            <div class="swatch-rgb">rgb(20, 27, 38)</div>
+            <div class="swatch-use">Cards, containers, elementos de destaque interno.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#1E2733;">
+            <div class="swatch-chip-check"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--ink-border</div>
+            <div class="swatch-hex">#1E2733</div>
+            <div class="swatch-rgb">rgb(30, 39, 51)</div>
+            <div class="swatch-use">Bordas, divisores, linhas de tabela, separadores visuais.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECUNDÁRIAS — Âmbar -->
+    <div class="color-group fade-up delay-3">
+      <p class="color-group-title">02.2 — Secundárias / Acento (Amber System)</p>
+      <div class="color-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#D4860A;">
+            <div class="swatch-chip-check" style="background:rgba(0,0,0,0.2);"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--amber</div>
+            <div class="swatch-hex">#D4860A</div>
+            <div class="swatch-rgb">rgb(212, 134, 10)</div>
+            <div class="swatch-use">Âmbar queimado. Acento principal: barras, bordas ativas, ícones de destaque.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#F5A623;">
+            <div class="swatch-chip-check" style="background:rgba(0,0,0,0.2);"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--amber-bright</div>
+            <div class="swatch-hex">#F5A623</div>
+            <div class="swatch-rgb">rgb(245, 166, 35)</div>
+            <div class="swatch-use">Âmbar destaque. CTAs, links hover, destaques em texto técnico.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#FFD47A;">
+            <div class="swatch-chip-check" style="background:rgba(0,0,0,0.2);"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--amber-pale</div>
+            <div class="swatch-hex">#FFD47A</div>
+            <div class="swatch-rgb">rgb(255, 212, 122)</div>
+            <div class="swatch-use">Âmbar claro. Variáveis CSS em code blocks, highlights suaves, ícones secundários.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPORTE — Chalk -->
+    <div class="color-group fade-up delay-4">
+      <p class="color-group-title">02.3 — Suporte / Texto (Chalk System)</p>
+      <div class="color-row">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#F2EEE8;border:1px solid #ddd;">
+            <div class="swatch-chip-check" style="background:rgba(0,0,0,0.1);"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--chalk</div>
+            <div class="swatch-hex">#F2EEE8</div>
+            <div class="swatch-rgb">rgb(242, 238, 232)</div>
+            <div class="swatch-use">Branco quente. Texto principal em fundos escuros, headings e títulos de seção.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#9BA3AE;border:1px solid #888;">
+            <div class="swatch-chip-check" style="background:rgba(0,0,0,0.15);"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--chalk-dim</div>
+            <div class="swatch-hex">#9BA3AE</div>
+            <div class="swatch-rgb">rgb(155, 163, 174)</div>
+            <div class="swatch-use">Texto secundário. Subtítulos, descrições, metadata, corpo de texto corrido.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#3D4855;">
+            <div class="swatch-chip-check"></div>
+          </div>
+          <div class="swatch-body">
+            <div class="swatch-var">--chalk-ghost</div>
+            <div class="swatch-hex">#3D4855</div>
+            <div class="swatch-rgb">rgb(61, 72, 85)</div>
+            <div class="swatch-use">Muted. Placeholders, bordas de nav inativo, watermarks, elementos de baixíssima ênfase.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hierarquia visual -->
+    <div class="fade-up delay-5" style="background:var(--ink-soft);border:1px solid var(--ink-border);padding:2rem;margin-top:1rem;">
+      <p style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;">
+        02.4 — Hierarquia de Aplicação
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+        <div style="padding:1rem;background:var(--ink);border:1px solid var(--ink-border);">
+          <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--chalk-ghost);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Fundo de Página</div>
+          <div style="font-family:var(--font-body);font-size:0.72rem;color:var(--chalk-dim);">--ink → --ink-mid → --ink-soft</div>
+        </div>
+        <div style="padding:1rem;background:var(--ink);border:1px solid var(--ink-border);">
+          <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--chalk-ghost);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Acentos e CTAs</div>
+          <div style="font-family:var(--font-body);font-size:0.72rem;color:var(--chalk-dim);">--amber → --amber-bright (hover)</div>
+        </div>
+        <div style="padding:1rem;background:var(--ink);border:1px solid var(--ink-border);">
+          <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--chalk-ghost);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Tipografia</div>
+          <div style="font-family:var(--font-body);font-size:0.72rem;color:var(--chalk-dim);">--chalk → --chalk-dim → --chalk-ghost</div>
+        </div>
+        <div style="padding:1rem;background:var(--ink);border:1px solid var(--ink-border);">
+          <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--chalk-ghost);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Estrutura</div>
+          <div style="font-family:var(--font-body);font-size:0.72rem;color:var(--chalk-dim);">--ink-border para todas as divisões</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 — TIPOGRAFIA ===== -->
+  <section id="tipografia" class="blueprint-bg">
+    <p class="section-ref fade-up">REF-03 / IDENTIDADE</p>
+    <h2 class="section-title fade-up delay-1">Tipografia</h2>
+    <p class="section-subtitle fade-up delay-2">Sistema de três fontes com papéis definidos e escala tipográfica</p>
+
+    <!-- Bebas Neue -->
+    <div class="type-specimen fade-up delay-2">
+      <div class="type-specimen-label">
+        <span class="norm-tag">DISPLAY</span> Bebas Neue — Títulos, números grandes, capa
+      </div>
+      <div class="type-alphabet">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+      </div>
+      <div class="type-numbers">
+        0 1 2 3 4 5 6 7 8 9
+      </div>
+      <div style="margin-top:1rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:baseline;">
+        <span style="font-family:var(--font-display);font-size:4rem;color:var(--chalk);letter-spacing:0.04em;">Hero</span>
+        <span style="font-family:var(--font-display);font-size:3rem;color:var(--chalk-dim);letter-spacing:0.04em;">Display</span>
+        <span style="font-family:var(--font-display);font-size:2rem;color:var(--chalk-ghost);letter-spacing:0.04em;">Heading</span>
+        <span style="font-family:var(--font-display);font-size:1.5rem;color:var(--chalk-ghost);letter-spacing:0.04em;">Sub</span>
+      </div>
+    </div>
+
+    <!-- DM Mono -->
+    <div class="type-specimen fade-up delay-3">
+      <div class="type-specimen-label">
+        <span class="norm-tag">BODY</span> DM Mono — Texto corrido, dados técnicos, código
+      </div>
+      <div class="type-mono-sample">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz<br>
+        A NPT Engenharia desenvolve projetos técnicos de pressurização de escadas de emergência conforme NBR 9077,
+        além de projetos hidráulicos e elétricos para edificações residenciais e industriais em todo o Brasil.<br>
+        <em style="color:var(--chalk-ghost);">Especificações, normas e dados técnicos ganham clareza com tipografia monoespacial.</em>
+      </div>
+      <div class="type-mono-special">
+        0O Il1| {} [] () &lt;&gt; /\ →← ◎ // NBR ABNT
+      </div>
+    </div>
+
+    <!-- Barlow Condensed -->
+    <div class="type-specimen fade-up delay-4">
+      <div class="type-specimen-label">
+        <span class="norm-tag">LABEL</span> Barlow Condensed — Tags, labels, eyebrows, navegação
+      </div>
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:baseline;margin-bottom:1rem;">
+        <span style="font-family:var(--font-label);font-weight:700;font-size:1.5rem;color:var(--chalk);letter-spacing:0.06em;">PRESSURIZAÇÃO</span>
+        <span style="font-family:var(--font-label);font-weight:600;font-size:1.2rem;color:var(--chalk-dim);letter-spacing:0.08em;">PROJETOS ELÉTRICOS</span>
+        <span style="font-family:var(--font-label);font-weight:500;font-size:1rem;color:var(--chalk-ghost);letter-spacing:0.1em;">NBR 9077</span>
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <span class="label-tag">Pressurização</span>
+        <span class="label-tag">Hidráulica</span>
+        <span class="label-tag">Elétrica</span>
+        <span class="label-tag">CREA</span>
+        <span class="label-tag">NBR 9077</span>
+        <span class="label-tag">ABNT</span>
+      </div>
+    </div>
+
+    <!-- Escala tipográfica -->
+    <h3 class="fade-up" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;margin-top:2.5rem;">
+      03.4 — Escala Tipográfica Completa
+    </h3>
+    <div class="type-scale-table fade-up">
+      <div class="type-scale-row">
+        <span class="ts-name">hero</span>
+        <span class="ts-size">7rem</span>
+        <span class="ts-sample" style="font-size:4rem;">NPT</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">4xl</span>
+        <span class="ts-size">4rem</span>
+        <span class="ts-sample" style="font-size:3rem;">Pressurização</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">3xl</span>
+        <span class="ts-size">3rem</span>
+        <span class="ts-sample" style="font-size:2.2rem;">Engenharia</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">2xl</span>
+        <span class="ts-size">2rem</span>
+        <span class="ts-sample" style="font-size:1.8rem;">Projetos Técnicos</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">xl</span>
+        <span class="ts-size">1.5rem</span>
+        <span class="ts-sample" style="font-size:1.4rem;">Norma NBR 9077</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">lg</span>
+        <span class="ts-size">1.25rem</span>
+        <span class="ts-sample" style="font-size:1.2rem;">Escadas de Emergência</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">base</span>
+        <span class="ts-size">0.875rem</span>
+        <span class="ts-sample" style="font-size:0.875rem;font-family:var(--font-body);color:var(--chalk-dim);">Texto corrido e especificações técnicas detalhadas</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">sm</span>
+        <span class="ts-size">0.75rem</span>
+        <span class="ts-sample" style="font-size:0.75rem;font-family:var(--font-body);color:var(--chalk-dim);">Metadata, datas, referências de norma</span>
+      </div>
+      <div class="type-scale-row">
+        <span class="ts-name">xs</span>
+        <span class="ts-size">0.625rem</span>
+        <span class="ts-sample" style="font-size:0.625rem;font-family:var(--font-label);letter-spacing:0.15em;text-transform:uppercase;color:var(--chalk-ghost);">LABELS E REFERÊNCIAS TÉCNICAS</span>
+      </div>
+    </div>
+
+    <!-- Regras de pairing -->
+    <h3 class="fade-up" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;margin-top:2.5rem;">
+      03.5 — Regras de Combinação
+    </h3>
+    <div class="fade-up" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;">
+      <div style="padding:1.5rem;background:var(--ink-soft);border:1px solid var(--ink-border);border-top:2px solid var(--amber);">
+        <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--amber);letter-spacing:0.15em;margin-bottom:1rem;">REGRA 01</div>
+        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--chalk);margin-bottom:0.25rem;">Heading Display</div>
+        <div style="font-family:var(--font-label);font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;margin-bottom:0.5rem;">EYEBROW · BARLOW</div>
+        <div style="font-family:var(--font-body);font-size:0.72rem;color:var(--chalk-dim);line-height:1.6;">Texto de suporte em DM Mono abaixo do display cria contraste intencional entre o impacto do título e a precisão do corpo.</div>
+      </div>
+      <div style="padding:1.5rem;background:var(--ink-soft);border:1px solid var(--ink-border);border-top:2px solid var(--amber);">
+        <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--amber);letter-spacing:0.15em;margin-bottom:1rem;">REGRA 02</div>
+        <div style="font-family:var(--font-label);font-weight:700;font-size:1.2rem;color:var(--chalk);letter-spacing:0.08em;margin-bottom:0.5rem;">SEÇÃO / CATEGORIA</div>
+        <div style="font-family:var(--font-body);font-size:0.72rem;color:var(--chalk-dim);line-height:1.6;">Barlow Condensed Bold para eyebrows e rótulos de seção, seguido de corpo em DM Mono para o conteúdo técnico.</div>
+      </div>
+      <div style="padding:1.5rem;background:var(--ink-soft);border:1px solid var(--ink-border);border-top:2px solid var(--amber);">
+        <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--amber);letter-spacing:0.15em;margin-bottom:1rem;">REGRA 03</div>
+        <div style="font-family:var(--font-body);font-size:0.8rem;color:var(--chalk-dim);line-height:1.7;margin-bottom:0.75rem;">Evite usar Bebas Neue para textos corridos com mais de 3 linhas. A fonte é otimizada para impacto, não para leitura extensa.</div>
+        <div style="font-family:var(--font-label);font-size:0.62rem;color:var(--chalk-ghost);letter-spacing:0.1em;">// DM Mono para corpo longo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 — ICONOGRAFIA & ELEMENTOS ===== -->
+  <section id="iconografia" class="blueprint-bg">
+    <p class="section-ref fade-up">REF-04 / ELEMENTOS</p>
+    <h2 class="section-title fade-up delay-1">Iconografia &amp; Elementos Gráficos</h2>
+    <p class="section-subtitle fade-up delay-2">Vocabulário visual técnico: grid, brackets, linhas e marcadores</p>
+
+    <div class="element-grid fade-up delay-2">
+      <!-- Blueprint Grid -->
+      <div class="element-card">
+        <p class="element-card-title">04.1 — Blueprint Grid</p>
+        <div style="position:relative;height:120px;background:#050709;overflow:hidden;border:1px solid var(--ink-border);background-image:linear-gradient(rgba(212,134,10,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(212,134,10,0.06) 1px,transparent 1px),linear-gradient(rgba(212,134,10,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(212,134,10,0.02) 1px,transparent 1px);background-size:60px 60px,60px 60px,12px 12px,12px 12px;">
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(5,7,9,0.6) 100%);"></div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-label);font-size:0.6rem;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;">Grid Blueprint</div>
+        </div>
+        <p class="element-card-desc">
+          Grid maior: <span style="color:var(--chalk);">80×80px</span>, opacidade <span style="color:var(--chalk);">4%</span> âmbar.<br>
+          Grid menor: <span style="color:var(--chalk);">16×16px</span>, opacidade <span style="color:var(--chalk);">2%</span> âmbar.<br>
+          Usar em fundos escuros de seções hero e capa. Sempre acompanhar com vinheta radial.
+        </p>
+      </div>
+
+      <!-- Corner Brackets -->
+      <div class="element-card">
+        <p class="element-card-title">04.2 — Corner Brackets Técnicos</p>
+        <div class="bracket-demo">
+          <div class="bracket-item">Elemento A</div>
+          <div class="bracket-item" style="padding:1.5rem 2rem;">Destaque B</div>
+          <div class="bracket-item" style="padding:0.75rem 1rem;font-size:0.65rem;">Tag</div>
+        </div>
+        <p class="element-card-desc">
+          Marcação técnica de canto em âmbar. Largura: <span style="color:var(--chalk);">8–12px</span>, espessura: <span style="color:var(--chalk);">1–2px</span>.<br>
+          Aplicar em cards de destaque, diagramas, áreas de foco e elementos de UI que necessitem enquadramento técnico.
+        </p>
+      </div>
+
+      <!-- Amber Lines -->
+      <div class="element-card">
+        <p class="element-card-title">04.3 — Linhas Âmbar (Espessuras)</p>
+        <div class="amber-lines">
+          <div class="amber-line-demo">
+            <span>1px — sutil</span>
+            <div class="a-line" style="height:1px;"></div>
+          </div>
+          <div class="amber-line-demo">
+            <span>2px — padrão</span>
+            <div class="a-line" style="height:2px;"></div>
+          </div>
+          <div class="amber-line-demo">
+            <span>3px — forte</span>
+            <div class="a-line" style="height:3px;"></div>
+          </div>
+          <div class="amber-line-demo">
+            <span>4px — accent</span>
+            <div class="a-line" style="height:4px;background:linear-gradient(90deg,var(--amber),var(--amber-bright));"></div>
+          </div>
+        </div>
+        <p class="element-card-desc">
+          1px: separadores internos. 2px: acento de seção e barra do logo. 3px: bordas de card em destaque. 4px (gradiente): bordas laterais de elementos hero.
+        </p>
+      </div>
+
+      <!-- Norm Tags -->
+      <div class="element-card">
+        <p class="element-card-title">04.4 — Tags de Norma Técnica</p>
+        <div class="norm-tags">
+          <span class="norm-tag">NBR 9077</span>
+          <span class="norm-tag">ABNT</span>
+          <span class="norm-tag">CREA-SP</span>
+          <span class="norm-tag">NR-10</span>
+          <span class="norm-tag">NBR 5410</span>
+          <span class="norm-tag">ISO 9001</span>
+          <span class="norm-tag">ART</span>
+          <span class="norm-tag">RRT</span>
+        </div>
+        <p class="element-card-desc">
+          Barlow Condensed SemiBold, 0.65rem, letter-spacing 0.15em, uppercase. Border âmbar 1px, background âmbar 8% opacidade. Usar para referenciar normas regulatórias e certificações em contexto técnico.
+        </p>
+      </div>
+
+      <!-- Technical Markers -->
+      <div class="element-card" style="grid-column:1/-1;">
+        <p class="element-card-title">04.5 — Marcadores Técnicos</p>
+        <div class="tech-markers">
+          <div class="tech-marker">
+            <span class="symbol">◎</span>
+            <span class="m-label">Ponto focal<br>/ atenção</span>
+          </div>
+          <div class="tech-marker">
+            <span class="symbol">//</span>
+            <span class="m-label">Comentário<br>/ nota técnica</span>
+          </div>
+          <div class="tech-marker">
+            <span class="symbol">→</span>
+            <span class="m-label">Direção<br>/ próximo passo</span>
+          </div>
+          <div class="tech-marker">
+            <span class="symbol">[ ]</span>
+            <span class="m-label">Container<br>/ delimitador</span>
+          </div>
+          <div class="tech-marker">
+            <span class="symbol">×</span>
+            <span class="m-label">Erro<br>/ proibido</span>
+          </div>
+          <div class="tech-marker">
+            <span class="symbol">∅</span>
+            <span class="m-label">Diâmetro<br>/ tubulação</span>
+          </div>
+          <div class="tech-marker">
+            <span class="symbol">▲</span>
+            <span class="m-label">Alerta<br>/ aviso</span>
+          </div>
+          <div class="tech-marker">
+            <span class="symbol">±</span>
+            <span class="m-label">Tolerância<br>/ variação</span>
+          </div>
+        </div>
+        <p class="element-card-desc" style="margin-top:1.25rem;">
+          Marcadores renderizados em DM Mono, cor --amber-bright. Uso em documentos técnicos, páginas de serviços e annotations gráficas. Mantém coerência com a estética de planta técnica.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 — VOZ & TOM ===== -->
+  <section id="voz" class="blueprint-bg">
+    <p class="section-ref fade-up">REF-05 / COMUNICAÇÃO</p>
+    <h2 class="section-title fade-up delay-1">Voz &amp; Tom</h2>
+    <p class="section-subtitle fade-up delay-2">Personalidade da marca, exemplos de copy e glossário técnico</p>
+
+    <!-- Personalidade -->
+    <h3 class="fade-up delay-2" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;">
+      05.1 — Personalidade da Marca
+    </h3>
+    <div class="personality-grid fade-up delay-3">
+      <div class="personality-card">
+        <div class="personality-number">01</div>
+        <div class="personality-word">Preciso</div>
+        <div class="personality-desc">
+          A NPT fala com a exatidão de quem domina as normas. Cada afirmação é técnica, verificável e baseada em regulamentação. Sem exagero, sem ambiguidade — como um projeto de engenharia deve ser.
+          <br><br>
+          <span style="color:var(--amber);">// </span>Números reais. Normas citadas. Metodologia explicada.
+        </div>
+      </div>
+      <div class="personality-card">
+        <div class="personality-number">02</div>
+        <div class="personality-word">Direto</div>
+        <div class="personality-desc">
+          Construtoras e engenheiros não têm tempo para rodeios. A comunicação vai direto ao ponto: o que fazemos, como fazemos, em quanto tempo e por que é a escolha certa. Zero jargão corporativo vazio.
+          <br><br>
+          <span style="color:var(--amber);">// </span>Frases curtas. Verbos de ação. Benefício antes da característica.
+        </div>
+      </div>
+      <div class="personality-card">
+        <div class="personality-number">03</div>
+        <div class="personality-word">Confiável</div>
+        <div class="personality-desc">
+          Empresa nova, mas não inexperiente. A confiabilidade vem da competência técnica demonstrada: CREA ativo, normas ABNT, entrega dentro do prazo e comunicação transparente durante o projeto.
+          <br><br>
+          <span style="color:var(--amber);">// </span>Evidências concretas. Casos reais. Responsabilidade técnica.
+        </div>
+      </div>
+    </div>
+
+    <!-- Copy correto vs incorreto -->
+    <h3 class="fade-up" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;margin-top:2.5rem;">
+      05.2 — Exemplos de Copy: Correto vs. Incorreto
+    </h3>
+
+    <div class="copy-compare fade-up">
+      <div class="copy-block correct">
+        <div class="copy-block-label">✓ Correto</div>
+        <p>"Projetos de pressurização de escada de emergência conforme NBR 9077. Entrega em 15 dias úteis. ART inclusa. Atendimento nacional."</p>
+      </div>
+      <div class="copy-block incorrect">
+        <div class="copy-block-label">✗ Incorreto</div>
+        <p>"Somos a melhor empresa de engenharia do Brasil! Nossa equipe apaixonada oferece soluções inovadoras e customizadas para o seu negócio crescer!"</p>
+      </div>
+    </div>
+
+    <div class="copy-compare fade-up">
+      <div class="copy-block correct">
+        <div class="copy-block-label">✓ Correto</div>
+        <p>"Sistema de pressurização projetado para garantir a segurança dos ocupantes em situação de incêndio, conforme exigência do Corpo de Bombeiros."</p>
+      </div>
+      <div class="copy-block incorrect">
+        <div class="copy-block-label">✗ Incorreto</div>
+        <p>"Transformamos sonhos em realidade! Com nossa expertise única, seu projeto vai para outro nível de qualidade e excelência incomparável."</p>
+      </div>
+    </div>
+
+    <div class="copy-compare fade-up">
+      <div class="copy-block correct">
+        <div class="copy-block-label">✓ Correto</div>
+        <p>"Estrutura enxuta = custos menores repassados ao cliente. Sem intermediários, sem overhead de grandes escritórios."</p>
+      </div>
+      <div class="copy-block incorrect">
+        <div class="copy-block-label">✗ Incorreto</div>
+        <p>"Preços imperdíveis! Não perca essa oportunidade incrível de contratar a gente antes que seja tarde!"</p>
+      </div>
+    </div>
+
+    <!-- Glossário -->
+    <h3 class="fade-up" style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;margin-top:2.5rem;">
+      05.3 — Glossário de Termos Técnicos
+    </h3>
+    <div class="glossary fade-up">
+      <div class="glossary-item">
+        <div class="glossary-term">Pressurização de Escada</div>
+        <div class="glossary-def">Sistema de insuflamento de ar que mantém a caixa de escada pressurizada em caso de incêndio, impedindo a entrada de fumaça. Regulamentado pela NBR 9077.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">NBR 9077</div>
+        <div class="glossary-def">Norma da ABNT que estabelece exigências mínimas de saídas de emergência em edifícios. Define quando a pressurização é obrigatória.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">ART</div>
+        <div class="glossary-def">Anotação de Responsabilidade Técnica. Documento emitido pelo CREA que vincula o engenheiro responsável ao projeto. Obrigatória para todos os projetos.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">CREA</div>
+        <div class="glossary-def">Conselho Regional de Engenharia e Agronomia. Órgão que regulamenta o exercício profissional da engenharia no Brasil. Registro obrigatório para emissão de ART.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Spda</div>
+        <div class="glossary-def">Sistema de Proteção contra Descargas Atmosféricas (para-raios). Parte do escopo de projetos elétricos conforme NBR 5419.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Projeto Hidráulico</div>
+        <div class="glossary-def">Dimensionamento de sistemas de abastecimento de água, esgoto, incêndio (hidrantes/sprinklers) e drenagem pluvial conforme ABNT NBR 5626 e 7198.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">ABNT</div>
+        <div class="glossary-def">Associação Brasileira de Normas Técnicas. Entidade que elabora as normas técnicas nacionais (NBR). Referência obrigatória em todos os projetos.</div>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Laudo Técnico</div>
+        <div class="glossary-def">Documento técnico emitido por engenheiro responsável atestando condições ou conformidade de um sistema ou instalação. Requer ART e assinatura do CREA.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 — APLICAÇÕES ===== -->
+  <section id="aplicacoes" class="blueprint-bg">
+    <p class="section-ref fade-up">REF-06 / APLICAÇÕES</p>
+    <h2 class="section-title fade-up delay-1">Aplicações</h2>
+    <p class="section-subtitle fade-up delay-2">Mockups de email, apresentação, documento técnico e site</p>
+
+    <div class="mockup-grid fade-up delay-2">
+      <!-- Email header -->
+      <div class="mockup-wrap">
+        <p class="mockup-title">06.1 — Email Header</p>
+        <div class="mock-email">
+          <div class="mock-email-header">
+            <div class="mock-email-logo">N<span>P</span>T <span style="font-family:var(--font-label);font-size:0.7rem;color:var(--chalk-dim);letter-spacing:0.2em;">ENGENHARIA</span></div>
+            <div class="mock-email-contact">
+              contato@nptengenharia.com.br<br>
+              +55 (11) 9 0000-0000<br>
+              <span style="color:var(--amber);">nptengenharia.com.br</span>
+            </div>
+          </div>
+          <div class="mock-email-body">
+            <div class="mock-email-greeting">Olá, [Nome]</div>
+            <div class="mock-email-text">Conforme solicitado, segue o orçamento para o projeto de pressurização da escada de emergência do Edifício [Nome], conforme NBR 9077...</div>
+          </div>
+          <div class="mock-email-footer">
+            <span>NPT Engenharia · CREA-SP XXXXXXX</span>
+            <span style="color:var(--amber);">// Atendimento Nacional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide cover -->
+      <div class="mockup-wrap">
+        <p class="mockup-title">06.2 — Slide de Apresentação</p>
+        <div class="mock-slide">
+          <div class="mock-slide-accent"></div>
+          <div class="mock-slide-eyebrow">NPT Engenharia · Proposta Técnica</div>
+          <div class="mock-slide-title">Projeto de<br><span>Pressurização</span></div>
+          <div class="mock-slide-bar"></div>
+          <div class="mock-slide-sub">Escadas de Emergência · NBR 9077 · ABNT</div>
+          <div class="mock-slide-corner">NPT</div>
+        </div>
+      </div>
+
+      <!-- Documento técnico -->
+      <div class="mockup-wrap">
+        <p class="mockup-title">06.3 — Documento Técnico</p>
+        <div class="mock-doc">
+          <div class="mock-doc-header">
+            <div class="mock-doc-logo">NPT</div>
+            <div class="mock-doc-divider"></div>
+            <div class="mock-doc-type">Projeto de Pressurização</div>
+          </div>
+          <div class="mock-doc-body">
+            <div class="mock-doc-title">Memorial de Cálculo — Sistema de Pressurização</div>
+            <div class="mock-doc-meta">Revisão: 00 · Data: 2026-03-21 · Responsável: Eng. [Nome] · CREA-SP XXXXXXX</div>
+            <div class="mock-doc-line"></div>
+            <div class="mock-doc-line medium"></div>
+            <div class="mock-doc-line short"></div>
+            <div class="mock-doc-line"></div>
+            <div class="mock-doc-line medium"></div>
+            <div class="mock-doc-norm">NBR 9077</div>
+            <span style="display:inline-block;width:0.5rem;"></span>
+            <div class="mock-doc-norm">ABNT</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Site hero -->
+      <div class="mockup-wrap">
+        <p class="mockup-title">06.4 — Hero do Site</p>
+        <div class="mock-hero">
+          <div class="mock-hero-nav">
+            <div class="mock-hero-nav-logo">NPT</div>
+            <div class="mock-hero-nav-links">
+              <span>Serviços</span>
+              <span>Sobre</span>
+              <span>Portfólio</span>
+              <span>Contato</span>
+            </div>
+          </div>
+          <div style="margin-top:3rem;">
+            <div class="mock-hero-bar"></div>
+            <div class="mock-hero-eyebrow">Engenharia Técnica · Atendimento Nacional</div>
+            <div class="mock-hero-title">Projetos de<br><em>Pressurização</em><br>e Segurança</div>
+            <div class="mock-hero-sub">Conforme NBR 9077 · ABNT · CREA ativo</div>
+            <div class="mock-hero-cta">
+              Solicitar Orçamento →
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regras gerais de aplicação -->
+    <div class="fade-up" style="margin-top:2rem;padding:2rem;background:var(--ink-soft);border:1px solid var(--ink-border);">
+      <p style="font-family:var(--font-label);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;">
+        06.5 — Regras Gerais de Aplicação
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;font-family:var(--font-body);font-size:0.72rem;color:var(--chalk-dim);line-height:1.8;">
+        <div>
+          <span style="color:var(--amber);">◎ </span><strong style="color:var(--chalk);">Consistência:</strong><br>
+          Usar sempre as variáveis CSS definidas. Nunca hardcoded hex fora do token.
+        </div>
+        <div>
+          <span style="color:var(--amber);">◎ </span><strong style="color:var(--chalk);">Hierarquia:</strong><br>
+          Âmbar é acento — nunca fundo. Nunca usar como cor de texto em blocos longos.
+        </div>
+        <div>
+          <span style="color:var(--amber);">◎ </span><strong style="color:var(--chalk);">Espaçamento:</strong><br>
+          Usar a escala de 4px como base. Margens generosas criam credibilidade técnica.
+        </div>
+        <div>
+          <span style="color:var(--amber);">◎ </span><strong style="color:var(--chalk);">Border-radius:</strong><br>
+          Máximo 2px. Cantos vivos reforçam a estética industrial. Preferir 0px (sem radius).
+        </div>
+        <div>
+          <span style="color:var(--amber);">◎ </span><strong style="color:var(--chalk);">Contraste:</strong><br>
+          Texto chalk sobre ink: ratio mínimo WCAG AA (4.5:1). Verificar sempre em revisão.
+        </div>
+        <div>
+          <span style="color:var(--amber);">◎ </span><strong style="color:var(--chalk);">Print:</strong><br>
+          Todo material impresso usa print-color-adjust: exact. Testar sempre antes de enviar.
+        </div>
+      </div>
+    </div>
+
+    <!-- Rodapé do brandbook -->
+    <div class="fade-up" style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--ink-border);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:gap;gap:1rem;">
+      <div>
+        <div style="font-family:var(--font-display);font-size:2rem;color:var(--chalk);letter-spacing:0.08em;line-height:1;">
+          N<span style="color:var(--amber-bright);">P</span>T
+        </div>
+        <div style="font-family:var(--font-label);font-size:0.6rem;letter-spacing:0.25em;color:var(--chalk-ghost);text-transform:uppercase;margin-top:0.25rem;">
+          Engenharia
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-family:var(--font-body);font-size:0.65rem;color:var(--chalk-ghost);line-height:1.8;">
+          Manual de Identidade Visual · v1.0 · 2026<br>
+          Documento confidencial — uso interno e agências parceiras<br>
+          <span style="color:var(--amber);">nptengenharia.com.br</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     NAV SCROLL HIGHLIGHT
+     ============================================================ -->
+<script>
+(function() {
+  var navLinks = document.querySelectorAll('.side-nav a');
+  var sections = document.querySelectorAll('section[id]');
+
+  function onScroll() {
+    var scrollY = window.scrollY + window.innerHeight * 0.3;
+    var current = '';
+    sections.forEach(function(s) {
+      if (s.offsetTop <= scrollY) current = s.id;
+    });
+    navLinks.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
