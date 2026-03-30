@@ -172,12 +172,12 @@
           </div>
         </div>
 
-        <!-- Badge técnico — carrossel de projetos -->
-        <div class="hero__badge" aria-hidden="true" id="hero-badge">
-          <span class="hero__badge-label">Projeto em destaque <span id="hero-badge-counter" style="opacity:0.5;font-size:0.75em;">01/03</span></span>
-          <div class="hero__badge-title" id="hero-badge-title">Raro Prime<br>23 Andares</div>
-          <div class="hero__badge-text" id="hero-badge-text">Pressurização de escadas + Ar condicionado — Osasco, SP</div>
-          <span class="hero__badge-norm" id="hero-badge-norm">NBR 9077 · IT 11 · Aprovado 1ª vistoria</span>
+        <!-- Badge técnico — painel de instrumento -->
+        <div class="hero__badge" aria-hidden="true">
+          <span class="hero__badge-label">Projeto em destaque</span>
+          <div class="hero__badge-title">Raro Prime<br>23 Andares</div>
+          <div class="hero__badge-text">Pressurização de escadas + Ar condicionado — Osasco, SP</div>
+          <span class="hero__badge-norm">NBR 9077 · IT 11 · Aprovado 1ª vistoria</span>
         </div>
 
         <!-- Scroll indicator -->
@@ -442,37 +442,5 @@
   </a>
 
   <script type="module" src="/src/js/main.js"></script>
-  <script>
-  (function () {
-    var badge = document.getElementById('hero-badge');
-    if (!badge) return;
-    var titleEl   = document.getElementById('hero-badge-title');
-    var textEl    = document.getElementById('hero-badge-text');
-    var normEl    = document.getElementById('hero-badge-norm');
-    var counterEl = document.getElementById('hero-badge-counter');
-    var projects = [
-      { title: 'Raro Prime<br>23 Andares', text: 'Pressurização de escadas + Ar condicionado — Osasco, SP', norm: 'NBR 9077 · IT 11 · Aprovado 1ª vistoria' },
-      { title: 'Edifício Comercial<br>18 Pavimentos', text: 'Projeto hidráulico predial — São Paulo, SP', norm: 'NBR 5626 · ABNT · Aprovado 1ª vistoria' },
-      { title: 'Condomínio Residencial<br>12 Torres', text: 'Projeto elétrico + SPDA — Guarulhos, SP', norm: 'NBR 5410 · IT · Aprovado 1ª vistoria' }
-    ];
-    var current = 0;
-    function next() {
-      current = (current + 1) % projects.length;
-      var p = projects[current];
-      badge.style.opacity = '0';
-      badge.style.transform = 'translateY(-58%)';
-      badge.style.transition = 'opacity 0.3s, transform 0.3s';
-      setTimeout(function () {
-        titleEl.innerHTML = p.title;
-        textEl.textContent = p.text;
-        normEl.textContent = p.norm;
-        counterEl.textContent = '0' + (current + 1) + '/0' + projects.length;
-        badge.style.opacity = '1';
-        badge.style.transform = 'translateY(-60%)';
-      }, 300);
-    }
-    setInterval(next, 4000);
-  })();
-  </script>
 </body>
 </html>
